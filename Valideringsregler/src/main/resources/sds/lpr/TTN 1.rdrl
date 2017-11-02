@@ -1,0 +1,31 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.KontaktVO;
+
+rule "TTN 1"
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.ruleGroup(NONE)
+	@lprmeta.errorText(Tues test)
+	@lprmeta.errorNumber(1)
+	@lprmeta.isValidForDUSASAbroadReports(false)
+	@lprmeta.isValidForDUSASSpecialityReports(false)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.isValidForPrivateSectorReports(false)
+	@lprmeta.productionDate(1509636814525)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.archivedDate(0)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	dialect "mvel"
+	when
+		KontaktVO( )
+	then
+end
