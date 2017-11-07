@@ -18,7 +18,7 @@
     <dependency>
       <groupId>com.scandihealth.lpr.common</groupId>
       <artifactId>commonDomainLPR3</artifactId>
-      <version>3.0.0</version>
+      <version>3.0.1</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
