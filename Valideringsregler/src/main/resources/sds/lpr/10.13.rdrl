@@ -1,0 +1,34 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.BetalingOplysning;
+import com.dxc.lpr3.domain.Kontakt;
+
+rule "10.13"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1513075569956)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(BETALINGSOPLYSNING)
+	@lprmeta.errorNumber(1013)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.errorText(En betalingsoplysnings periode skal ligge inden for kontaktens periode)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		B : BetalingOplysning( )
+		Kontakt( slutTidspunkt != null && betalingOplysninger contains B && slutTidspunkt <= B.startTidspunkt )
+	then
+end
