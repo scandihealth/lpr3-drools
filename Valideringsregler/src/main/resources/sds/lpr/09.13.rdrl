@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "09.13"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1513232320029)
+	@lprmeta.productionDate(1513669615279)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,7 +28,7 @@ rule "09.13"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( )
+		K : Kontakt( slutTidspunkt != null )
 		(OpholdAdresse( startTidspunkt >= K.slutTidspunkt ) from K.opholdAddresser)
 	then
 end
