@@ -1,0 +1,35 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Procedure;
+import com.dxc.lpr3.domain.BetalingOplysning;
+import com.dxc.lpr3.domain.ForloebElement;
+
+rule "11.31"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1513694034109)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(PROCEDURE)
+	@lprmeta.errorNumber(1131)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(Hvis en procedure er tilknyttet direkte til et forløbselement, skal der være tilknyttet en betalingsoplysning til proceduren, og starttidspunkt for betalingsoplysningen skal være lig med starttidspunkt for proceduren
+)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		P : Procedure( betalingOplysning == null || betalingOplysning.startTidspunkt != P.startTidspunkt )
+		ForloebElement( procedurer contains P )
+	then
+end
