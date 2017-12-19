@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "10.16b"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1513075622111)
+	@lprmeta.productionDate(1513686461238)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -21,7 +21,7 @@ rule "10.16b"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Ved en afsluttet kontakt skal starttidspunkt for første betalingsoplysning være lig med kontaktens starttidspunkt, og sluttidspunkt for sidste betalingsoplysning være lig med kontaktens sluttidspunkt.)
+	@lprmeta.errorText(Ved en afsluttet kontakt skal sluttidspunkt for sidste betalingsoplysning være lig med kontaktens sluttidspunkt.)
 	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
