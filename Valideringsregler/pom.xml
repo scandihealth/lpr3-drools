@@ -11,14 +11,8 @@
   <dependencies>
     <dependency>
       <groupId>com.scandihealth.lpr.common</groupId>
-      <artifactId>commonRuleDomain</artifactId>
-      <version>2.0</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.scandihealth.lpr.common</groupId>
       <artifactId>commonDomainLPR3</artifactId>
-      <version>3.0.2</version>
+      <version>3.0.3</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
