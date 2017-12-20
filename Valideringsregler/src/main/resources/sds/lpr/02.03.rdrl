@@ -1,0 +1,33 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.ForloebElement;
+
+rule "02.03"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1513771128237)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(FORLOEBSELEMENT)
+	@lprmeta.errorNumber(203)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.errorText(Et forløbselement, der refererer til et andet forløbselement, skal have et starttidspunkt, der ligger senere end det refererede forløbselements starttidspunkt)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		F2 : ForloebElement( )
+		F1 : ForloebElement( identifikatorer contains F2 , startTidspunkt <= F2.startTidspunkt )
+	then
+end
