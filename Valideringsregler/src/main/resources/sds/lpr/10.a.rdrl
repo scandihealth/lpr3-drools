@@ -1,0 +1,33 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.BetalingOplysning;
+import com.dxc.lpr3.domain.SksKodeLister;
+
+rule "10.a"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1514990657578)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(BETALINGSOPLYSNING)
+	@lprmeta.errorNumber(10001)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.errorText(Betalingsaftalen skal findes i kodelisten admin.betalaftale)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		B : BetalingOplysning( )
+		SksKodeLister( listeHarKode(B.betalingAftale, "admin.betalaftale", B.startTidspunkt) == "false" )
+	then
+end
