@@ -1,0 +1,31 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.ForloebElement;
+
+rule "02.43"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1514990350685)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(FORLOEBSELEMENT)
+	@lprmeta.errorNumber(243)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(Hvis en SOR-enhed, der er ansvarlig enhed for et forløbselement, er lukket, skal forløbselementet afsluttes med et sluttidspunkt, der ligger før eller samtidig med SOR-enhedens sluttidspunkt)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		F : ForloebElement( ansvarligEnhed.endTime != null && ansvarligEnhed.endTime < F.slutTidspunkt )
+	then
+end
