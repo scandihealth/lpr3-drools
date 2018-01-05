@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Henvisning;
 
 rule "01.11"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1512654011983)
+	@lprmeta.productionDate(1515162326468)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,7 +28,7 @@ rule "01.11"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		P : Patient( )
-		Henvisning( tidspunkt < P.foedselsdato )
+		P : Patient( foedselsdato != null )
+		Henvisning( tidspunkt != null , tidspunkt.toLocalDate() < P.foedselsdato )
 	then
 end
