@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>sds</groupId>
   <artifactId>lpr</artifactId>
-  <version>3.0.0</version>
+  <version>3.0-SNAPSHOT</version>
   <packaging>kjar</packaging>
   <name>Valideringsregler</name>
   <description>Drools regler til validering af indberetninger</description>
@@ -12,7 +12,7 @@
     <dependency>
       <groupId>com.scandihealth.lpr.common</groupId>
       <artifactId>commonDomainLPR3</artifactId>
-      <version>3.0.3</version>
+      <version>3.0.2</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
