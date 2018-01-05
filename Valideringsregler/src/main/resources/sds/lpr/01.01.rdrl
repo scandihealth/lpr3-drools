@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.ForloebElement;
 
 rule "01.01"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1512653975186)
+	@lprmeta.productionDate(1515162478025)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,7 +28,7 @@ rule "01.01"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		P : Patient( )
-		ForloebElement( startTidspunkt < P.foedselsdato )
+		P : Patient( foedselsdato != null )
+		ForloebElement( startTidspunkt != null , startTidspunkt.toLocalDate() < P.foedselsdato )
 	then
 end
