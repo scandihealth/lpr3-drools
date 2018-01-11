@@ -5,9 +5,9 @@ import com.dxc.lpr3.domain.ForloebElement;
 
 rule "03.51"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1515603950462)
+	@lprmeta.productionDate(1515674591330)
 	@lprmeta.reportReceivedFromDate(0)
-	@lprmeta.isValidForLPRReports(false)
+	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
@@ -27,6 +27,6 @@ rule "03.51"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		FE : ForloebElement( startTidspunkt < FE.reference.kode.gyldigFraDato || startTidspunkt > FE.reference.kode.gyldigTilDato )
+		FE : ForloebElement( startTidspunkt != null , reference != null , startTidspunkt < FE.reference.kode.gyldigFraDato || startTidspunkt > FE.reference.kode.gyldigTilDato )
 	then
 end
