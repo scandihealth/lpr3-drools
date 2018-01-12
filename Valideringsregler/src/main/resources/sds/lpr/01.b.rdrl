@@ -1,0 +1,31 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.UofficielBopael;
+
+rule "01.b"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1515763272911)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(BOPAEL)
+	@lprmeta.errorNumber(1002)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(Kommunekode skal være 0009, 0101-0860 eller 0956-0961)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		UofficielBopael( kommuneKode != null , kommuneKode.kode != "0009" && ( kommuneKode.kode < "0101" || kommuneKode.kode > "0860" )&& ( kommuneKode.kode < "0956" || kommuneKode.kode > "0961" ))
+	then
+end
