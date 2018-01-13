@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.ForloebElement;
 
 rule "MAM"
 	@lprmeta.isValidForDUSASAbroadReports(false)
-	@lprmeta.productionDate(1515873551612)
+	@lprmeta.productionDate(1515873970198)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -19,7 +19,7 @@ rule "MAM"
 	@lprmeta.archivedDate(0)
 	@lprmeta.type(REPORT_VALIDATION)
 	@lprmeta.hasProdVersion(true)
-	@lprmeta.reportReceivedToDate(1519686000000)
+	@lprmeta.reportReceivedToDate(1519858800000)
 	@lprmeta.encounterEndFromDate(0)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
