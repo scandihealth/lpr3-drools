@@ -1,0 +1,32 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Kontakt;
+import java.time.OffsetDateTime;
+
+rule "05.15"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1515842904075)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(KONTAKT)
+	@lprmeta.errorNumber(515)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(Hvis en kontakt er startet for mere end 30 siden, skal der være tilknyttet én aktionsdiagnose)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		Kontakt( startTidspunkt.plusDays(30) < ( OffsetDateTime.now() ) , aktionDiagnose == null )
+	then
+end
