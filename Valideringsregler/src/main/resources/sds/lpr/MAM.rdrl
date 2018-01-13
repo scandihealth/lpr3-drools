@@ -1,0 +1,33 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Patient;
+import com.dxc.lpr3.domain.ForloebElement;
+
+rule "MAM"
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.errorType(OK)
+	@lprmeta.ruleGroup(NONE)
+	@lprmeta.errorNumber(8370)
+	@lprmeta.isValidForDUSASAbroadReports(false)
+	@lprmeta.isValidForDUSASSpecialityReports(false)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.productionDate(1515867366174)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.archivedDate(0)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(MAM fejl)
+	dialect "mvel"
+	when
+		P : Patient( foedselsdato != null )
+		ForloebElement( harStartTidspunkt(), startTidspunkt.toLocalDate() < P.foedselsdato )
+	then
+end
