@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "05.102"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1515855447761)
+	@lprmeta.productionDate(1515925433488)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -29,6 +29,6 @@ rule "05.102"
 	dialect "mvel"
 	when
 		K : Kontakt( ansvarligEnhed.harPsykiatriskHovedSpeciale() == false , kontaktAarsag == null )
-		SksKodeLister( listeHarKode(K.prioritet, "admin.prioritet.akut", K.startTidspunkt) == "true" , listeHarKode(K.type, "admin.konttype.fysfrem", K.startTidspunkt) == "true" )
+		SksKodeLister( listeHarKode(K.prioritet, "admin.prioritet.akut", K.startTidspunkt) == "true" , listeHarKode(K.type, "admin.konttype.fysfr", K.startTidspunkt) == "true" )
 	then
 end
