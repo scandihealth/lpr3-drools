@@ -3,9 +3,9 @@ package sds.lpr;
 import java.lang.Number;
 import com.dxc.lpr3.domain.ForloebElement;
 
-rule "03.51"
+rule "null"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1515674591330)
+	@lprmeta.productionDate(1515934354452)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -21,12 +21,11 @@ rule "03.51"
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
 	@lprmeta.errorText(En SKS-kode anvendt som referencetype for et forløbselement skal være gyldig på forløbselementets starttidspunkt)
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		FE : ForloebElement( startTidspunkt != null , reference != null , startTidspunkt < FE.reference.kode.gyldigFraDato || startTidspunkt > FE.reference.kode.gyldigTilDato )
+		F : ForloebElement( harStartTidspunkt(), reference != null , startTidspunkt < F.reference.kode.gyldigFraDato || ( reference.kode.harGyldigTilDato()&& startTidspunkt > F.reference.kode.gyldigTilDato ))
 	then
 end
