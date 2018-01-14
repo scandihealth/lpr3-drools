@@ -1,0 +1,34 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Kontakt;
+import com.dxc.lpr3.domain.SksKodeLister;
+
+rule "05.105"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1515927087675)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(KONTAKT)
+	@lprmeta.errorNumber(5105)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(Hvis kontakten er af typen 'fysisk fremmøde', skal der registreres opholdsadresse på kontakten
+)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		K : Kontakt( opholdAddresser == null )
+		SksKodeLister( listeHarKode(K.type, "admin.konttype.fysfr", K.startTidspunkt) == "true" )
+	then
+end
