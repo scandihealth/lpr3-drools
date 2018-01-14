@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.ForloebElement;
 
 rule "06.01"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1512996662855)
+	@lprmeta.productionDate(1515933758939)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -30,6 +30,6 @@ rule "06.01"
 	dialect "mvel"
 	when
 		H : Henvisning( )
-		ForloebElement( henvisning == ( H ) && startTidspunkt < H.tidspunkt )
+		ForloebElement( henvisning == ( H ) && harStartTidspunkt()&& startTidspunkt < H.tidspunkt )
 	then
 end
