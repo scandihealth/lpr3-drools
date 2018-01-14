@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "05.105"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1515927087675)
+	@lprmeta.productionDate(1515929903458)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,7 +28,7 @@ rule "05.105"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( opholdAddresser == null )
+		K : Kontakt( opholdAddresser.empty)
 		SksKodeLister( listeHarKode(K.type, "admin.konttype.fysfr", K.startTidspunkt) == "true" )
 	then
 end
