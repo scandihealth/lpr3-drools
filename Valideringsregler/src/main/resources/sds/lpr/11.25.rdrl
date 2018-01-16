@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Procedure;
 
 rule "11.25"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1513248952857)
+	@lprmeta.productionDate(1516114197584)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,7 +28,7 @@ rule "11.25"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		P : Procedure( slutTidspunkt != null )
-		Kontakt( procedurer contains P && slutTidspunkt != null && slutTidspunkt < P.slutTidspunkt )
+		P : Procedure( harSlutTidspunkt())
+		Kontakt( procedurer contains P && slutTidspunkt < P.slutTidspunkt )
 	then
 end
