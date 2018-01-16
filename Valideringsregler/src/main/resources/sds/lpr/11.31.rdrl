@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.ForloebElement;
 
 rule "11.31"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1513694034109)
+	@lprmeta.productionDate(1516114233103)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -29,7 +29,7 @@ rule "11.31"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		P : Procedure( betalingOplysning == null || betalingOplysning.startTidspunkt != P.startTidspunkt )
+		P : Procedure( betalingOplysning == null || ( betalingOplysning != null && betalingOplysning.startTidspunkt != P.startTidspunkt ))
 		ForloebElement( procedurer contains P )
 	then
 end
