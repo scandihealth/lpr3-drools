@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.BetalingOplysning;
 
 rule "10.51"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1515675548915)
+	@lprmeta.productionDate(1516113943231)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,6 +27,6 @@ rule "10.51"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		B : BetalingOplysning( startTidspunkt < B.specialiseringNiveau.gyldigFraDato || startTidspunkt > B.specialiseringNiveau.gyldigTilDato )
+		B : BetalingOplysning( specialiseringNiveau != null , startTidspunkt < B.specialiseringNiveau.gyldigFraDato || startTidspunkt > B.specialiseringNiveau.gyldigTilDato )
 	then
 end
