@@ -3,9 +3,9 @@ package sds.lpr;
 import java.lang.Number;
 import com.dxc.lpr3.domain.OpholdAdresse;
 
-rule "null"
+rule "09.42"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516274230526)
+	@lprmeta.productionDate(1516276047194)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
