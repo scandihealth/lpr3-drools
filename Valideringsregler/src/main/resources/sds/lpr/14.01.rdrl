@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.SksKode;
 
 rule "14.01"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1514990832842)
+	@lprmeta.productionDate(1516264823374)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -29,7 +29,7 @@ rule "14.01"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		D : Diagnose( )
+		D : Diagnose( lokalRecidiver.empty == false )
 		K : Kontakt( aktionDiagnose == ( D ) || bidiagnoser contains D )
 		(SksKode( gyldigFraDato > K.slutTidspunkt || gyldigTilDato < K.startTidspunkt ) from D.lokalRecidiver)
 	then
