@@ -3,7 +3,7 @@ package sds.lpr;
 import java.lang.Number;
 import com.dxc.lpr3.domain.ForloebElement;
 
-rule "03.51-temp"
+rule "03.51"
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1515934354452)
 	@lprmeta.reportReceivedFromDate(0)
