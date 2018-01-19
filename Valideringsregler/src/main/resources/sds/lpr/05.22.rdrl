@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "05.22"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1515848824440)
+	@lprmeta.productionDate(1516363976056)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,6 +28,6 @@ rule "05.22"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( forloebElement.harSlutTidspunkt(), startTidspunkt <= K.forloebElement.slutTidspunkt )
+		K : Kontakt( forloebElement.harSlutTidspunkt(), startTidspunkt >= K.forloebElement.slutTidspunkt )
 	then
 end
