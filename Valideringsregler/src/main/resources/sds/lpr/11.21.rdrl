@@ -1,0 +1,34 @@
+package sds.lpr;
+
+import com.dxc.lpr3.domain.Procedure;
+import com.dxc.lpr3.domain.SksKodeLister;
+import com.dxc.lpr3.domain.Kontakt;
+
+rule "11.21"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1516358446287)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(PROCEDURE)
+	@lprmeta.errorNumber(1121)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(Hvis en procedure, hvor sluttidspunkt er påkrævet, knytter sig til en afsluttet kontakt, skal procedurens sluttidspunkt være angivet.)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		K : Kontakt( harSlutTidspunkt())
+		(P : Procedure( harSlutTidspunkt() == false ) from K.procedurer)
+		SksKodeLister( listeHarKode(P.kode.primaerKode, "proc.sluttid", P.startTidspunkt) == "true" )
+	then
+end
