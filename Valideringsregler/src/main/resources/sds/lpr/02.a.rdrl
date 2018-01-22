@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "02.a"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1515845520218)
+	@lprmeta.productionDate(1516634296337)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,7 +27,6 @@ rule "02.a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		F : ForloebElement( harStartTidspunkt())
-		SksKodeLister( listeHarKode(F.forloebLabel, "forloeb.label", F.startTidspunkt) == "false" )
+		F : ForloebElement( harStartTidspunkt(), forloebLabel.kodelisterPaaDato(F.startTidspunkt) not contains "forloeb.label" )
 	then
 end
