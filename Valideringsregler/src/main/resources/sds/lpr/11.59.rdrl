@@ -1,0 +1,33 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Procedure;
+import com.dxc.lpr3.domain.SksKode;
+
+rule "11.59"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1516620679493)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(PROCEDURE)
+	@lprmeta.errorNumber(1159)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(Hvis der er en tillægskode til en procedurekode, skal tillægskoden være gyldig på procedurens starttidspunkt)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		P : Procedure( )
+		(SksKode( gyldigFraDato > P.startTidspunkt || gyldigTilDato < P.startTidspunkt ) from P.kode.tillaegsKoder)
+	then
+end
