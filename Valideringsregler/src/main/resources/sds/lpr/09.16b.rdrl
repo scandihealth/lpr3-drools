@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.OpholdAdresse;
 
 rule "09.16b"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1513233073322)
+	@lprmeta.productionDate(1516707810797)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,8 +28,8 @@ rule "09.16b"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		O : OpholdAdresse( )
-		K : Kontakt( slutTidspunkt != null , opholdAddresser contains O )
-		not (OpholdAdresse( slutTidspunkt == K.slutTidspunkt )) 
+		K : Kontakt( harSlutTidspunkt(), opholdAddresser.empty == false )
+		not (		OpholdAdresse( slutTidspunkt == K.slutTidspunkt ) from K.opholdAddresser
+) 
 	then
 end
