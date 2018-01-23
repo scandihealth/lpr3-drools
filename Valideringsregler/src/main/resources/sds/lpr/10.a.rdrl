@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "10.a"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1514990657578)
+	@lprmeta.productionDate(1516719360063)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,7 +27,6 @@ rule "10.a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		B : BetalingOplysning( )
-		SksKodeLister( listeHarKode(B.betalingAftale, "admin.betalaftale", B.startTidspunkt) == "false" )
+		BetalingOplysning( betalingAftale.kodelisterPaaDato(startTidspunkt) not contains "admin.betalaftale" )
 	then
 end
