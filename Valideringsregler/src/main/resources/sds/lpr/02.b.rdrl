@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "02.b"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516634280911)
+	@lprmeta.productionDate(1516719230346)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,6 +27,6 @@ rule "02.b"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		F : ForloebElement( afslutningsmaade != null , harSlutTidspunkt(), afslutningsmaade.kodelisterPaaDato(F.slutTidspunkt) not contains "admin.afslutmaade" )
+		F : ForloebElement( afslutningsmaade != null , harSlutTidspunkt(), afslutningsmaade.kodelisterPaaDato(slutTidspunkt) not contains "admin.afslutmaade" )
 	then
 end
