@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "11.21"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516358446287)
+	@lprmeta.productionDate(1516728898291)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,7 +28,6 @@ rule "11.21"
 	dialect "mvel"
 	when
 		K : Kontakt( harSlutTidspunkt())
-		(P : Procedure( harSlutTidspunkt() == false ) from K.procedurer)
-		SksKodeLister( listeHarKode(P.kode.primaerKode, "proc.sluttid", P.startTidspunkt) == "true" )
+		(P : Procedure( harSlutTidspunkt() == false , kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.sluttid" ) from K.procedurer)
 	then
 end
