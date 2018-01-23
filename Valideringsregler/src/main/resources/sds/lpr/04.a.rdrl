@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.ForloebMarkoer;
 
 rule "04.a"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516011228517)
+	@lprmeta.productionDate(1516719313686)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,7 +27,6 @@ rule "04.a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		F : ForloebMarkoer( )
-		SksKodeLister( listeHarKode(F.kode, "forloeb.markoer", F.tidspunkt) == "false" )
+		F : ForloebMarkoer( kode.kodelisterPaaDato(tidspunkt) not contains "forloeb.markoer" )
 	then
 end
