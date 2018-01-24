@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.OpholdAdresse;
 
 rule "09.43"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516639819160)
+	@lprmeta.productionDate(1516794683283)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,6 +27,6 @@ rule "09.43"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		O : OpholdAdresse( enhed.harSlutTidspunkt()&& harSlutTidspunkt() == false )
+		O : OpholdAdresse( enhed != null , enhed.harSlutTidspunkt(), harSlutTidspunkt() == false )
 	then
 end
