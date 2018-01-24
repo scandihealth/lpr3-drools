@@ -1,0 +1,32 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Procedure;
+import com.dxc.lpr3.domain.SksKodeLister;
+
+rule "11.e"
+	@lprmeta.isValidForDUSASAbroadReports(false)
+	@lprmeta.productionDate(1516814178674)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(false)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(PROCEDURE)
+	@lprmeta.errorNumber(11005)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.errorText(Indikation skal være i en af kodelisterne diag og admin.behandsigte)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.isValidForDUSASSpecialityReports(false)
+	dialect "mvel"
+	when
+		Procedure( indikation != null , indikation.primaerKode.kodelisterPaaDato(startTidspunkt) not contains "diag" , indikation.primaerKode.kodelisterPaaDato(startTidspunkt) not contains "admin.behandsigte" )
+	then
+end
