@@ -1,0 +1,32 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Kontakt;
+import com.dxc.lpr3.domain.SksKodeLister;
+
+rule "05.107"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1516805153717)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(KONTAKT)
+	@lprmeta.errorNumber(5107)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.errorText(Hvis en kontakt er af typen 'diagnoseindberetning', skal kontaktens sluttidspunkt være lig med starttidspunktet plus ét minut)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		K : Kontakt( startTidspunkt.plusMinutes(1) != ( slutTidspunkt ) , type.kodelisterPaaDato(startTidspunkt) contains "admin.konttype.diagindb" )
+	then
+end
