@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "07.a"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516100678928)
+	@lprmeta.productionDate(1516869894071)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,7 +27,6 @@ rule "07.a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( kontaktAarsag != null )
-		SksKodeLister( listeHarKode(K.kontaktAarsag, "admin.kontaarsag", K.startTidspunkt) == "false" )
+		Kontakt( kontaktAarsag != null , kontaktAarsag.kodelisterPaaDato(startTidspunkt) not contains "admin.kontaarsag" )
 	then
 end
