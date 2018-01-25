@@ -6,9 +6,9 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "12.51"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1515603448568)
+	@lprmeta.productionDate(1516870140136)
 	@lprmeta.reportReceivedFromDate(0)
-	@lprmeta.isValidForLPRReports(false)
+	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
@@ -29,6 +29,6 @@ rule "12.51"
 	dialect "mvel"
 	when
 		D : Diagnose( )
-		K : Kontakt( aktionDiagnose == ( D ) || bidiagnoser contains D , startTidspunkt > D.art.gyldigTilDato || startTidspunkt < D.art.gyldigFraDato )
+		K : Kontakt( aktionDiagnose == ( D ) || bidiagnoser contains D , startTidspunkt > D.art.gyldigTilDato || slutTidspunkt < D.art.gyldigFraDato )
 	then
 end
