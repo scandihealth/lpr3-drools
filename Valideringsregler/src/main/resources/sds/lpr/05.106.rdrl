@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "05.106"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516805071306)
+	@lprmeta.productionDate(1516861262721)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,6 +28,6 @@ rule "05.106"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( opholdAddresser.empty == false , type.kodelisterPaaDato(startTidspunkt) contains "admin.konttype.fysfr" )
+		K : Kontakt( opholdAddresser.empty == false , type.kodelisterPaaDato(startTidspunkt) not contains "admin.konttype.fysfr" )
 	then
 end
