@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.Diagnose;
 
 rule "12.c-1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516867853777)
+	@lprmeta.productionDate(1517325060869)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
