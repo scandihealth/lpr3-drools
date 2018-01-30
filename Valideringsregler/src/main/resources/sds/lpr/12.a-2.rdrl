@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "12.a-2"
 	@lprmeta.isValidForDUSASAbroadReports(false)
-	@lprmeta.productionDate(1516867782313)
+	@lprmeta.productionDate(1517324487615)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(false)
 	@lprmeta.episodeOfCareStartFromDate(0)
