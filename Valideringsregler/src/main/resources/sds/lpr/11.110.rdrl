@@ -1,0 +1,40 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Diagnose;
+import com.dxc.lpr3.domain.Procedure;
+import com.dxc.lpr3.domain.ResultatIndberetning;
+import com.dxc.lpr3.domain.Resultat;
+import com.dxc.lpr3.domain.Kontakt;
+
+rule "11.110"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1517400644040)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(PROCEDURE)
+	@lprmeta.errorNumber(11110)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(Hvis en procedure er på liste over operationer, der kræver komplikationsregistrering, og denne angiver, at der er tilstødt komplikation ved Clavien grad I-V, så skal der til kontakten være knyttet (mindst) en bidiagnose for angivelse af komplicerende tilstand)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		P : Procedure( kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.opr.komplikat" , PstartTidspunkt : startTidspunkt)
+		(RI : ResultatIndberetning( navn.kode == "RAA09" ) from P.resultatIndberetning)
+		(Resultat( type.kode == "RDA85" , vaerdiSomSksKode().kodelisterPaaDato(PstartTidspunkt) contains "res.clavien.suba" ) from RI.resultater)
+		K : Kontakt( procedurer contains P )
+		not (		Diagnose( kode.primaerKode.kodelisterPaaDato(PstartTidspunkt) contains "diag.kirkomplikat" ) from K.bidiagnoser
+) 
+	then
+end
