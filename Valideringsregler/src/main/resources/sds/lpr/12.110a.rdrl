@@ -1,0 +1,35 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Diagnose;
+import com.dxc.lpr3.domain.Kontakt;
+
+rule "12.110a"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1517424800291)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(DIAGNOSE)
+	@lprmeta.errorNumber(12110)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(Hvis der til en kontakt er knyttet en diagnose for lokalrecidiv, skal der til samme kontakt være knyttet en diagnose i form af en kode for primær kræft)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		K : Kontakt( KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt, aktionDiagnose.kode.primaerKode.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "diag.primkraeft" )
+		(B1 : Diagnose( kode.primaerKode.kode contains "diag.lokalrecidiv" ) from K.bidiagnoser)
+		not (		Diagnose( this != B1 , kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.primkraeft" ) from K.bidiagnoser
+) 
+	then
+end
