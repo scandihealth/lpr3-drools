@@ -5,10 +5,10 @@ import com.dxc.lpr3.domain.Procedure;
 import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "11.e"
-	@lprmeta.isValidForDUSASAbroadReports(false)
-	@lprmeta.productionDate(1516814178674)
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1517481395612)
 	@lprmeta.reportReceivedFromDate(0)
-	@lprmeta.isValidForLPRReports(false)
+	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
@@ -24,7 +24,7 @@ rule "11.e"
 	@lprmeta.errorText(Indikation skal være i en af kodelisterne diag og admin.behandsigte)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.isValidForDUSASSpecialityReports(false)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
 		Procedure( indikation != null , indikation.primaerKode.kodelisterPaaDato(startTidspunkt) not contains "diag" , indikation.primaerKode.kodelisterPaaDato(startTidspunkt) not contains "admin.behandsigte" )
