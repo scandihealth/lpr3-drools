@@ -6,16 +6,16 @@ import com.dxc.lpr3.domain.Diagnose;
 import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "12.a-2"
-	@lprmeta.isValidForDUSASAbroadReports(false)
-	@lprmeta.productionDate(1517324487615)
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1517492821878)
 	@lprmeta.reportReceivedFromDate(0)
-	@lprmeta.isValidForLPRReports(false)
+	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
-	@lprmeta.errorType(OK)
+	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
 	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
-	@lprmeta.ruleGroup(NONE)
+	@lprmeta.ruleGroup(DIAGNOSE)
 	@lprmeta.errorNumber(12001)
 	@lprmeta.archivedDate(0)
 	@lprmeta.type(REPORT_VALIDATION)
@@ -25,7 +25,7 @@ rule "12.a-2"
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.errorText(Bidiagnosers art skal findes i kodelisten admin.diagart)
-	@lprmeta.isValidForDUSASSpecialityReports(false)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
 		K : Kontakt( KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt)
