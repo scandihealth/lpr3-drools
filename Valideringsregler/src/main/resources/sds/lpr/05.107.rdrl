@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "05.107"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516805153717)
+	@lprmeta.productionDate(1517842727567)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -21,12 +21,12 @@ rule "05.107"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Hvis en kontakt er af typen 'diagnoseindberetning', skal kontaktens sluttidspunkt være lig med starttidspunktet plus ét minut)
+	@lprmeta.errorText(Hvis en kontakt er af typen 'diagnoseindberetning', skal kontaktens sluttidspunkt være lig med starttidspunktet plus ét minut, og prioritet skal være i kodelisten admin.prioritet.plan)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( startTidspunkt.plusMinutes(1) != ( slutTidspunkt ) , type.kodelisterPaaDato(startTidspunkt) contains "admin.konttype.diagindb" )
+		K : Kontakt( type.kodelisterPaaDato(startTidspunkt) contains "admin.konttype.diagindb" , startTidspunkt.plusMinutes(1) != K.slutTidspunkt || prioritet.kodelisterPaaDato(startTidspunkt) not contains "admin.prioritet.plan" )
 	then
 end
