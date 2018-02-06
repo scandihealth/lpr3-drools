@@ -1,0 +1,34 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Diagnose;
+import com.dxc.lpr3.domain.Kontakt;
+import com.dxc.lpr3.domain.SksKodeLister;
+
+rule "13.102b"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1517923280283)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(DIAGNOSE)
+	@lprmeta.errorNumber(13102)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.errorText(Hvis der til en diagnose er knyttet en kode for metastase, skal diagnosen være en anmeldelsespligtig cancerdiagnose for primær kræft)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		K : Kontakt( KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt)
+		(Diagnose( metastaser.empty == false , kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) not contains "diag.primkraeft" ) from K.bidiagnoser)
+	then
+end
