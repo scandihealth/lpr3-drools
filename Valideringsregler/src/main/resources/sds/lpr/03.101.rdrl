@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "03.101"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1517224766559)
+	@lprmeta.productionDate(1517996991896)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,6 +28,6 @@ rule "03.101"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		F : ForloebElement( harStartTidspunkt(), reference != null , reference.forloebElement != null , reference.kode.kodelisterPaaDato(startTidspunkt) contains "reftype.ident_id" , reference.forloebElement.patient != F.patient )
+		F : ForloebElement( harStartTidspunkt(), reference != null , reference.forloebElement != null , reference.kode.kodelisterPaaDato(startTidspunkt) contains "forloeb.reftype.ident_id" , reference.forloebElement.patient != F.patient )
 	then
 end
