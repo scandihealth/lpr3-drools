@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "12.110a"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1517838673054)
+	@lprmeta.productionDate(1518006148624)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,7 +28,7 @@ rule "12.110a"
 	dialect "mvel"
 	when
 		K : Kontakt( KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt, aktionDiagnose == null || ( aktionDiagnose != null && aktionDiagnose.kode.primaerKode.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "diag.primkraeft" ))
-		(B1 : Diagnose( kode.primaerKode.kode contains "diag.lokalrecidiv" ) from K.bidiagnoser)
+		(B1 : Diagnose( kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.lokalrecidiv" ) from K.bidiagnoser)
 		not (		Diagnose( this != B1 , kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.primkraeft" ) from K.bidiagnoser
 ) 
 	then
