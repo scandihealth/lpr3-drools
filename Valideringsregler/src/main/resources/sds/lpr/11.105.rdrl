@@ -3,12 +3,10 @@ package sds.lpr;
 import java.lang.Number;
 import com.dxc.lpr3.domain.Procedure;
 import com.dxc.lpr3.domain.Patient;
-import com.dxc.lpr3.domain.SksKodeLister;
-import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "11.105"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516882637594)
+	@lprmeta.productionDate(1518184020833)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -30,8 +28,6 @@ rule "11.105"
 	dialect "mvel"
 	when
 		Pt : Patient( )
-		P : Procedure( startTidspunkt.minusDays(90).toLocalDate() <= Pt.foedselsdato , kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.hoerescreen" )
-		not (		ResultatIndberetning( navn.kode == "RAA06" ) from P.resultatIndberetning
-) 
+		P : Procedure( startTidspunkt.minusDays(90).toLocalDate() <= Pt.foedselsdato , kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.hoerescreen" , harResultatIndberetning("RAA06") == false )
 	then
 end
