@@ -4,10 +4,11 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.Kontakt;
 import com.dxc.lpr3.domain.Procedure;
 import java.time.OffsetDateTime;
+import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "RAA09.1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1518423927195)
+	@lprmeta.productionDate(1518438478911)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -29,6 +30,7 @@ rule "RAA09.1"
 	dialect "mvel"
 	when
 		K : Kontakt( slutTidspunkt != null , slutTidspunkt.plusDays(3) < ( OffsetDateTime.now() ) )
-		(Procedure( kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.opr.komplikat" , resultatIndberetning == null || ( resultatIndberetning != null && resultatIndberetning.navn.kode != "RAA09" )|| ( resultatIndberetning != null && resultatIndberetning.navn.kode == "RAA09" && resultatIndberetning.status.kodelisterPaaDato(startTidspunkt) not contains "resindb.status.suba" )) from K.procedurer)
+		(P : Procedure( kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.opr.komplikat" ) from K.procedurer)
+		( ResultatIndberetning( indberetningAarsag == P , navn.kode == "RAA09" , status.kodelisterPaaDato(aarsagStartTidspunkt) not contains "resindb.status.suba" ) or Procedure( this == P , harResultatIndberetning("RAA09") == false ) )
 	then
 end
