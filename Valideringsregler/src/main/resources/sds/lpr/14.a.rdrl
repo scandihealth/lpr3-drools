@@ -8,7 +8,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "14.a"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1518422541457)
+	@lprmeta.productionDate(1518602395965)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -32,6 +32,6 @@ rule "14.a"
 	when
 		D : Diagnose( lokalRecidiver.empty == false )
 		Kontakt( ( aktionDiagnose != null && aktionDiagnose == D )|| ( bidiagnoser != null && bidiagnoser contains D ), KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt)
-		(SksKode( kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) != "diag.lokalrecidiv" ) from D.lokalRecidiver)
+		(SksKode( kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) not contains "diag.lokalrecidiv" ) from D.lokalRecidiver)
 	then
 end
