@@ -1,0 +1,35 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Kontakt;
+import com.dxc.lpr3.domain.Diagnose;
+
+rule "12.102"
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.ruleGroup(DIAGNOSE)
+	@lprmeta.errorText(For en diagnose, hvor lateralitet er obligatorisk, skal sideangivelse være udfyldt)
+	@lprmeta.errorNumber(12102)
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.productionDate(1518674269250)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.archivedDate(0)
+	@lprmeta.reportReceivedFromDate(-9223372036854775808)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterStartFromDate(-9223372036854775808)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(-9223372036854775808)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	dialect "mvel"
+	when
+		K : Kontakt( KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt)
+		( 		Diagnose( kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.lateral" , sideAngivelse == null ) from K.bidiagnoser
+ or 		Diagnose( kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.lateral" , sideAngivelse == null ) from K.aktionDiagnose
+ )
+	then
+end
