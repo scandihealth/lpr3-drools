@@ -6,7 +6,7 @@ import java.time.OffsetDateTime;
 
 rule "05.15"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1515842904075)
+	@lprmeta.productionDate(1518673228770)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -23,7 +23,7 @@ rule "05.15"
 	@lprmeta.encounterEndFromDate(0)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(Hvis en kontakt er startet for mere end 30 siden, skal der være tilknyttet én aktionsdiagnose)
+	@lprmeta.errorText(Hvis en kontakt er startet for mere end 30 dage siden, skal der være tilknyttet én aktionsdiagnose)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
