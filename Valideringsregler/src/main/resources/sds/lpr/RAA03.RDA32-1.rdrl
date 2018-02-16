@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA03.RDA32-1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1518784925860)
+	@lprmeta.productionDate(1518785398480)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -26,6 +26,6 @@ rule "RAA03.RDA32-1"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Resultat( type.kode == "RDA32" , vaerdiSomHeltal() < 1 || vaerdiSomHeltal() > 9 )
+		Resultat( type.kode == "RDA32" , vaerdiSomHeltal() < 1 )
 	then
 end
