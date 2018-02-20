@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA03.ZZ4229V"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519127158741)
+	@lprmeta.productionDate(1519131444825)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,6 +27,6 @@ rule "RAA03.ZZ4229V"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Resultat( type.kode == "ZZ4229V" , vaerdiSomDecimaltal() <= ( -20.00 ) || vaerdiSomDecimaltal() >= 10.00 || vaerdiSomHeltal() == null )
+		Resultat( type.kode == "ZZ4229V" , vaerdiSomDecimaltal() <= ( -20.00 ) || vaerdiSomDecimaltal() >= 10.00 || vaerdiSomDecimaltal() == null )
 	then
 end
