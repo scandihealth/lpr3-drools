@@ -1,0 +1,31 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Resultat;
+
+rule "RAA03.RDA38-1"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1519123478402)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(RESULTATINDBERETNING)
+	@lprmeta.errorNumber(90381)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.errorText(Placentavægt (resultat RDA38) skal være et heltal mellem 100 og 3999)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		Resultat( type.kode == "RDA38" , vaerdiSomHeltal() < 100 || vaerdiSomHeltal() >= 4000 || vaerdiSomHeltal() == null )
+	then
+end
