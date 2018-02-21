@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA05.RDA60-1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519220630819)
+	@lprmeta.productionDate(1519221101652)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -26,6 +26,6 @@ rule "RAA05.RDA60-1"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Resultat( type.kode == "RDA060" , erVaerdiValidDatoTid() == false )
+		Resultat( type.kode == "RDA60" , erVaerdiValidDatoTid() == false )
 	then
 end
