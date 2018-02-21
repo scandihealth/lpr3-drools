@@ -1,0 +1,33 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Procedure;
+import com.dxc.lpr3.domain.ResultatIndberetning;
+
+rule "RAA07.1"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1519198105994)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(RESULTATINDBERETNING)
+	@lprmeta.errorNumber(9701)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(For procedurekoder i kodelisten proc.inhabil.suba skal der være en komplet resultatindberetning RAA07. )
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		P : Procedure( kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.inhabil.suba" )
+		( Procedure( this == P , harResultatIndberetning("RAA07") == false ) or ResultatIndberetning( indberetningAarsag == P , navn.kode == "RAA07" , status.kodelisterPaaDato(aarsagStartTidspunkt) not contains "resindb.status.suba" ) )
+	then
+end
