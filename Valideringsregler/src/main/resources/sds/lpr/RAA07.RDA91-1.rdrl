@@ -1,0 +1,35 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Procedure;
+import com.dxc.lpr3.domain.Resultat;
+import com.dxc.lpr3.domain.ResultatIndberetning;
+import com.dxc.lpr3.domain.SksKodeLister;
+
+rule "RAA07.RDA91-1"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1519200515611)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(RESULTATINDBERETNING)
+	@lprmeta.errorNumber(90911)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(Begrundelse for indgreb (RDA91) skal være i kodelisten res.inhabbegrundelse)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		RI : ResultatIndberetning( navn.kode == "RAA07" , RIaarsagStartTidspunkt : aarsagStartTidspunkt)
+		(R : Resultat( type.kode == "RDA91" , vaerdiSomSksKode().kodelisterPaaDato(RIaarsagStartTidspunkt) not contains "res.inhabbegrundelse" ) from RI.resultater)
+	then
+end
