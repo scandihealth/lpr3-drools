@@ -1,0 +1,31 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.ResultatIndberetning;
+
+rule "RAA02.3"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1519374956475)
+	@lprmeta.reportReceivedFromDate(-9223372036854775808)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(-9223372036854775808)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(RESULTATINDBERETNING)
+	@lprmeta.errorNumber(9200)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(-9223372036854775808)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(Resultatindberetning RAA02 (fødselsindberetning mor) må kun trigges af en aktionsdiagnose i kodelisten diag.foedmor)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		RI : ResultatIndberetning( navn.kode == "RAA02" , diagnose == null || ( diagnose != null && diagnose.art.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) not contains "admin.diagart.aktdia" )|| ( diagnose != null && diagnose.kode.primaerKode.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) not contains "diag.foedmor" ))
+	then
+end
