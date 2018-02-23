@@ -1,0 +1,37 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.ResultatIndberetning;
+import com.dxc.lpr3.domain.Resultat;
+import com.dxc.lpr3.domain.SksKodeLister;
+import com.dxc.lpr3.domain.Kontakt;
+
+rule "RAA05.RDA65"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1519372071880)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(RESULTATINDBERETNING)
+	@lprmeta.errorNumber(9065)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(For resultatindberetning RAA05 (skadeindberetning) skal der være et resultat af type RDA65 (transportform for modpart) ved komplet indberetning, når kontaktårsagen er i kodelisten admin.kontaarsag.skade.subb og resultat RDA63 (aktivitet) er i kodelisten res.skadeakt.transp)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		RI : ResultatIndberetning( navn.kode == "RAA05" , kontakt != null , kontakt.kontaktAarsag != null , kontakt.kontaktAarsag.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "admin.kontaarsag.skade.subb" , status.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "resindb.status.suba" , RIaarsagStartTidspunkt : aarsagStartTidspunkt, RIaarsagSlutTidspunkt : aarsagSlutTidspunkt)
+		(Resultat( type.kode == "RDA63" , vaerdiSomSksKode().kodelisterIndenforPeriode(RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) contains "res.skadeakt.transp" ) from RI.resultater)
+		not (		Resultat( type.kode == "RDA65" ) from RI.resultater
+) 
+	then
+end
