@@ -1,0 +1,35 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.ResultatIndberetning;
+import com.dxc.lpr3.domain.Resultat;
+import com.dxc.lpr3.domain.SksKodeLister;
+import com.dxc.lpr3.domain.Kontakt;
+
+rule "RAA05.RDA71"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1519638399080)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(RESULTATINDBERETNING)
+	@lprmeta.errorNumber(9071)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(Anvendt sikkerhedsudstyr (resultat RDA71) skal være i kodelisten res.sikkuds)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		RI : ResultatIndberetning( navn.kode == "RAA05" , RIaarsagStartTidspunkt : aarsagStartTidspunkt, RIaarsagSlutTidspunkt : aarsagSlutTidspunkt)
+		(Resultat( type.kode == "RDA71" , vaerdiSomSksKode().kodelisterIndenforPeriode(RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) not contains "res.sikkuds" ) from RI.resultater)
+	then
+end
