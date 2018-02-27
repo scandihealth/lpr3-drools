@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "06.b"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1515942119829)
+	@lprmeta.productionDate(1519723437220)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,7 +27,6 @@ rule "06.b"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		H : Henvisning( )
-		SksKodeLister( listeHarKode(H.maade, "admin.henvmaade", H.tidspunkt) == "false" )
+		Henvisning( maade.kodelisterPaaDato(tidspunkt) not contains "admin.henvmaade" )
 	then
 end
