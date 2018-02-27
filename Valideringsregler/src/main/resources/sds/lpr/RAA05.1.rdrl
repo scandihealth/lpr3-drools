@@ -1,0 +1,34 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Kontakt;
+import com.dxc.lpr3.domain.ResultatIndberetning;
+import java.time.OffsetDateTime;
+
+rule "RAA05.1"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1519731421958)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(RESULTATINDBERETNING)
+	@lprmeta.errorNumber(9501)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(Hvis kontaktens sluttidspunkt er 3 dage eller mere før dags dato og kontaktårsagen er i kodelisten admin.kontaarsag.skade, kontakttypen i kodelisten admin.konttype.fysfr og prioritet i kodelisten admin.prioritet.akut, skal der være en komplet resultatindberetning RAA05 (skadeindberetning) )
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		K : Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(3) <= ( OffsetDateTime.now() ) , kontaktAarsag.kodelisterPaaDato(slutTidspunkt) contains "admin.kontaarsag.skade" , type.kodelisterPaaDato(slutTidspunkt) contains "admin.konttype.fysfr" , prioritet.kodelisterPaaDato(slutTidspunkt) contains "admin.prioritet.akut" )
+		( Kontakt( this == K , harResultatIndberetning("RAA05") == false ) or ResultatIndberetning( indberetningAarsag == K , navn.kode == "RAA05" , status.kodelisterPaaDato(aarsagSlutTidspunkt) not contains "resindb.status.suba" ) )
+	then
+end
