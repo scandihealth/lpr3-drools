@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "05.b"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1515922785369)
+	@lprmeta.productionDate(1519722862244)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,7 +27,6 @@ rule "05.b"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( )
-		SksKodeLister( listeHarKode(K.prioritet, "admin.prioritet", K.startTidspunkt) == "false" )
+		K : Kontakt( prioritet.kodelisterPaaDato(startTidspunkt) not contains "admin.prioritet" )
 	then
 end
