@@ -6,15 +6,15 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "12.112a"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1518090523919)
+	@lprmeta.productionDate(1519808107158)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
-	@lprmeta.errorType(OK)
+	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
 	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
-	@lprmeta.ruleGroup(NONE)
+	@lprmeta.ruleGroup(DIAGNOSE)
 	@lprmeta.errorNumber(12112)
 	@lprmeta.archivedDate(0)
 	@lprmeta.type(REPORT_VALIDATION)
