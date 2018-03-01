@@ -1,0 +1,35 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.ResultatIndberetning;
+import com.dxc.lpr3.domain.Resultat;
+
+rule "RAA04.RDA52-1"
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.ruleGroup(RESULTATINDBERETNING)
+	@lprmeta.errorText(For resultatindberetning RAA04 (abortoplysninger) skal der være et resultat af type RDA52 (misdannelsesoplysning) ved komplet indberetning, hvis diagnosen er i  kodelisten diag.abort.spon og der er et resultat RDA20 (gestationsalder) i kodelisten res.gestald.spontanabort)
+	@lprmeta.errorNumber(90521)
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.productionDate(1519903043740)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.archivedDate(0)
+	@lprmeta.reportReceivedFromDate(-9223372036854775808)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterStartFromDate(-9223372036854775808)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(-9223372036854775808)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	dialect "mvel"
+	when
+		RI : ResultatIndberetning( navn.kode == "RAA04" , diagnose != null , diagnose.kode.primaerKode.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "diag.abort.spon" , RIaarsagStartTidspunkt : aarsagStartTidspunkt, RIaarsagSlutTidspunkt : aarsagSlutTidspunkt)
+		(Resultat( type.kode == "RDA20" , vaerdiSomSksKode().kodelisterIndenforPeriode(RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) contains "res.gestald.spontanabort" ) from RI.resultater)
+		not (		Resultat( type.kode == "RDA52" ) from RI.resultater
+) 
+	then
+end
