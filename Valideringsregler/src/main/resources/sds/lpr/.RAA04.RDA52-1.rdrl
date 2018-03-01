@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.productionDate</string>
-    <long>1519903300609</long>
+    <long>1519905843687</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -42,7 +42,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>For resultatindberetning RAA04 (abortoplysninger) skal der være et resultat af type RDA52 (misdannelsesoplysning) ved komplet indberetning, hvis diagnosen er i  kodelisten diag.abort.spon og der er et resultat RDA20 (gestationsalder) i kodelisten res.gestald.spontanabort</string>
+    <string>For resultatindberetning RAA04 (abortoplysninger) skal der være et resultat af type RDA52 (misdannelsesoplysning) ved komplet indberetning, hvis diagnosen er i  kodelisten diag.abort.spon og der er et resultat RDA20 (gestationsalder) i kodelisten res.gestald.spontabort</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
