@@ -1,0 +1,35 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.ResultatIndberetning;
+import com.dxc.lpr3.domain.Resultat;
+
+rule "RAA04.RDA53"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1519907065523)
+	@lprmeta.reportReceivedFromDate(-9223372036854775808)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(-9223372036854775808)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(RESULTATINDBERETNING)
+	@lprmeta.errorNumber(9053)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(-9223372036854775808)
+	@lprmeta.errorText(For resultatindberetning RAA04 (abortoplysninger) skal der være et resultat af type RDA53 (misdannelsesdiagnose) ved komplet indberetning, hvis der er et resultat af typen RDA52 (misdannelsesoplysning) i kodelisten res.misdann.suba)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		RI : ResultatIndberetning( navn.kode == "RAA04" , status.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "resindb.status.suba" , RIaarsagStartTidspunkt : aarsagStartTidspunkt, RIaarsagSlutTidspunkt : aarsagSlutTidspunkt)
+		(Resultat( type.kode == "RDA52" , vaerdiSomSksKode().kodelisterIndenforPeriode(RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) contains "res.misdann.suba" ) from RI.resultater)
+		not (		Resultat( type.kode == "RDA53" ) from RI.resultater
+) 
+	then
+end
