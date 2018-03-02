@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1516110604057</long>
+    <long>1519980694177</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -20,7 +20,7 @@
     <string>lprmeta.encounterStartFromDate</string>
     <long>0</long>
     <string>lprmeta.errorType</string>
-    <string>0</string>
+    <string>2</string>
     <string>lprmeta.isValidForPrimarySectorReports</string>
     <boolean>false</boolean>
     <string>lprmeta.encounterEndToDate</string>
