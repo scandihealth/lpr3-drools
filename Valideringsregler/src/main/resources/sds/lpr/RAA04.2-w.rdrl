@@ -1,0 +1,37 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Kontakt;
+import com.dxc.lpr3.domain.Diagnose;
+import com.dxc.lpr3.domain.ResultatIndberetning;
+import java.time.OffsetDateTime;
+
+rule "RAA04.2-w"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1519989090819)
+	@lprmeta.reportReceivedFromDate(-9223372036854775808)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
+	@lprmeta.errorType(WARN)
+	@lprmeta.encounterStartFromDate(-9223372036854775808)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(RESULTATINDBERETNING)
+	@lprmeta.errorNumber(9401)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(-9223372036854775808)
+	@lprmeta.errorText(Hvis der er en diagnose i kodelisten diag.abort, skal der være en komplet resultatindberetning RAA04 (abortoplysninger) senest 7 dage efter kontaktens afslutning)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		K : Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(7) > ( OffsetDateTime.now() ) , KslutTidspunkt : slutTidspunkt)
+		(D : Diagnose( kode.primaerKode.kodelisterPaaDato(KslutTidspunkt) contains "diag.abort" ) from K.bidiagnoser)
+		not (		ResultatIndberetning( navn.kode == "RAA04" , status.kodelisterPaaDato(aarsagSlutTidspunkt) contains "resindb.status.suba" ) from D.resultatIndberetninger
+) 
+	then
+end
