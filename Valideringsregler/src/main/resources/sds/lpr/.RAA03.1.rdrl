@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1518694641415</long>
+    <long>1519986066212</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -42,8 +42,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Hvis kontaktens sluttidspunkt er mere end 7 dage før dags dato og aktionsdiagnosen er i kodelisten diag.foedbarn, skal der være en 
- komplet resultatindberetning RAA03 (fødselindberetning barn) </string>
+    <string>Hvis aktionsdiagnosen er i kodelisten diag.foedbarn, skal der være en komplet resultatindberetning RAA03 (fødselindberetning barn) senest 7 dage efter kontaktens afslutning</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
