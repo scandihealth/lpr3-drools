@@ -6,11 +6,11 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "10.16a"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516110567448)
+	@lprmeta.productionDate(1519980481946)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
-	@lprmeta.errorType(OK)
+	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
 	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
