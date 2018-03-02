@@ -3,10 +3,11 @@ package sds.lpr;
 import java.lang.Number;
 import com.dxc.lpr3.domain.Kontakt;
 import com.dxc.lpr3.domain.ResultatIndberetning;
+import java.time.OffsetDateTime;
 
 rule "RAA02.1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519294490388)
+	@lprmeta.productionDate(1519985823834)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -23,12 +24,11 @@ rule "RAA02.1"
 	@lprmeta.encounterEndFromDate(0)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(Hvis kontaktens sluttidspunkt er mere end 7 dage før dags dato og aktionsdiagnosen er i kodelisten diag.foedmor, skal der være en 
- komplet resultatindberetning RAA02 (fødselsindberetning mor) )
+	@lprmeta.errorText(Hvis aktionsdiagnosen er i kodelisten diag.foedmor, skal der være en komplet resultatindberetning RAA02 (fødselsindberetning mor) senest 7 dage efter kontaktens afslutning)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(7) < ( OffsetDateTime.now() ) , aktionDiagnose != null , aktionDiagnose.kode.primaerKode.kodelisterPaaDato(slutTidspunkt) contains "diag.foedmor" , A : aktionDiagnose)
+		Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(7) <= ( OffsetDateTime.now() ) , aktionDiagnose != null , aktionDiagnose.kode.primaerKode.kodelisterPaaDato(slutTidspunkt) contains "diag.foedmor" , A : aktionDiagnose)
 		not (ResultatIndberetning( navn.kode == "RAA02" , status.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "resindb.status.suba" , diagnose == A )) 
 	then
 end
