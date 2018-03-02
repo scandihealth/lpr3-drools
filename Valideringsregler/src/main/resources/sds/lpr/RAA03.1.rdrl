@@ -3,10 +3,11 @@ package sds.lpr;
 import java.lang.Number;
 import com.dxc.lpr3.domain.Kontakt;
 import com.dxc.lpr3.domain.ResultatIndberetning;
+import java.time.OffsetDateTime;
 
-rule "RAA03.1"
+rule "null"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1518694641415)
+	@lprmeta.productionDate(1519986066212)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -21,14 +22,13 @@ rule "RAA03.1"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.errorText(Hvis aktionsdiagnosen er i kodelisten diag.foedbarn, skal der være en komplet resultatindberetning RAA03 (fødselindberetning barn) senest 7 dage efter kontaktens afslutning)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(Hvis kontaktens sluttidspunkt er mere end 7 dage før dags dato og aktionsdiagnosen er i kodelisten diag.foedbarn, skal der være en 
- komplet resultatindberetning RAA03 (fødselindberetning barn) )
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(7) < ( OffsetDateTime.now() ) , aktionDiagnose != null , aktionDiagnose.kode.primaerKode.kodelisterPaaDato(slutTidspunkt) contains "diag.foedbarn" , KslutTidspunkt : slutTidspunkt, A : aktionDiagnose)
+		Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(7) <= ( OffsetDateTime.now() ) , aktionDiagnose != null , aktionDiagnose.kode.primaerKode.kodelisterPaaDato(slutTidspunkt) contains "diag.foedbarn" , KslutTidspunkt : slutTidspunkt, A : aktionDiagnose)
 		not (ResultatIndberetning( diagnose == A , navn.kode == "RAA03" , status.kodelisterPaaDato(KslutTidspunkt) contains "resindb.status.suba" )) 
 	then
 end
