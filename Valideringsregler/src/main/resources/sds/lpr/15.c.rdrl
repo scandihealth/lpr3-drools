@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "15.c"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519996802920)
+	@lprmeta.productionDate(1520234590079)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -26,6 +26,6 @@ rule "15.c"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		ResultatIndberetning( ansvarligEnhed.endTime < ( aarsagStartTidspunkt ) , ansvarligEnhed.startTime > ( aarsagSlutTidspunkt ) )
+		ResultatIndberetning( ansvarligEnhed.endTime < ( aarsagStartTidspunkt ) || ansvarligEnhed.startTime > ( aarsagSlutTidspunkt ) )
 	then
 end
