@@ -8,7 +8,7 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "RAA09.1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1518525468909)
+	@lprmeta.productionDate(1520343171913)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -25,11 +25,11 @@ rule "RAA09.1"
 	@lprmeta.encounterEndFromDate(0)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(Hvis kontaktens sluttidspunkt er mere end 3 dage før dags dato, og der er en procedure i kodelisten proc.opr.komplikat, skal der være en komplet resultatindberetning RAA09 (komplikationsoplysninger))
+	@lprmeta.errorText(Hvis der er en procedure i kodelisten proc.opr.komplikat, skal der være en komplet resultatindberetning RAA09 (komplikationsoplysninger) senest 3 dage efter kontaktens afslutning)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(3) < ( OffsetDateTime.now() ) )
+		K : Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(3) <= ( OffsetDateTime.now() ) )
 		(P : Procedure( kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.opr.komplikat" ) from K.procedurer)
 		( ResultatIndberetning( indberetningAarsag == P , navn.kode == "RAA09" , status.kodelisterPaaDato(aarsagStartTidspunkt) not contains "resindb.status.suba" ) or Procedure( this == P , harResultatIndberetning("RAA09") == false ) )
 	then
