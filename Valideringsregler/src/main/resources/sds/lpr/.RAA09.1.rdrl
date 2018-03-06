@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1518525468909</long>
+    <long>1520343171913</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -42,7 +42,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Hvis kontaktens sluttidspunkt er mere end 3 dage før dags dato, og der er en procedure i kodelisten proc.opr.komplikat, skal der være en komplet resultatindberetning RAA09 (komplikationsoplysninger)</string>
+    <string>Hvis der er en procedure i kodelisten proc.opr.komplikat, skal der være en komplet resultatindberetning RAA09 (komplikationsoplysninger) senest 3 dage efter kontaktens afslutning</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
