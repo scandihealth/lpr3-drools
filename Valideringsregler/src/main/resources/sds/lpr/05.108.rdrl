@@ -1,0 +1,31 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Kontakt;
+
+rule "05.108"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1520495272421)
+	@lprmeta.reportReceivedFromDate(-9223372036854775808)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(-9223372036854775808)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(KONTAKT)
+	@lprmeta.errorNumber(5108)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(-9223372036854775808)
+	@lprmeta.errorText(Hvis en kontakt er af typen 'død', skal den have prioritet 'akut' og have tilknyttet en aktionsdiagnose for tilstanden 'død')
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		Kontakt( type.kodelisterPaaDato(startTidspunkt) contains "admin.konttype.doed" , prioritet.kodelisterPaaDato(startTidspunkt) not contains "admin.prioritet.akut" || aktionDiagnose == null || ( aktionDiagnose != null && aktionDiagnose.kode.primaerKode.kodelisterPaaDato(startTidspunkt) not contains "diag.doed" ))
+	then
+end
