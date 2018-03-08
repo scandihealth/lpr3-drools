@@ -1,0 +1,34 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Kontakt;
+import com.dxc.lpr3.domain.Procedure;
+import com.dxc.lpr3.domain.SksKodeLister;
+
+rule "11.111"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1520518890704)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(PROCEDURE)
+	@lprmeta.errorNumber(11111)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.errorText(Hvis en procedure er tilknyttet en kontakt af typen 'diagnoseindberetning', skal procedurens starttidspunkt være lig med kontaktens starttidspunkt, og procedurens sluttidspunkt skal være blank)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		K : Kontakt( type.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) contains "admin.konttype.diagindb" )
+		(Procedure( slutTidspunkt != null || startTidspunkt != K.startTidspunkt ) from K.procedurer)
+	then
+end
