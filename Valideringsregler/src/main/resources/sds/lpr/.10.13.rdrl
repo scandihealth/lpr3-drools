@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1516110499020</long>
+    <long>1520501081942</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -44,7 +44,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>1013 En betalingsoplysnings periode skal ligge inden for kontaktens periode</string>
+    <string>En betalingsoplysnings periode skal ligge inden for kontaktens periode</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
