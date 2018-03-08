@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.productionDate</string>
-    <long>1520502735920</long>
+    <long>1520508862648</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -44,7 +44,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Hvis der er en aktionsdiagnose for &apos;død&apos;, skal kontakten være af type &apos;død&apos; og have prioritet &apos;akut&apos;</string>
+    <string>Hvis der er en aktionsdiagnose for &apos;død patient&apos;, skal kontakten være af type &apos;død&apos; </string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
