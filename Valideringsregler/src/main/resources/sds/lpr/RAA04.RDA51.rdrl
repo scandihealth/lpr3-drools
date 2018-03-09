@@ -6,15 +6,15 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA04.RDA51"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519736830012)
+	@lprmeta.productionDate(1520593423454)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
-	@lprmeta.errorType(OK)
+	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(-9223372036854775808)
 	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
-	@lprmeta.ruleGroup(NONE)
+	@lprmeta.ruleGroup(RESULTATINDBERETNING)
 	@lprmeta.errorNumber(9051)
 	@lprmeta.archivedDate(0)
 	@lprmeta.type(REPORT_VALIDATION)
