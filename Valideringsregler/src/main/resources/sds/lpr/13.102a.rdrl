@@ -1,13 +1,11 @@
 package sds.lpr;
 
 import java.lang.Number;
-import com.dxc.lpr3.domain.Diagnose;
 import com.dxc.lpr3.domain.Kontakt;
-import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "13.102a"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1517579192317)
+	@lprmeta.productionDate(1520591050929)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
