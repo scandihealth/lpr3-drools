@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1519025866940</long>
+    <long>1521203313081</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -42,7 +42,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Hvis der foreligger en neonatal hørescreening (procedure i kodelisten proc.hoerescreen), og denne er foretaget inden 90 dage efter barns fødsel, skal der være en resultatindberetning med resultatet af screeningen (RAA06)</string>
+    <string>Hvis der foreligger en neonatal hørescreening (procedure i kodelisten proc.hoerescreen), og denne er foretaget inden 90 dage efter barns fødsel, skal der være en komplet resultatindberetning med resultatet af screeningen (RAA06)</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
