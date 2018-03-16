@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.Patient;
 
 rule "RAA06.1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519025866940)
+	@lprmeta.productionDate(1521203313081)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -24,7 +24,7 @@ rule "RAA06.1"
 	@lprmeta.encounterEndFromDate(0)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(Hvis der foreligger en neonatal hørescreening (procedure i kodelisten proc.hoerescreen), og denne er foretaget inden 90 dage efter barns fødsel, skal der være en resultatindberetning med resultatet af screeningen (RAA06))
+	@lprmeta.errorText(Hvis der foreligger en neonatal hørescreening (procedure i kodelisten proc.hoerescreen), og denne er foretaget inden 90 dage efter barns fødsel, skal der være en komplet resultatindberetning med resultatet af screeningen (RAA06))
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
