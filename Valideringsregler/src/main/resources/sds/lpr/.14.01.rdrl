@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1517917027822</long>
+    <long>1521451560335</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -30,7 +30,7 @@
     <string>dcore.description[0]</string>
     <string>en SKS-kode anvendt som lokalrecidiv-kode tilknyttet en kontakt via et diagnoseobjekt skal have været gyldig på et tidspunkt inden for kontaktens varighedsperiode</string>
     <string>lprmeta.errorNumber</string>
-    <string>1301</string>
+    <string>1401</string>
     <string>lprmeta.archivedDate</string>
     <long>0</long>
     <string>lprmeta.type</string>
