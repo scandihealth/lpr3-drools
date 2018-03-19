@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.SksKode;
 
 rule "14.01"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1517917027822)
+	@lprmeta.productionDate(1521451560335)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -16,7 +16,7 @@ rule "14.01"
 	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(DIAGNOSE)
-	@lprmeta.errorNumber(1301)
+	@lprmeta.errorNumber(1401)
 	@lprmeta.archivedDate(0)
 	@lprmeta.type(REPORT_VALIDATION)
 	@lprmeta.hasProdVersion(true)
