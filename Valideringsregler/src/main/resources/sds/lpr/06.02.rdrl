@@ -1,12 +1,11 @@
 package sds.lpr;
 
 import java.lang.Number;
-import com.dxc.lpr3.domain.Henvisning;
 import com.dxc.lpr3.domain.Kontakt;
 
 rule "06.02"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1512996681342)
+	@lprmeta.productionDate(1522148568685)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,7 +27,6 @@ rule "06.02"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		H : Henvisning( )
-		Kontakt( henvisning == ( H ) && startTidspunkt <= H.tidspunkt )
+		Kontakt( henvisning != null , henvisning.tidspunkt >= ( startTidspunkt ) )
 	then
 end
