@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "10.15"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1520501224535)
+	@lprmeta.productionDate(1522152513084)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,7 +28,7 @@ rule "10.15"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		B : BetalingOplysning( harSlutTidspunkt())
-		Kontakt( betalingOplysninger contains B && slutTidspunkt < B.slutTidspunkt )
+		K : Kontakt( harSlutTidspunkt())
+		(BetalingOplysning( harSlutTidspunkt(), slutTidspunkt > K.slutTidspunkt ) from K.betalingOplysninger)
 	then
 end
