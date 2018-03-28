@@ -5,10 +5,10 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA01.RDA03-1"
-	@lprmeta.isValidForDUSASAbroadReports(false)
-	@lprmeta.productionDate(1522251592041)
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1522259316071)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
-	@lprmeta.isValidForLPRReports(false)
+	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(-9223372036854775808)
@@ -24,7 +24,7 @@ rule "RAA01.RDA03-1"
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.errorText(Mikroskopisk diagnosegrundlag (resultat RDA03) skal være i kodelisten res.mikrogr)
-	@lprmeta.isValidForDUSASSpecialityReports(false)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
 		RI : ResultatIndberetning( navn.kode == "RAA01" , RIaarsagStartTidspunkt : aarsagStartTidspunkt, RIaarsagSlutTidspunkt : aarsagSlutTidspunkt)
