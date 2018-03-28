@@ -1,0 +1,35 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.ResultatIndberetning;
+import com.dxc.lpr3.domain.Resultat;
+
+rule "RAA01.RDA03"
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.productionDate(1522259089520)
+	@lprmeta.reportReceivedFromDate(-9223372036854775808)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(-9223372036854775808)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.ruleGroup(RESULTATINDBERETNING)
+	@lprmeta.errorNumber(9003)
+	@lprmeta.archivedDate(0)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(-9223372036854775808)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorText(For resultatindberetning RAA01 (canceranmeldelse) skal der være et resultat af type RDA03 (mikroskopisk diagnosegrundlag), når  anmeldelsesstatus (resultat RDA01) er i kodelisten res.statuscar.suba)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	dialect "mvel"
+	when
+		RI : ResultatIndberetning( navn.kode == "RAA01" , RIaarsagStartTidspunkt : aarsagStartTidspunkt, RIaarsagSlutTidspunkt : aarsagSlutTidspunkt)
+		(Resultat( type.kode == "RDA01" , vaerdiSomSksKode().kodelisterIndenforPeriode(RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) contains "res.statuscar.suba" ) from RI.resultater)
+		not (		Resultat( type.kode == "RDA03" ) from RI.resultater
+) 
+	then
+end
