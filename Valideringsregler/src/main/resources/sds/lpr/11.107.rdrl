@@ -2,11 +2,10 @@ package sds.lpr;
 
 import java.lang.Number;
 import com.dxc.lpr3.domain.Procedure;
-import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "11.107"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1517397363250)
+	@lprmeta.productionDate(1522218971173)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,6 +27,6 @@ rule "11.107"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		P : Procedure( personaleKategori == null || ( personaleKategori != null && personaleKategori.kodelisterPaaDato(startTidspunkt) not contains "admin.personale" ), kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.inhabil.subb" )
+		Procedure( kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.inhabil.subb" , personaleKategori == null || ( personaleKategori != null && personaleKategori.kodelisterPaaDato(startTidspunkt) not contains "admin.personale" ))
 	then
 end
