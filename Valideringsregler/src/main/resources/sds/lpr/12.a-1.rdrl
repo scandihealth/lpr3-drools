@@ -2,12 +2,10 @@ package sds.lpr;
 
 import java.lang.Number;
 import com.dxc.lpr3.domain.Kontakt;
-import com.dxc.lpr3.domain.SksKodeLister;
-import com.dxc.lpr3.domain.Diagnose;
 
 rule "12.a-1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1517324543277)
+	@lprmeta.productionDate(1522745034497)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,7 +26,6 @@ rule "12.a-1"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( aktionDiagnose != null , KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt)
-		(Diagnose( art.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) not contains "admin.diagart" ) from K.aktionDiagnose)
+		K : Kontakt( aktionDiagnose != null , aktionDiagnose.art.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "admin.diagart" )
 	then
 end
