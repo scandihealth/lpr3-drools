@@ -2,12 +2,10 @@ package sds.lpr;
 
 import java.lang.Number;
 import com.dxc.lpr3.domain.Kontakt;
-import com.dxc.lpr3.domain.Diagnose;
-import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "12.03.105"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1518006238666)
+	@lprmeta.productionDate(1522742638992)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,6 +26,6 @@ rule "12.03.105"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Kontakt( aktionDiagnose != null , prioritet.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "admin.prioritet.akut" || ( type.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "admin.konttype.fysfr" && type.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "admin.konttype.udeko" ), aktionDiagnose.kode.primaerKode.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) contains "diag.foedbarn.vital" )
+		Kontakt( aktionDiagnose != null , aktionDiagnose.kode.primaerKode.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) contains "diag.foedbarn.vital" , prioritet.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "admin.prioritet.akut" || ( type.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "admin.konttype.fysfr" && type.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "admin.konttype.udeko" ))
 	then
 end
