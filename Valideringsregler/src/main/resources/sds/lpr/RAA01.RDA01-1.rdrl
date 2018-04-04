@@ -1,0 +1,33 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.Resultat;
+import com.dxc.lpr3.domain.ResultatIndberetning;
+
+rule "RAA01.RDA01-1"
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.ruleGroup(RESULTATINDBERETNING)
+	@lprmeta.errorText(Anmeldelsesstatus (resultat RDA01) skal være i kodelisten res.statuscar)
+	@lprmeta.errorNumber(90011)
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.isValidForPrimarySectorReports(true)
+	@lprmeta.productionDate(1522823945639)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.archivedDate(0)
+	@lprmeta.reportReceivedFromDate(-9223372036854775808)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterStartFromDate(-9223372036854775808)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(-9223372036854775808)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	dialect "mvel"
+	when
+		RI : ResultatIndberetning( navn.kode == "RAA01" , RIaarsagStartTidspunkt : aarsagStartTidspunkt, RIaarsagSlutTidspunkt : aarsagSlutTidspunkt)
+		(Resultat( vaerdiSomSksKode().kodelisterIndenforPeriode(RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) not contains "res.statuscar" ) from RI.resultater)
+	then
+end
