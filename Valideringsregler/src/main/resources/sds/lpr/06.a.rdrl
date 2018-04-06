@@ -2,11 +2,10 @@ package sds.lpr;
 
 import java.lang.Number;
 import com.dxc.lpr3.domain.Henvisning;
-import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "06.a"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519723261748)
+	@lprmeta.productionDate(1523012038954)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,6 +26,6 @@ rule "06.a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Henvisning( aarsag != null , aarsag.primaerKode.kodelisterPaaDato(tidspunkt) not contains "diag" , aarsag.primaerKode.kodelisterPaaDato(tidspunkt) not contains "proc.act" , aarsag.primaerKode.kodelisterPaaDato(tidspunkt) not contains "proc.opr" , aarsag.primaerKode.kodelisterPaaDato(tidspunkt) not contains "proc.und" )
+		Henvisning( aarsag != null , aarsag.primaerKode != null , aarsag.primaerKode.kodelisterPaaDato(tidspunkt) not contains "diag" , aarsag.primaerKode.kodelisterPaaDato(tidspunkt) not contains "proc.act" , aarsag.primaerKode.kodelisterPaaDato(tidspunkt) not contains "proc.opr" , aarsag.primaerKode.kodelisterPaaDato(tidspunkt) not contains "proc.und" )
 	then
 end
