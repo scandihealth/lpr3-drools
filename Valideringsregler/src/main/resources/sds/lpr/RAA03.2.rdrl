@@ -6,13 +6,13 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA03.2"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1523460228765)
+	@lprmeta.productionDate(1523517029918)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(-9223372036854775808)
-	@lprmeta.isValidForPrimarySectorReports(true)
+	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(RESULTATINDBERETNING)
 	@lprmeta.errorNumber(9302)
@@ -23,7 +23,7 @@ rule "RAA03.2"
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(Resultatindberetning RAA03 (fødselsindberetning barn) må kun indeholde resultater af typen RDA20, RDA031-RDA42 og RDA46-RDA49)
+	@lprmeta.errorText(Resultatindberetning RAA03 (fødselsindberetning barn) må kun indeholde resultater af typen RDA20, RDA031-RDA42 og RDA46-RDA49.)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
