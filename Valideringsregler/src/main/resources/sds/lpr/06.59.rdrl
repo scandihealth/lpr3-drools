@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKode;
 
 rule "06.59"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516016466539)
+	@lprmeta.productionDate(1523558430918)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,7 +27,7 @@ rule "06.59"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		H : Henvisning( )
+		H : Henvisning( aarsag != null )
 		(SksKode( gyldigFraDato > H.tidspunkt || gyldigTilDato < H.tidspunkt ) from H.aarsag.tillaegsKoder)
 	then
 end
