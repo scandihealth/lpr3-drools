@@ -1,4 +1,6 @@
+com.dxc.lpr3.domain.gui
 com.logica.heca.lpr.ruleengine.utils
+com.dxc.lpr3.domain.util
 com.logica.heca.lpr.ruleengine.wrapper
 com.dxc.lpr3.drools
 com.dxc.lpr3.domain
