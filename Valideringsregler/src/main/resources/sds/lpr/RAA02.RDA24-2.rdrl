@@ -7,7 +7,7 @@ import java.util.Set;
 
 rule "RAA02.RDA24-2"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1525345570210)
+	@lprmeta.productionDate(1525346094040)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
