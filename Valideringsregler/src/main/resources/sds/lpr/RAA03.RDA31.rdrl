@@ -3,12 +3,11 @@ package sds.lpr;
 import java.lang.Number;
 import com.dxc.lpr3.domain.ResultatIndberetning;
 import com.dxc.lpr3.domain.Resultat;
-import com.dxc.lpr3.domain.SksKodeLister;
-import com.dxc.lpr3.domain.Kontakt;
+import java.util.Set;
 
 rule "RAA03.RDA31"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1518699697887)
+	@lprmeta.productionDate(1526974783929)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -25,12 +24,12 @@ rule "RAA03.RDA31"
 	@lprmeta.encounterEndFromDate(0)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(For resultatindberetning RAA03 (fødselsindberetning barn) skal der være et resultat af type RDA31 (fødselstidspunkt) )
+	@lprmeta.errorText(For resultatindberetning RAA03 (fødselsindberetning barn) skal der være netop 1 resultat af type RDA31 (fødselstidspunkt) )
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		RI : ResultatIndberetning( navn.kode == "RAA03" )
-		not (		Resultat( type.kode == "RDA31" ) from RI.resultater
+		ResultatIndberetning( navn.kode == "RAA03" , Resultater : resultater)
+		Set( size() != 1 ) from collect ( 		(Resultat( type.kode == "RDA31" ) from Resultater)
 ) 
 	then
 end
