@@ -1,20 +1,19 @@
 package sds.lpr;
 
 import java.lang.Number;
-import com.dxc.lpr3.domain.Procedure;
 import com.dxc.lpr3.domain.Resultat;
 import com.dxc.lpr3.domain.ResultatIndberetning;
-import com.dxc.lpr3.domain.SksKodeLister;
+import java.util.Set;
 
 rule "RAA07.RDA92"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519655103939)
+	@lprmeta.productionDate(1526974772147)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.isValidForPrimarySectorReports(true)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(RESULTATINDBERETNING)
 	@lprmeta.errorNumber(9092)
@@ -25,12 +24,12 @@ rule "RAA07.RDA92"
 	@lprmeta.encounterEndFromDate(0)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(For resultatindberetning RAA07 skal der være et resultat af typen RDA92)
+	@lprmeta.errorText(For resultatindberetning RAA07 skal der være netop 1 resultat af typen RDA92 (samtykke))
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		RI : ResultatIndberetning( navn.kode == "RAA07" )
-		not (		Resultat( type.kode == "RDA92" ) from RI.resultater
+		ResultatIndberetning( navn.kode == "RAA07" , Resultater : resultater)
+		Set( size() != 1 ) from collect ( 		(Resultat( type.kode == "RDA92" ) from Resultater)
 ) 
 	then
 end
