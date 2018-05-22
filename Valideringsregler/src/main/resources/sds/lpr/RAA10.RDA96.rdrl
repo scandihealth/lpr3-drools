@@ -3,18 +3,17 @@ package sds.lpr;
 import java.lang.Number;
 import com.dxc.lpr3.domain.ResultatIndberetning;
 import com.dxc.lpr3.domain.Resultat;
-import com.dxc.lpr3.domain.SksKodeLister;
-import com.dxc.lpr3.domain.Kontakt;
+import java.util.Set;
 
 rule "RAA10.RDA96"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1520505317692)
+	@lprmeta.productionDate(1526987877581)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.isValidForPrimarySectorReports(true)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(RESULTATINDBERETNING)
 	@lprmeta.errorNumber(9096)
@@ -25,12 +24,12 @@ rule "RAA10.RDA96"
 	@lprmeta.encounterEndFromDate(0)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(For resultatindberetning RAA10 (tvangsforanstaltning) skal der være et resultat af type RDA96 (begrundelse) )
+	@lprmeta.errorText(For resultatindberetning RAA10 (tvangsforanstaltning) skal der være netop 1 resultat af type RDA96 (begrundelse) )
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		RI : ResultatIndberetning( navn.kode == "RAA10" )
-		not (		Resultat( type.kode == "RDA96" ) from RI.resultater
+		ResultatIndberetning( navn.kode == "RAA10" , Resultater : resultater)
+		Set( size() != 1 ) from collect ( 		(Resultat( type.kode == "RDA96" ) from Resultater)
 ) 
 	then
 end
