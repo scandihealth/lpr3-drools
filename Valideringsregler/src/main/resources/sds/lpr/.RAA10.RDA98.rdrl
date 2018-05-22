@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1520505907763</long>
+    <long>1526986529456</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -22,7 +22,7 @@
     <string>lprmeta.errorType</string>
     <string>2</string>
     <string>lprmeta.isValidForPrimarySectorReports</string>
-    <boolean>false</boolean>
+    <boolean>true</boolean>
     <string>lprmeta.encounterEndToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.ruleGroup</string>
@@ -42,7 +42,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>For resultatindberetning RAA10 (tvangsforanstaltning) skal der være et resultat af type RDA98 (seneste behandlingsdato) </string>
+    <string>For resultatindberetning RAA10 (tvangsforanstaltning) skal der være netop 1 resultat af type RDA98 (seneste behandlingsdato) </string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
