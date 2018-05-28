@@ -2,14 +2,13 @@ package sds.lpr;
 
 import java.lang.Number;
 import com.dxc.lpr3.domain.Diagnose;
-import com.dxc.lpr3.domain.Procedure;
 import com.dxc.lpr3.domain.ResultatIndberetning;
 import com.dxc.lpr3.domain.Resultat;
 import com.dxc.lpr3.domain.Kontakt;
 
 rule "11.110"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1517400644040)
+	@lprmeta.productionDate(1527512681015)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -30,11 +29,10 @@ rule "11.110"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		P : Procedure( kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.opr.komplikat" , PstartTidspunkt : startTidspunkt)
-		(RI : ResultatIndberetning( navn.kode == "RAA09" ) from P.resultatIndberetning)
-		(Resultat( type.kode == "RDA85" , vaerdiSomSksKode().kodelisterPaaDato(PstartTidspunkt) contains "res.clavien.suba" ) from RI.resultater)
+		RI : ResultatIndberetning( navn.kode == "RAA09" , procedure != null , procedure.kode.primaerKode.kodelisterPaaDato(aarsagStartTidspunkt) contains "proc.opr.komplikat" , P : procedure, RIaarsagStartTidspunkt : aarsagStartTidspunkt)
+		(Resultat( type.kode == "RDA85" , vaerdiSomSksKode().kodelisterPaaDato(RIaarsagStartTidspunkt) contains "res.clavien.suba" ) from RI.resultater)
 		K : Kontakt( procedurer contains P )
-		not (		Diagnose( kode.primaerKode.kodelisterPaaDato(PstartTidspunkt) contains "diag.kirkomplikat" ) from K.bidiagnoser
+		not (		Diagnose( kode.primaerKode.kodelisterPaaDato(RIaarsagStartTidspunkt) contains "diag.kirkomplikat" ) from K.bidiagnoser
 ) 
 	then
 end
