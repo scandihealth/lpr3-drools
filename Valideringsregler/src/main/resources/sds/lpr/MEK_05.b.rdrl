@@ -5,28 +5,28 @@ import com.dxc.lpr3.domain.Kontakt;
 import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "MEK_05.b"
-	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.isValidForDUSASAbroadReports(false)
+	@lprmeta.productionDate(1529925715447)
+	@lprmeta.reportReceivedFromDate(-9223372036854775808)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
 	@lprmeta.errorType(ERROR)
+	@lprmeta.encounterStartFromDate(-9223372036854775808)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(KONTAKT)
 	@lprmeta.errorNumber(130872)
-	@lprmeta.isValidForDUSASAbroadReports(false)
-	@lprmeta.isValidForDUSASSpecialityReports(false)
-	@lprmeta.isValidForLPRReports(true)
-	@lprmeta.isValidForPrimarySectorReports(false)
-	@lprmeta.productionDate(1529399394874)
-	@lprmeta.hasProdVersion(true)
 	@lprmeta.archivedDate(0)
-	@lprmeta.reportReceivedFromDate(-9223372036854775808)
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
-	@lprmeta.encounterStartFromDate(-9223372036854775808)
-	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
-	@lprmeta.encounterEndToDate(9223372036854775807)
-	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
+	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.errorText(En meget lang fejltekst for at teste om alt teksten kan være der og at jeg kan indberette indberetninger. Fejlteksten skal kunne gemmes i databasen og vises i brugergrænsefladen uden problemer. Ellers skal der meldes en defect. Og så skal den rettes og gentestes. Og det tager jo lang tid alt sammen.)
+	@lprmeta.isValidForDUSASSpecialityReports(false)
 	dialect "mvel"
 	when
-		K : Kontakt( prioritet.kodelisterPaaDato(startTidspunkt) not contains "admin.prioritet" )
+		K : Kontakt( prioritet.kodelisterPaaDato(startTidspunkt) contains "admin.prioritet" )
 	then
 end
