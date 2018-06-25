@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "MEK_05.b"
 	@lprmeta.isValidForDUSASAbroadReports(false)
-	@lprmeta.productionDate(1529925715447)
+	@lprmeta.productionDate(1529925793806)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -27,6 +27,6 @@ rule "MEK_05.b"
 	@lprmeta.isValidForDUSASSpecialityReports(false)
 	dialect "mvel"
 	when
-		K : Kontakt( prioritet.kodelisterPaaDato(startTidspunkt) contains "admin.prioritet" )
+		K : Kontakt( prioritet.kodelisterPaaDato(startTidspunkt) not contains "admin.prioritet" )
 	then
 end
