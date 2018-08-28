@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA01.RDA05"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1522271365975)
+	@lprmeta.productionDate(1535462212860)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -23,7 +23,7 @@ rule "RAA01.RDA05"
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(For resultatindberetning RAA01 (canceranmeldelse) skal der være et resultat af type RDA05 (cN-stadie), når diagnosen er i kodelisten diag.car.tnm og anmeldelsesstatus (resultat RDA01) er i kodelisten res.statuscar.subb)
+	@lprmeta.errorText(For resultatindberetning RAA01 (canceranmeldelse) skal der være et resultat af type RDA05 (N-stadie), når diagnosen er i kodelisten diag.car.tnm og anmeldelsesstatus (resultat RDA01) er i kodelisten res.statuscar.subb)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
