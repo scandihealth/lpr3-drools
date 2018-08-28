@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.productionDate</string>
-    <long>1522266132248</long>
+    <long>1535458554901</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -42,7 +42,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>cT-stadie (resultat RDA04) skal være i kodelisten res.ctcstad.t0, når diagnosen er i kodelisten diag.car.t0, og anmeldelsesstatus (resultat RDA01) er i kodeliste res.statuscar.subb</string>
+    <string>T-stadie (resultat RDA04) skal være i kodelisten res.tcstad.t0, når diagnosen er i kodelisten diag.car.t0, og anmeldelsesstatus (resultat RDA01) er i kodeliste res.statuscar.subb</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
