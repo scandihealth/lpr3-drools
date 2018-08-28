@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA01.RDA04-2"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1522266132248)
+	@lprmeta.productionDate(1535458554901)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -23,12 +23,12 @@ rule "RAA01.RDA04-2"
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(cT-stadie (resultat RDA04) skal være i kodelisten res.ctcstad.t0, når diagnosen er i kodelisten diag.car.t0, og anmeldelsesstatus (resultat RDA01) er i kodeliste res.statuscar.subb)
+	@lprmeta.errorText(T-stadie (resultat RDA04) skal være i kodelisten res.tcstad.t0, når diagnosen er i kodelisten diag.car.t0, og anmeldelsesstatus (resultat RDA01) er i kodeliste res.statuscar.subb)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
 		RI : ResultatIndberetning( D : diagnose != null , navn.kode == "RAA01" , diagnose.kode.primaerKode.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "diag.car.t0" , RIaarsagStartTidspunkt : aarsagStartTidspunkt, RIaarsagSlutTidspunkt : aarsagSlutTidspunkt)
 		(Resultat( type.kode == "RDA01" , vaerdiSomSksKode().kodelisterIndenforPeriode(RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) contains "res.statuscar.subb" ) from RI.resultater)
-		(Resultat( type.kode == "RDA04" , vaerdiSomSksKode().kodelisterIndenforPeriode(RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) not contains "res.ctcstad.t0" ) from RI.resultater)
+		(Resultat( type.kode == "RDA04" , vaerdiSomSksKode().kodelisterIndenforPeriode(RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) not contains "res.tcstad.t0" ) from RI.resultater)
 	then
 end
