@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.productionDate</string>
-    <long>1522274553070</long>
+    <long>1535621043783</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -42,7 +42,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>cM-stadie (resultat RDA06) skal være i kodelisten res.cmcstad</string>
+    <string>M-stadie (resultat RDA06) skal være i kodelisten res.mcstad</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
