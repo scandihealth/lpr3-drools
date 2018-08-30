@@ -8,12 +8,13 @@ import java.time.OffsetDateTime;
 
 rule "RAA01.3-w"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1522249330516)
+	@lprmeta.productionDate(1535624449328)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
 	@lprmeta.errorType(WARN)
 	@lprmeta.encounterStartFromDate(-9223372036854775808)
+	@lprmeta.warningTimeLimit(30)
 	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(RESULTATINDBERETNING)
