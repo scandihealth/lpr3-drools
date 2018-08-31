@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA01.5"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1522924667756)
+	@lprmeta.productionDate(1535712214051)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -23,11 +23,11 @@ rule "RAA01.5"
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(Resultatindberetning RAA01 (canceranmeldelse) må kun indeholde resultater af typen RDA01-RDA08 og RDA11-RDA13)
+	@lprmeta.errorText(Resultatindberetning RAA01 (canceranmeldelse) må kun indeholde resultater af typen RDA01-RDA08)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
 		RI : ResultatIndberetning( navn.kode == "RAA01" )
-		(Resultat( type.kode not in ( "RDA01", "RDA02", "RDA03", "RDA04", "RDA05", "RDA06", "RDA07", "RDA08", "RDA11", "RDA12", "RDA13" ) ) from RI.resultater)
+		(Resultat( type.kode not in ( "RDA01", "RDA02", "RDA03", "RDA04", "RDA05", "RDA06", "RDA07", "RDA08" ) ) from RI.resultater)
 	then
 end
