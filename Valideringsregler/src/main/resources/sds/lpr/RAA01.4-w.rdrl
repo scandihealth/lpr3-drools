@@ -7,12 +7,13 @@ import java.time.OffsetDateTime;
 
 rule "RAA01.4-w"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1535711433137)
+	@lprmeta.productionDate(1535827070794)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(WARN)
 	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.warningTimeLimit(30)
 	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(RESULTATINDBERETNING)
@@ -26,10 +27,9 @@ rule "RAA01.4-w"
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.errorText(Hvis der er en diagnose i kodelisten diag.car, skal der være en komplet resultatindberetning RAA01 (canceranmeldelse) senest 30 dage efter kontaktens afslutning)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
-	@lprmeta.warningTimeLimit(30)
 	dialect "mvel"
 	when
-		Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(30) > ( OffsetDateTime.now() ) , A : aktionDiagnose != null , aktionDiagnose.kode.primaerKode.kodelisterPaaDato(slutTidspunkt) contains "diag.car" )
+		Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(30) > ( OffsetDateTime.now() ) , A : aktionDiagnose != null , aktionDiagnose.kode.primaerKode.kodelisterPaaDato(slutTidspunkt) contains "diag.car" , DelayStart : slutTidspunkt)
 		not (ResultatIndberetning( diagnose == A , navn.kode == "RAA01" , status.kodelisterPaaDato(aarsagSlutTidspunkt) contains "resindb.status.suba" )) 
 	then
 end
