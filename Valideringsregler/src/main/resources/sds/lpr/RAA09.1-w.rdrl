@@ -8,7 +8,7 @@ import java.time.OffsetDateTime;
 
 rule "RAA09.1-w"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1520343395809)
+	@lprmeta.productionDate(1535829279138)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -27,9 +27,10 @@ rule "RAA09.1-w"
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
+	@lprmeta.warningTimeLimit(3)
 	dialect "mvel"
 	when
-		K : Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(3) > ( OffsetDateTime.now() ) )
+		K : Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(3) > ( OffsetDateTime.now() ) , DelayStart : slutTidspunkt)
 		(P : Procedure( kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.opr.komplikat" ) from K.procedurer)
 		not (ResultatIndberetning( indberetningAarsag == P , navn.kode == "RAA09" , status.kodelisterPaaDato(aarsagStartTidspunkt) contains "resindb.status.suba" )) 
 	then
