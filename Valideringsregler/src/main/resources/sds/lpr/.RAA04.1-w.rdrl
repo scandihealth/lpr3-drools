@@ -6,13 +6,13 @@
       <threshold>24</threshold>
     </default>
     <int>32</int>
-    <int>21</int>
+    <int>22</int>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1519988908386</long>
+    <long>1535828121580</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -21,6 +21,8 @@
     <long>0</long>
     <string>lprmeta.errorType</string>
     <string>1</string>
+    <string>lprmeta.warningTimeLimit</string>
+    <int>7</int>
     <string>lprmeta.isValidForPrimarySectorReports</string>
     <boolean>false</boolean>
     <string>lprmeta.encounterEndToDate</string>
