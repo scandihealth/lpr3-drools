@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 
 rule "RAA05.1-w"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1520260128768)
+	@lprmeta.productionDate(1535829031735)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -26,9 +26,10 @@ rule "RAA05.1-w"
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.errorText(Hvis kontaktårsagen er i kodelisten admin.kontaarsag.skade, kontakttypen i kodelisten admin.konttype.fysfr og prioritet i kodelisten admin.prioritet.akut, skal der være en komplet resultatindberetning RAA05 (skadeindberetning) senest 3 dage efter kontaktens afslutning)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
+	@lprmeta.warningTimeLimit(3)
 	dialect "mvel"
 	when
-		K : Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(3) > ( OffsetDateTime.now() ) , kontaktAarsag != null , kontaktAarsag.kodelisterPaaDato(slutTidspunkt) contains "admin.kontaarsag.skade" , type.kodelisterPaaDato(slutTidspunkt) contains "admin.konttype.fysfr" , prioritet.kodelisterPaaDato(slutTidspunkt) contains "admin.prioritet.akut" )
+		K : Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(3) > ( OffsetDateTime.now() ) , kontaktAarsag != null , kontaktAarsag.kodelisterPaaDato(slutTidspunkt) contains "admin.kontaarsag.skade" , type.kodelisterPaaDato(slutTidspunkt) contains "admin.konttype.fysfr" , prioritet.kodelisterPaaDato(slutTidspunkt) contains "admin.prioritet.akut" , DelayStart : slutTidspunkt)
 		( Kontakt( this == K , harResultatIndberetning("RAA05") == false ) or ResultatIndberetning( indberetningAarsag == K , navn.kode == "RAA05" , status.kodelisterPaaDato(aarsagSlutTidspunkt) not contains "resindb.status.suba" ) )
 	then
 end
