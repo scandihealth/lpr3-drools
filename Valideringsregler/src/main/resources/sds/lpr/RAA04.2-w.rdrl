@@ -8,7 +8,7 @@ import java.time.OffsetDateTime;
 
 rule "RAA04.2-w"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519989090819)
+	@lprmeta.productionDate(1535828518427)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -27,9 +27,10 @@ rule "RAA04.2-w"
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
+	@lprmeta.warningTimeLimit(7)
 	dialect "mvel"
 	when
-		K : Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(7) > ( OffsetDateTime.now() ) , KslutTidspunkt : slutTidspunkt)
+		K : Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(7) > ( OffsetDateTime.now() ) , KslutTidspunkt : slutTidspunkt, DelayStart : slutTidspunkt)
 		(D : Diagnose( kode.primaerKode.kodelisterPaaDato(KslutTidspunkt) contains "diag.abort" ) from K.bidiagnoser)
 		not (		ResultatIndberetning( navn.kode == "RAA04" , status.kodelisterPaaDato(aarsagSlutTidspunkt) contains "resindb.status.suba" ) from D.resultatIndberetninger
 ) 
