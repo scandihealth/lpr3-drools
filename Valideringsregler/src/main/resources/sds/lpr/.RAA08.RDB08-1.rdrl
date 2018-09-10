@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.productionDate</string>
-    <long>1536588063353</long>
+    <long>1536588496208</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -42,7 +42,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Produktionstidspunkt (resultat RDB08) skal være et validt tidspunkt</string>
+    <string>Produktionstidspunkt (resultat RDB08) skal være et validt tidspunkt (forventet format er YYYYMMDDhhmmss+-ZZzz)</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
