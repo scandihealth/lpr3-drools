@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA08.RDB09-1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1536588350319)
+	@lprmeta.productionDate(1536588407527)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -20,7 +20,7 @@ rule "RAA08.RDB09-1"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
-	@lprmeta.errorText(Udløbstidspunkt (resultat RDB09) skal være et validt tidspunkt)
+	@lprmeta.errorText(Udløbstidspunkt (resultat RDB09) skal være et validt tidspunkt (forventet format er YYYYMMDDhhmmss+-ZZzz))
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
