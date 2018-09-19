@@ -7,7 +7,7 @@ import java.util.Set;
 
 rule "RAA08.RDB09"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1536588115167)
+	@lprmeta.productionDate(1537382954266)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -28,7 +28,7 @@ rule "RAA08.RDB09"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		ResultatIndberetning( navn.kode == "RAA09" , Resultater : resultater)
+		ResultatIndberetning( navn.kode == "RAA08" , Resultater : resultater)
 		Set( size() > 1 ) from collect ( 		(Resultat( type.kode == "RDB09" ) from Resultater)
 ) 
 	then
