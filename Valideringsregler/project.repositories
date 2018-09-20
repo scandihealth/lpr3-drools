@@ -4,7 +4,7 @@
       <include>true</include>
       <metadata>
         <id>local</id>
-        <url>/opt/wildfly/standalone/drools/m2localrepo</url>
+        <url>/opt/wildfly-10.1.0.Final/standalone/drools/m2localrepo</url>
         <source>LOCAL</source>
       </metadata>
     </repository>
