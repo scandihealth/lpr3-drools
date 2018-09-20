@@ -1,0 +1,34 @@
+package sds.lpr;
+
+import java.lang.Number;
+import com.dxc.lpr3.domain.ResultatIndberetning;
+import com.dxc.lpr3.domain.Resultat;
+
+rule "RAA08.RDB02-1"
+	@lprmeta.type(REPORT_VALIDATION)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.ruleGroup(RESULTATINDBERETNING)
+	@lprmeta.errorText(For resultatindberetning RAA08 (implantatoplysninger) skal der være et resultat af type RDB02 (produktionsnummer) ved komplet indberetning)
+	@lprmeta.errorNumber(9000021)
+	@lprmeta.isValidForDUSASAbroadReports(true)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.isValidForPrimarySectorReports(false)
+	@lprmeta.productionDate(1537440893736)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.archivedDate(0)
+	@lprmeta.reportReceivedFromDate(-9223372036854775808)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterStartFromDate(-9223372036854775808)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(-9223372036854775808)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	dialect "mvel"
+	when
+		RI : ResultatIndberetning( navn.kode == "RAA08" , status.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "resindb.status.suba" )
+		not (		Resultat( type.kode == "RDB02" ) from RI.resultater
+) 
+	then
+end
