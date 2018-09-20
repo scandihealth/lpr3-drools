@@ -13,7 +13,7 @@ import java.time.OffsetDateTime;
 
 rule "00.01"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1537468214741)
+	@lprmeta.productionDate(1537468776022)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -35,6 +35,6 @@ rule "00.01"
 	dialect "mvel"
 	when
 		F : ForloebElement( )
-		( ForloebElement( dannelsesTidspunkt != null || dannelsesTidspunkt > ( OffsetDateTime.now ) || startTidspunkt > ( dannelsesTidspunkt ) || ( harSlutTidspunkt() == true && slutTidspunkt > ( dannelsesTidspunkt ) )) or Kontakt( startTidspunkt > F.dannelsesTidspunkt || ( harSlutTidspunkt() == true && slutTidspunkt > F.dannelsesTidspunkt )|| ( harStartBehandlingTidspunkt() == true && startBehandling > F.dannelsesTidspunkt )) or ForloebMarkoer( tidspunkt > F.dannelsesTidspunkt ) or Henvisning( tidspunkt > F.dannelsesTidspunkt ) or Procedure( startTidspunkt > F.dannelsesTidspunkt || ( harSlutTidspunkt() == true && slutTidspunkt > F.dannelsesTidspunkt )) or BetalingOplysning( startTidspunkt > F.dannelsesTidspunkt || ( harSlutTidspunkt() == true && slutTidspunkt > F.dannelsesTidspunkt )) )
+		( ForloebElement( dannelsesTidspunkt == null || dannelsesTidspunkt > ( OffsetDateTime.now ) || startTidspunkt > ( dannelsesTidspunkt ) || ( harSlutTidspunkt() == true && slutTidspunkt > ( dannelsesTidspunkt ) )) or Kontakt( startTidspunkt > F.dannelsesTidspunkt || ( harSlutTidspunkt() == true && slutTidspunkt > F.dannelsesTidspunkt )|| ( harStartBehandlingTidspunkt() == true && startBehandling > F.dannelsesTidspunkt )) or ForloebMarkoer( tidspunkt > F.dannelsesTidspunkt ) or Henvisning( tidspunkt > F.dannelsesTidspunkt ) or Procedure( startTidspunkt > F.dannelsesTidspunkt || ( harSlutTidspunkt() == true && slutTidspunkt > F.dannelsesTidspunkt )) or BetalingOplysning( startTidspunkt > F.dannelsesTidspunkt || ( harSlutTidspunkt() == true && slutTidspunkt > F.dannelsesTidspunkt )) )
 	then
 end
