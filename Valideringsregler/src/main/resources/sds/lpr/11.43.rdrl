@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "11.43"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516788730673)
+	@lprmeta.productionDate(1537535556064)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,6 +27,6 @@ rule "11.43"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		P : Procedure( producent.endTime < ( slutTidspunkt ) , kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.sluttid" )
+		P : Procedure( producent.harSlutTidspunkt(), kode.primaerKode.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) contains "proc.sluttid" , slutTidspunkt > P.producent.endTime )
 	then
 end
