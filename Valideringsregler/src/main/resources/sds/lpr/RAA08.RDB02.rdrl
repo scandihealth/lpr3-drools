@@ -7,7 +7,7 @@ import java.util.Set;
 
 rule "RAA08.RDB02"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1537521402082)
+	@lprmeta.productionDate(1537521634706)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -24,7 +24,7 @@ rule "RAA08.RDB02"
 	@lprmeta.encounterEndFromDate(0)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(For resultatindberetning RAA08 (implantatoplysninger) skal der være netop 1 resultat af type RDB02 (produktionsnummer))
+	@lprmeta.errorText(For resultatindberetning RAA08 (implantatoplysninger) kan der højest være 1 resultat af type RDB02 (produktionsnummer))
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
