@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1519987246851</long>
+    <long>1537966233001</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -30,7 +30,7 @@
     <string>dcore.description[0]</string>
     <string>En SKS-kode anvendt som status for et resultatindberetningsobjekt trigget af en given diagnose skal være gyldigt på et tidspunkt inden for tidsrammen af den kontakt, som diagnosen knytter sig til</string>
     <string>lprmeta.errorNumber</string>
-    <string>1515</string>
+    <string>1505</string>
     <string>lprmeta.archivedDate</string>
     <long>0</long>
     <string>lprmeta.type</string>
@@ -44,7 +44,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>En SKS-kode, der er anvendt som status for en resultatindberetning trigget af en diagnose, skal være gyldig inden for perioden af den kontakt, som diagnosen knytter sig til</string>
+    <string>En SKS-kode, der er anvendt som navn for en resultatindberetning trigget af en diagnose, skal være gyldig inden for perioden af den kontakt, som diagnosen knytter sig til</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
