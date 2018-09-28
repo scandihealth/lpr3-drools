@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "15.05-1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1538034965261)
+	@lprmeta.productionDate(1538121638281)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -31,6 +31,6 @@ rule "15.05-1"
 	when
 		K : Kontakt( )
 		(D : Diagnose( ) from K.bidiagnoser)
-		ResultatIndberetning( diagnose != null , diagnose == ( D ) , navn.gyldigFraDato < K.startTidspunkt || navn.gyldigTilDato > K.slutTidspunkt )
+		ResultatIndberetning( diagnose != null , diagnose == ( D ) , navn.gyldigTilDato < K.startTidspunkt || navn.gyldigFraDato > K.slutTidspunkt )
 	then
 end
