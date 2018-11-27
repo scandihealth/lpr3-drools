@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1519206127919</long>
+    <long>1543311377308</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -21,8 +21,6 @@
     <long>0</long>
     <string>lprmeta.errorType</string>
     <string>2</string>
-    <string>lprmeta.isValidForPrimarySectorReports</string>
-    <boolean>false</boolean>
     <string>lprmeta.encounterEndToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.ruleGroup</string>
@@ -42,7 +40,9 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Højde før graviditet (resultat RDA26) skal være et tal mellem 50 og 219</string>
+    <string>Højde før graviditet (resultat RDA26) skal være et tal mellem 50 og 219 eller -1</string>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>false</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
