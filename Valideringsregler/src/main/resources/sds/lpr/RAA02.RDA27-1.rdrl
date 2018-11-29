@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA02.RDA27-1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1543313377992)
+	@lprmeta.productionDate(1543481316298)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -23,11 +23,10 @@ rule "RAA02.RDA27-1"
 	@lprmeta.errorText(Vægt før graviditet (resultat RDA27) skal være større end 29 eller -1)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.isValidForDUSASSpecialityReports(true)
 	@lprmeta.isValidForPrivateSectorReports(false)
+	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Resultat( type.kode == "RDA27" , vaerdiSomHeltal() == null || vaerdiSomHeltal() < 30 )
-		not (Resultat( vaerdi == "-1" )) 
+		Resultat( type.kode == "RDA27" , vaerdiSomHeltal() == null || vaerdiSomHeltal() < 30 , vaerdi != "-1" )
 	then
 end
