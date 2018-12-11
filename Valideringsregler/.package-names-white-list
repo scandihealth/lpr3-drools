@@ -20,7 +20,7 @@
     <string>lprmeta.encounterStartFromDate</string>
     <long>0</long>
     <string>lprmeta.errorType</string>
-    <string>0</string>
+    <string>2</string>
     <string>lprmeta.encounterEndToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.ruleGroup</string>
