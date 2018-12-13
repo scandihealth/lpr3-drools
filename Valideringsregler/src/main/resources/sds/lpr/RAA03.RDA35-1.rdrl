@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA03.RDA35-1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519122163063)
+	@lprmeta.productionDate(1544708725831)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -20,12 +20,13 @@ rule "RAA03.RDA35-1"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Apgar-5 (resultat RDA35) skal være et heltal mellem 0 og 10)
+	@lprmeta.errorText(Apgar-5 (resultat RDA35) skal være et heltal mellem 0 og 10 eller -1)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
+	@lprmeta.isValidForPrivateSectorReports(false)
 	dialect "mvel"
 	when
-		Resultat( type.kode == "RDA35" , vaerdiSomHeltal() < 0 || vaerdiSomHeltal() > 10 || vaerdiSomHeltal() == null )
+		Resultat( type.kode == "RDA35" , vaerdiSomHeltal() < 0 || vaerdiSomHeltal() > 10 || vaerdiSomHeltal() == null , vaerdi != "-1" )
 	then
 end
