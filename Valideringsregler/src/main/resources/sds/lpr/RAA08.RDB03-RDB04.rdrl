@@ -7,7 +7,7 @@ import java.util.Set;
 
 rule "RAA08.RDB03-RDB04"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1536578831872)
+	@lprmeta.productionDate(1545060457606)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -24,12 +24,13 @@ rule "RAA08.RDB03-RDB04"
 	@lprmeta.encounterEndFromDate(0)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(For resultatindberetning RAA08 (implantatoplysninger) skal der være netop 1 resultat af type RDB03 (batch-lotnummer) eller af type RDB04 (serienummer))
+	@lprmeta.errorText(For resultatindberetning RAA08 (implantatoplysninger) skal der være et resultat af type RDB03 (batch-lotnummer) eller af type RDB04 (serienummer))
 	@lprmeta.isValidForDUSASSpecialityReports(true)
+	@lprmeta.isValidForPrivateSectorReports(false)
 	dialect "mvel"
 	when
 		ResultatIndberetning( navn.kode == "RAA08" , Resultater : resultater)
-		Set( size() != 1 ) from collect ( 		(Resultat( type.kode == "RDB03" || type.kode == "RDB04" ) from Resultater)
+		Set( size() != 0 ) from collect ( 		(Resultat( type.kode == "RDB03" || type.kode == "RDB04" ) from Resultater)
 ) 
 	then
 end
