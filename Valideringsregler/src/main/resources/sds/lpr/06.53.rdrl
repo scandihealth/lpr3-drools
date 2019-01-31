@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.Henvisning;
 
 rule "06.53"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1515938733299)
+	@lprmeta.productionDate(1548962841316)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -21,12 +21,12 @@ rule "06.53"
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
 	@lprmeta.errorText(En SKS-kode anvendt som henvisningsmåde skal være gyldig på tidspunktet for henvisningen)
-	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.isValidForPrivateSectorReports(false)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		H : Henvisning( maade.gyldigFraDato > H.tidspunkt || maade.gyldigTilDato < H.tidspunkt )
+		H : Henvisning( maade.gyldigFraDato > H.tidspunkt || maade.gyldigTilDato < H.tidspunkt , tidspunktAsDate >= "01-07-2018" )
 	then
 end
