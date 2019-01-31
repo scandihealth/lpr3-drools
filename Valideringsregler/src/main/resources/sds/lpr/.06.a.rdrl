@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1523012038954</long>
+    <long>1548962482514</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -21,8 +21,6 @@
     <long>0</long>
     <string>lprmeta.errorType</string>
     <string>2</string>
-    <string>lprmeta.isValidForPrimarySectorReports</string>
-    <boolean>false</boolean>
     <string>lprmeta.encounterEndToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.ruleGroup</string>
@@ -43,6 +41,8 @@
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
     <string>Henvisningsårsagen skal findes i en af kodelisterne diag, proc.act, proc.opr, proc.und</string>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>false</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
