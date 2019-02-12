@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "12.03.103"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1517557316692)
+	@lprmeta.productionDate(1549978723736)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -26,8 +26,9 @@ rule "12.03.103"
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
+	@lprmeta.isValidForPrivateSectorReports(false)
 	dialect "mvel"
 	when
-		Kontakt( aktionDiagnose != null , aktionDiagnose.kode.primaerKode.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) contains "diag.foedmor" , prioritet.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "admin.prioritet.akut" || ( type.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "admin.konttype.fysfr" && type.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "admin.konttype.udeko" ))
+		Kontakt( aktionDiagnose != null , aktionDiagnose.kode.primaerKode.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) contains "diag.foedmor" , ( type.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "admin.konttype.fysfr" && type.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "admin.konttype.udeko" ))
 	then
 end
