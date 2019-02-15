@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1520415577786</long>
+    <long>1550223807843</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -21,8 +21,6 @@
     <long>0</long>
     <string>lprmeta.errorType</string>
     <string>2</string>
-    <string>lprmeta.isValidForPrimarySectorReports</string>
-    <boolean>false</boolean>
     <string>lprmeta.encounterEndToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.ruleGroup</string>
@@ -42,8 +40,10 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Base-excess fra navlesnorsarterie (resultat RDA48) skal være et tal mellem -19,9 og 9,9
+    <string>Base-excess fra navlesnorsarterie (resultat RDA48) skal være et tal mellem -30 og 30
 </string>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>false</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
