@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA03.RDA48"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1520415577786)
+	@lprmeta.productionDate(1550223807843)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -20,13 +20,14 @@ rule "RAA03.RDA48"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Base-excess fra navlesnorsarterie (resultat RDA48) skal være et tal mellem -19,9 og 9,9
+	@lprmeta.errorText(Base-excess fra navlesnorsarterie (resultat RDA48) skal være et tal mellem -30 og 30
 )
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
+	@lprmeta.isValidForPrivateSectorReports(false)
 	dialect "mvel"
 	when
-		Resultat( type.kode == "RDA48" , vaerdiSomDecimaltal() <= ( -20.0 ) || vaerdiSomDecimaltal() >= 10.00 || vaerdiSomDecimaltal() == null )
+		Resultat( type.kode == "RDA48" , vaerdiSomDecimaltal() <= ( -30.0 ) || vaerdiSomDecimaltal() >= 30.00 || vaerdiSomDecimaltal() == null )
 	then
 end
