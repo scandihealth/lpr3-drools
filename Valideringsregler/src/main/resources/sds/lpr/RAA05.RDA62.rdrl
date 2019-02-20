@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "RAA05.RDA62"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519289105053)
+	@lprmeta.productionDate(1550690283426)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -26,9 +26,10 @@ rule "RAA05.RDA62"
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.errorText(For resultatindberetning RAA05 (skadeindberetning) skal der være et resultat af type RDA62 (skadested) ved komplet indberetning)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
+	@lprmeta.isValidForPrivateSectorReports(false)
 	dialect "mvel"
 	when
-		Kontakt( harSlutTidspunkt(), RI : resultatIndberetning != null , resultatIndberetning.navn.kode == "RAA05" , resultatIndberetning.status.kodelisterPaaDato(slutTidspunkt) contains "resindb.status.suba" )
+		RI : ResultatIndberetning( navn.kode == "RAA05" , status.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "resindb.status.suba" )
 		not (		Resultat( type.kode == "RDA62" ) from RI.resultater
 ) 
 	then
