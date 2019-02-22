@@ -10,7 +10,7 @@
     <string>lprmeta.isValidForPrivateSectorReports</string>
     <boolean>true</boolean>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
-    <boolean>false</boolean>
+    <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
