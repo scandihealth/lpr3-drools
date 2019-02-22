@@ -5,6 +5,7 @@ import com.dxc.lpr3.domain.BetalingOplysning;
 import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "10.a"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1516719360063)
 	@lprmeta.reportReceivedFromDate(0)
@@ -12,7 +13,6 @@ rule "10.a"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(BETALINGSOPLYSNING)
 	@lprmeta.errorNumber(10001)

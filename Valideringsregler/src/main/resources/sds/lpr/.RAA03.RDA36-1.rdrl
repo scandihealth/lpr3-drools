@@ -42,7 +42,7 @@
     <string>lprmeta.errorText</string>
     <string>Hovedomfang (resultat RDA36) skal være et heltal mellem 10 og 99 eller -1</string>
     <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>false</boolean>
+    <boolean>true</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>

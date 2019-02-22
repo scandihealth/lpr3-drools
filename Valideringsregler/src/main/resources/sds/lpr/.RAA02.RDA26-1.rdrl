@@ -42,7 +42,7 @@
     <string>lprmeta.errorText</string>
     <string>Højde før graviditet (resultat RDA26) skal være et tal mellem 50 og 219 eller -1</string>
     <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>false</boolean>
+    <boolean>true</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>

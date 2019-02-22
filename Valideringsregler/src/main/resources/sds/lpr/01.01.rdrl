@@ -5,6 +5,7 @@ import com.dxc.lpr3.domain.Patient;
 import com.dxc.lpr3.domain.ForloebElement;
 
 rule "01.01"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1515763123868)
 	@lprmeta.reportReceivedFromDate(0)
@@ -12,7 +13,6 @@ rule "01.01"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(PATIENT)
 	@lprmeta.errorNumber(101)
@@ -21,7 +21,6 @@ rule "01.01"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.isValidForPrivateSectorReports(false)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.errorText(Starttidspunktet for forløbselementet skal ligge på eller efter patientens fødselsdato)

@@ -6,6 +6,7 @@ import com.dxc.lpr3.domain.BetalingOplysning;
 import com.dxc.lpr3.domain.ForloebElement;
 
 rule "11.31"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1516114233103)
 	@lprmeta.reportReceivedFromDate(0)
@@ -13,7 +14,6 @@ rule "11.31"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(PROCEDURE)
 	@lprmeta.errorNumber(1131)

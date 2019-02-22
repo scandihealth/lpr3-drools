@@ -5,6 +5,7 @@ import com.dxc.lpr3.domain.Henvisning;
 import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "06.c"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1548962691826)
 	@lprmeta.reportReceivedFromDate(0)
@@ -12,7 +13,6 @@ rule "06.c"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(HENVISNING)
 	@lprmeta.errorNumber(6003)
@@ -25,7 +25,6 @@ rule "06.c"
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
-	@lprmeta.isValidForPrivateSectorReports(false)
 	dialect "mvel"
 	when
 		Henvisning( fritvalg.kodelisterPaaDato(tidspunkt) not contains "admin.fritvalg" , tidspunktAsDate >= "01-07-2018" )

@@ -6,6 +6,7 @@ import com.dxc.lpr3.domain.Resultat;
 import java.util.Set;
 
 rule "RAA09.RDA85"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1526998522054)
 	@lprmeta.reportReceivedFromDate(0)
@@ -13,7 +14,6 @@ rule "RAA09.RDA85"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(true)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(RESULTATINDBERETNING)
 	@lprmeta.errorNumber(9085)

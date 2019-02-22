@@ -4,6 +4,7 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.Kontakt;
 
 rule "05.108"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1520495272421)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
@@ -11,7 +12,6 @@ rule "05.108"
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(-9223372036854775808)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(KONTAKT)
 	@lprmeta.errorNumber(5108)

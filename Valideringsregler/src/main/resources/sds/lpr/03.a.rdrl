@@ -6,6 +6,7 @@ import com.dxc.lpr3.domain.ForloebReference;
 import com.dxc.lpr3.domain.ForloebElement;
 
 rule "03.a"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1516719268841)
 	@lprmeta.reportReceivedFromDate(0)
@@ -13,7 +14,6 @@ rule "03.a"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(REFERENCE)
 	@lprmeta.errorNumber(3001)

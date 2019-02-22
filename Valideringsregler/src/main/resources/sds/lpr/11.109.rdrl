@@ -6,6 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "11.109"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1537879419136)
 	@lprmeta.reportReceivedFromDate(0)
@@ -13,7 +14,6 @@ rule "11.109"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(PROCEDURE)
 	@lprmeta.errorNumber(11109)

@@ -5,6 +5,7 @@ import com.dxc.lpr3.domain.Kontakt;
 import com.dxc.lpr3.domain.Diagnose;
 
 rule "12.101b"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1521202895203)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
@@ -12,7 +13,6 @@ rule "12.101b"
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(-9223372036854775808)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(DIAGNOSE)
 	@lprmeta.errorNumber(121011)

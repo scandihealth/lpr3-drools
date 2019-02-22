@@ -44,7 +44,7 @@
     <string>lprmeta.errorText</string>
     <string>En SKS-kode anvendt som henvisningsmåde skal være gyldig på tidspunktet for henvisningen</string>
     <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>false</boolean>
+    <boolean>true</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>

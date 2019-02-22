@@ -42,7 +42,7 @@
     <string>lprmeta.errorText</string>
     <string>Apgar-5 (resultat RDA35) skal være et heltal mellem 0 og 10 eller -1</string>
     <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>false</boolean>
+    <boolean>true</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>

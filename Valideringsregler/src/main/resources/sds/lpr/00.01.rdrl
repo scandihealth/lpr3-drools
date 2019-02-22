@@ -13,6 +13,7 @@ import java.time.OffsetDateTime;
 import com.dxc.lpr3.domain.OpholdAdresse;
 
 rule "00.01"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1539264806394)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
@@ -20,7 +21,6 @@ rule "00.01"
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(-9223372036854775808)
-	@lprmeta.isValidForPrimarySectorReports(true)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(NONE)
 	@lprmeta.errorNumber(1)

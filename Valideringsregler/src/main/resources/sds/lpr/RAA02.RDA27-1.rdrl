@@ -4,6 +4,7 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA02.RDA27-1"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1543481316298)
 	@lprmeta.reportReceivedFromDate(0)
@@ -11,7 +12,6 @@ rule "RAA02.RDA27-1"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(RESULTATINDBERETNING)
 	@lprmeta.errorNumber(90271)
@@ -23,7 +23,6 @@ rule "RAA02.RDA27-1"
 	@lprmeta.errorText(Vægt før graviditet (resultat RDA27) skal være større end 29 eller -1)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.isValidForPrivateSectorReports(false)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when

@@ -5,6 +5,7 @@ import com.dxc.lpr3.domain.Kontakt;
 import com.dxc.lpr3.domain.Diagnose;
 
 rule "12.102"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.type(REPORT_VALIDATION)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.ruleGroup(DIAGNOSE)
@@ -13,7 +14,6 @@ rule "12.102"
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	@lprmeta.isValidForLPRReports(true)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.productionDate(1518674269250)
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.archivedDate(0)

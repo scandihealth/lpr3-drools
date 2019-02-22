@@ -7,6 +7,7 @@ import com.dxc.lpr3.domain.SksKode;
 import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "14.101"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1521559232366)
 	@lprmeta.reportReceivedFromDate(0)
@@ -14,7 +15,6 @@ rule "14.101"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(DIAGNOSE)
 	@lprmeta.errorNumber(14101)
@@ -23,7 +23,6 @@ rule "14.101"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.isValidForPrivateSectorReports(false)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.errorText(En SKS-kode anvendt som lokalrecidiv skal findes i kodelisten diag.lokalrecidiv)

@@ -6,6 +6,7 @@ import com.dxc.lpr3.domain.Resultat;
 import com.dxc.lpr3.domain.Kontakt;
 
 rule "RAA05.RDA62"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1550690283426)
 	@lprmeta.reportReceivedFromDate(0)
@@ -13,7 +14,6 @@ rule "RAA05.RDA62"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(RESULTATINDBERETNING)
 	@lprmeta.errorNumber(9062)
@@ -26,7 +26,6 @@ rule "RAA05.RDA62"
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.errorText(For resultatindberetning RAA05 (skadeindberetning) skal der være et resultat af type RDA62 (skadested) ved komplet indberetning)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
-	@lprmeta.isValidForPrivateSectorReports(false)
 	dialect "mvel"
 	when
 		RI : ResultatIndberetning( navn.kode == "RAA05" , status.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "resindb.status.suba" )

@@ -4,6 +4,7 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.Henvisning;
 
 rule "06.a"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1548962482514)
 	@lprmeta.reportReceivedFromDate(0)
@@ -11,7 +12,6 @@ rule "06.a"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(HENVISNING)
 	@lprmeta.errorNumber(6001)
@@ -24,7 +24,6 @@ rule "06.a"
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
-	@lprmeta.isValidForPrivateSectorReports(false)
 	dialect "mvel"
 	when
 		Henvisning( aarsag != null , aarsag.primaerKode != null , aarsag.primaerKode.kodelisterPaaDato(tidspunkt) not contains "diag" , aarsag.primaerKode.kodelisterPaaDato(tidspunkt) not contains "proc.act" , aarsag.primaerKode.kodelisterPaaDato(tidspunkt) not contains "proc.opr" , aarsag.primaerKode.kodelisterPaaDato(tidspunkt) not contains "proc.und" , tidspunktAsDate >= "01-07-2018" )

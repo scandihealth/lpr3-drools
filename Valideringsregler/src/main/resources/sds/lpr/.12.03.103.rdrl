@@ -44,7 +44,7 @@
     <string>lprmeta.errorText</string>
     <string>Hvis der til en kontakt er knyttet en aktionsdiagnose for fødsel, skal kontakten være af type &apos;fysisk fremmøde&apos; eller &apos;udekontakt&apos;</string>
     <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>false</boolean>
+    <boolean>true</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>

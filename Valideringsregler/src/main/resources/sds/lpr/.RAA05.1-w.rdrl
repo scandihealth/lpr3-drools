@@ -7,6 +7,8 @@
     </default>
     <int>32</int>
     <int>22</int>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>true</boolean>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
@@ -23,8 +25,6 @@
     <string>1</string>
     <string>lprmeta.warningTimeLimit</string>
     <int>3</int>
-    <string>lprmeta.isValidForPrimarySectorReports</string>
-    <boolean>false</boolean>
     <string>lprmeta.encounterEndToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.ruleGroup</string>

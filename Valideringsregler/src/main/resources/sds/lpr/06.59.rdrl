@@ -5,6 +5,7 @@ import com.dxc.lpr3.domain.Henvisning;
 import com.dxc.lpr3.domain.SksKode;
 
 rule "06.59"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1523558430918)
 	@lprmeta.reportReceivedFromDate(0)
@@ -12,7 +13,6 @@ rule "06.59"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(HENVISNING)
 	@lprmeta.errorNumber(659)

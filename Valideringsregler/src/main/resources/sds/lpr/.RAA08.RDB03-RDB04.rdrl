@@ -42,7 +42,7 @@
     <string>lprmeta.errorText</string>
     <string>For resultatindberetning RAA08 (implantatoplysninger) skal der være et resultat af type RDB03 (batch-lotnummer) eller af type RDB04 (serienummer)</string>
     <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>false</boolean>
+    <boolean>true</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>

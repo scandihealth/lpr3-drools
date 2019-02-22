@@ -42,7 +42,7 @@
     <string>lprmeta.errorText</string>
     <string>Fødselsvægt (resultat RDA39) skal være et heltal mellem 100 og 9999 eller -1</string>
     <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>false</boolean>
+    <boolean>true</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>

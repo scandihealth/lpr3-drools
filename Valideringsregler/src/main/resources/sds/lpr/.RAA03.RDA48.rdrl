@@ -43,7 +43,7 @@
     <string>Base-excess fra navlesnorsarterie (resultat RDA48) skal være et tal mellem -30 og 30
 </string>
     <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>false</boolean>
+    <boolean>true</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>

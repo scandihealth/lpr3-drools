@@ -5,6 +5,7 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA08.RDB02-1"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.type(REPORT_VALIDATION)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.ruleGroup(RESULTATINDBERETNING)
@@ -13,7 +14,6 @@ rule "RAA08.RDB02-1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	@lprmeta.isValidForLPRReports(true)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.productionDate(1537440893736)
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.archivedDate(0)

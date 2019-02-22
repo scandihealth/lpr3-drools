@@ -5,6 +5,7 @@ import com.dxc.lpr3.domain.Kontakt;
 import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "05.105"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1516805010159)
 	@lprmeta.reportReceivedFromDate(0)
@@ -12,7 +13,6 @@ rule "05.105"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(KONTAKT)
 	@lprmeta.errorNumber(5105)

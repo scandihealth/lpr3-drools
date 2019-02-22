@@ -5,6 +5,7 @@ import com.dxc.lpr3.domain.Procedure;
 import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "11.103"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1516882463255)
 	@lprmeta.reportReceivedFromDate(0)
@@ -12,7 +13,6 @@ rule "11.103"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(PROCEDURE)
 	@lprmeta.errorNumber(11103)

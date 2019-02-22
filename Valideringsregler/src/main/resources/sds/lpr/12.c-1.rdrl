@@ -4,6 +4,7 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.Kontakt;
 
 rule "12.c-1"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1522745478662)
 	@lprmeta.reportReceivedFromDate(0)
@@ -11,7 +12,6 @@ rule "12.c-1"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(DIAGNOSE)
 	@lprmeta.errorNumber(12003)

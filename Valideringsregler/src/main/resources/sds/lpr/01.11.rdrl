@@ -5,6 +5,7 @@ import com.dxc.lpr3.domain.Patient;
 import com.dxc.lpr3.domain.Henvisning;
 
 rule "01.11"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1515162326468)
 	@lprmeta.reportReceivedFromDate(0)
@@ -12,7 +13,6 @@ rule "01.11"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(PATIENT)
 	@lprmeta.errorNumber(111)
@@ -21,7 +21,6 @@ rule "01.11"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.isValidForPrivateSectorReports(false)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.errorText(Tidspunktet for henvisningen skal ligge på eller efter patientens fødselsdato)

@@ -4,6 +4,7 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA03.RDA35-1"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1544708725831)
 	@lprmeta.reportReceivedFromDate(0)
@@ -11,7 +12,6 @@ rule "RAA03.RDA35-1"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(RESULTATINDBERETNING)
 	@lprmeta.errorNumber(90351)
@@ -24,7 +24,6 @@ rule "RAA03.RDA35-1"
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
-	@lprmeta.isValidForPrivateSectorReports(false)
 	dialect "mvel"
 	when
 		Resultat( type.kode == "RDA35" , vaerdiSomHeltal() < 0 || vaerdiSomHeltal() > 10 || vaerdiSomHeltal() == null , vaerdi != "-1" )

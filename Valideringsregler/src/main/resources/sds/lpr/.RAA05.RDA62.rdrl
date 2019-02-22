@@ -42,7 +42,7 @@
     <string>lprmeta.errorText</string>
     <string>For resultatindberetning RAA05 (skadeindberetning) skal der være et resultat af type RDA62 (skadested) ved komplet indberetning</string>
     <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>false</boolean>
+    <boolean>true</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>

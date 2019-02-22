@@ -7,6 +7,7 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 import java.time.OffsetDateTime;
 
 rule "RAA09.1-w"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1535829279138)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
@@ -14,7 +15,6 @@ rule "RAA09.1-w"
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
 	@lprmeta.errorType(WARN)
 	@lprmeta.encounterStartFromDate(-9223372036854775808)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(RESULTATINDBERETNING)
 	@lprmeta.errorNumber(9901)

@@ -4,6 +4,7 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.ForloebElement;
 
 rule "03.51"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1516275344169)
 	@lprmeta.reportReceivedFromDate(0)
@@ -11,7 +12,6 @@ rule "03.51"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(false)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(REFERENCE)
 	@lprmeta.errorNumber(351)

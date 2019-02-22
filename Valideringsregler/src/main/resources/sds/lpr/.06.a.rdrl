@@ -42,7 +42,7 @@
     <string>lprmeta.errorText</string>
     <string>Henvisningsårsagen skal findes i en af kodelisterne diag, proc.act, proc.opr, proc.und</string>
     <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>false</boolean>
+    <boolean>true</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>

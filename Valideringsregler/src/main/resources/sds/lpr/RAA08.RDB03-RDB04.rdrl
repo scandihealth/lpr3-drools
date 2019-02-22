@@ -6,6 +6,7 @@ import com.dxc.lpr3.domain.Resultat;
 import java.util.Set;
 
 rule "RAA08.RDB03-RDB04"
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.productionDate(1545120999746)
 	@lprmeta.reportReceivedFromDate(0)
@@ -13,7 +14,6 @@ rule "RAA08.RDB03-RDB04"
 	@lprmeta.episodeOfCareStartFromDate(0)
 	@lprmeta.errorType(ERROR)
 	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.isValidForPrimarySectorReports(true)
 	@lprmeta.encounterEndToDate(9223372036854775807)
 	@lprmeta.ruleGroup(RESULTATINDBERETNING)
 	@lprmeta.errorNumber(9000034)
@@ -25,7 +25,6 @@ rule "RAA08.RDB03-RDB04"
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.errorText(For resultatindberetning RAA08 (implantatoplysninger) skal der være et resultat af type RDB03 (batch-lotnummer) eller af type RDB04 (serienummer))
-	@lprmeta.isValidForPrivateSectorReports(false)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
