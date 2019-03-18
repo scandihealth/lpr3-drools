@@ -7,14 +7,12 @@
     </default>
     <int>32</int>
     <int>21</int>
-    <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>true</boolean>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1513248920151</long>
+    <long>1552916828086</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -28,7 +26,7 @@
     <string>lprmeta.ruleGroup</string>
     <string>12</string>
     <string>dcore.description[0]</string>
-    <string>En procedure, der knytter sig til en kontakt, skal tidsmæssigt ligge inden for kontaktens varighedsperiode.</string>
+    <string>Starttidspunkt for en procedure skal ligge efter eller være lig med kontaktens starttidspunkt</string>
     <string>lprmeta.errorNumber</string>
     <string>1122</string>
     <string>lprmeta.archivedDate</string>
@@ -41,6 +39,8 @@
     <long>9223372036854775807</long>
     <string>lprmeta.encounterEndFromDate</string>
     <long>0</long>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>true</boolean>
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
