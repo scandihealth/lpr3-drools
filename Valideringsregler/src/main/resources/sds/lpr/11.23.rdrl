@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Procedure;
 
 rule "11.23"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1552055117993)
+	@lprmeta.productionDate(1552916973424)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -20,7 +20,7 @@ rule "11.23"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Starttidspunkt for en procedure, der knytter sig til en kontakt, skal ligge inden for kontaktens periode )
+	@lprmeta.errorText(Starttidspunkt for en procedure skal ligge før eller være lig med kontaktens sluttidspunkt)
 	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
