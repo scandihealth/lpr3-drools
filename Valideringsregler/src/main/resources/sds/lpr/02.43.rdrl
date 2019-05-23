@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.ForloebElement;
 
 rule "02.43"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(0)
+	@lprmeta.productionDate(1558605067735)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
