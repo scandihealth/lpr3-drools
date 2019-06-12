@@ -4,9 +4,8 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.ForloebElement;
 
 rule "02.44"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1515921093121)
+	@lprmeta.productionDate(1560325416762)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -20,7 +19,8 @@ rule "02.44"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Hvis et forløbselement er afsluttet, skal den SOR-enhed, der er angivet som ansvarlig enhed, være gyldig på forløbselementets sluttidspunkt
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Der er angivet en ugyldig SOR-kode for forløbsansvarlig enhed
 )
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
