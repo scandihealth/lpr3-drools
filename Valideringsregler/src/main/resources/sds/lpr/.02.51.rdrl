@@ -7,14 +7,12 @@
     </default>
     <int>32</int>
     <int>21</int>
-    <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>true</boolean>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1515933118061</long>
+    <long>1560325984428</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -41,10 +39,12 @@
     <long>9223372036854775807</long>
     <string>lprmeta.encounterEndFromDate</string>
     <long>0</long>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>true</boolean>
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>En SKS-kode anvendt som label for et forløbselement skal være gyldig på et tidspunkt i forløbselementets periode</string>
+    <string>Der er angivet en ugyldig SKS-kode for forløbslabel</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
