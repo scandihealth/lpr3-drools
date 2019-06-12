@@ -7,14 +7,12 @@
     </default>
     <int>32</int>
     <int>21</int>
-    <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>true</boolean>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1517842727567</long>
+    <long>1560346475921</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -28,7 +26,7 @@
     <string>lprmeta.ruleGroup</string>
     <string>8</string>
     <string>dcore.description[0]</string>
-    <string>Hvis en kontakt er af typen &apos;diagnoseindberetning&apos; skal kontaktens sluttidspunkt være lig med starttidspunktet plus ét minut</string>
+    <string>Hvis en kontakt er af typen &apos;diagnoseindberetning&apos;, skal kontaktens sluttidspunkt være lig med starttidspunktet plus ét minut, og prioritet skal være i kodelisten admin.prioritet.plan</string>
     <string>lprmeta.errorNumber</string>
     <string>5107</string>
     <string>lprmeta.archivedDate</string>
@@ -41,10 +39,12 @@
     <long>9223372036854775807</long>
     <string>lprmeta.encounterEndFromDate</string>
     <long>0</long>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>true</boolean>
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Hvis en kontakt er af typen &apos;diagnoseindberetning&apos;, skal kontaktens sluttidspunkt være lig med starttidspunktet plus ét minut, og prioritet skal være i kodelisten admin.prioritet.plan</string>
+    <string>Kontakttypen &apos;diagnoseindberetning&apos; skal have en varighed på ét minut og prioritet &apos;planlagt&apos;</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
