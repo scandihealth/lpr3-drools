@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.UofficielBopael;
 
 rule "01.b"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1553171131779)
+	@lprmeta.productionDate(1560324574561)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
