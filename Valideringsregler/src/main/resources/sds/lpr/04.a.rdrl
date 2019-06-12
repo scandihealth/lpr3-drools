@@ -5,9 +5,8 @@ import com.dxc.lpr3.domain.SksKodeLister;
 import com.dxc.lpr3.domain.ForloebMarkoer;
 
 rule "04.a"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516719313686)
+	@lprmeta.productionDate(1560341158512)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -21,7 +20,8 @@ rule "04.a"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Forløbsmarkørens kode skal findes i kodelisten forloeb.markoer)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(SKS-koden må ikke indberettes som forløbsmarkør)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
