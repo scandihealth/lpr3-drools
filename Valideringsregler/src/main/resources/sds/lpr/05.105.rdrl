@@ -5,9 +5,8 @@ import com.dxc.lpr3.domain.Kontakt;
 import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "05.105"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516805010159)
+	@lprmeta.productionDate(1560343495873)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -21,10 +20,10 @@ rule "05.105"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(Hvis kontakten er af typen 'fysisk fremmøde', skal der registreres opholdsadresse på kontakten
-)
+	@lprmeta.errorText(Opholdsadresse skal angives for kontakttypen 'fysisk fremmøde' )
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
