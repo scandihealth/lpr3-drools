@@ -4,9 +4,8 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.Kontakt;
 
 rule "12.03.105"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1522742638992)
+	@lprmeta.productionDate(0)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -20,7 +19,8 @@ rule "12.03.105"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Hvis der til en kontakt er knyttet en aktionsdiagnose for levendefødt barn, skal kontakten være af type 'fysisk fremmøde' eller 'udekontakt' og have prioritet 'akut')
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Fødselskontakt for levendefødt barn skal være af typen 'fysisk fremmøde' eller 'udekontakt' og med prioritet 'akut')
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
