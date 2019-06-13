@@ -6,13 +6,13 @@
       <threshold>24</threshold>
     </default>
     <int>32</int>
-    <int>20</int>
+    <int>21</int>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1548962596801</long>
+    <long>1560413489986</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -25,6 +25,8 @@
     <long>9223372036854775807</long>
     <string>lprmeta.ruleGroup</string>
     <string>7</string>
+    <string>dcore.description[0]</string>
+    <string>Henvisningsmåde skal være i kodelisten admin.henvmaade</string>
     <string>lprmeta.errorNumber</string>
     <string>6002</string>
     <string>lprmeta.archivedDate</string>
@@ -40,7 +42,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Henvisningsmåde skal være i kodelisten admin.henvmaade</string>
+    <string>Der er angivet forkert SKS-kode for henvisningsmåde</string>
     <string>lprmeta.isValidForPrivateSectorReports</string>
     <boolean>true</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
