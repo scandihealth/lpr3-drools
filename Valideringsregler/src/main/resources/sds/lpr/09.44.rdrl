@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.OpholdAdresse;
 
 rule "09.44"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1558611924838)
+	@lprmeta.productionDate(1560414780514)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
