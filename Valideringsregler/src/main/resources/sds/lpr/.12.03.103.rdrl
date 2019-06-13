@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1549980197119</long>
+    <long>1560431138334</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -42,7 +42,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Hvis der til en kontakt er knyttet en aktionsdiagnose for fødsel, skal kontakten være af type &apos;fysisk fremmøde&apos; eller &apos;udekontakt&apos;</string>
+    <string>Mors fødselskontakt skal være af typen &apos;fysisk fremmøde&apos; eller &apos;udekontakt&apos;</string>
     <string>lprmeta.isValidForPrivateSectorReports</string>
     <boolean>true</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
