@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.BetalingOplysning;
 
 rule "10.51"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516113943231)
+	@lprmeta.productionDate(1560418055716)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -19,7 +19,7 @@ rule "10.51"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(En SKS-kode anvendt som specialiseringsniveau for en betalingsoplysning skal være gyldig på betalingsoplysningens starttidspunkt)
+	@lprmeta.errorText(Der er angivet en ugyldig SKS-kode for specialiseringsniveau (teknik))
 	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
