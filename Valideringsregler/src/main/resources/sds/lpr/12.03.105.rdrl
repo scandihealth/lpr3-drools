@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "12.03.105"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(0)
+	@lprmeta.productionDate(1560431607253)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
