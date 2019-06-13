@@ -6,9 +6,8 @@ import com.dxc.lpr3.domain.Procedure;
 import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "11.111"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1520584871372)
+	@lprmeta.productionDate(1560431092461)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -22,7 +21,8 @@ rule "11.111"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Hvis en procedure er tilknyttet en kontakt af typen 'diagnoseindberetning', skal procedurens starttidspunkt være lig med kontaktens starttidspunkt, og procedurens sluttidspunkt skal være blank)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Procedure registreret ved kontakttypen 'diagnoseindberetning' skal have samme starttidspunkt som kontakten og intet sluttidspunkt)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
