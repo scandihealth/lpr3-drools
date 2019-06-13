@@ -6,9 +6,8 @@ import com.dxc.lpr3.domain.SksKodeLister;
 import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "11.109"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1537879419136)
+	@lprmeta.productionDate(1560425117437)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -22,8 +21,8 @@ rule "11.109"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Hvis en procedurekode i form af operation er på liste over koder, der kræver komplikationsregistrering, så skal dette følges af en resultatindberetning med angivelse af graden af komplikation (Clavien-Dindo), herunder 'ingen komplikation'
-)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Der mangler resultatindberetning for kirurgisk komplikationsregistrering med angivelse af Clavien grad I-V eller kode for 'ingen komplikation')
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
