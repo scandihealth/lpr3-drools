@@ -39,10 +39,10 @@
     <long>9223372036854775807</long>
     <string>lprmeta.encounterEndFromDate</string>
     <long>0</long>
-    <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>true</boolean>
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>true</boolean>
     <string>lprmeta.errorText</string>
     <string>Fødselskontakt for dødfødt barn skal være af typen &apos;død&apos;</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
