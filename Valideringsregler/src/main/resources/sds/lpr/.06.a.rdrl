@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1548962482514</long>
+    <long>1560412898685</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -40,7 +40,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Henvisningsårsagen skal findes i en af kodelisterne diag, proc.act, proc.opr, proc.und</string>
+    <string>Der er angivet forkert SKS-kode for henvisningsårsag</string>
     <string>lprmeta.isValidForPrivateSectorReports</string>
     <boolean>true</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
