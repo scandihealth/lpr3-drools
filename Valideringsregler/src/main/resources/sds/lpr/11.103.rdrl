@@ -5,9 +5,8 @@ import com.dxc.lpr3.domain.Procedure;
 import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "11.103"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516882463255)
+	@lprmeta.productionDate(1560418103352)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -21,7 +20,8 @@ rule "11.103"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Hvis procedurekoden er på liste over koder, der skal have angivelse for handling , så skal handlingsspecifikation udfyldes)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Proceduren mangler handlingsspecifikation)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
