@@ -4,9 +4,8 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.Henvisning;
 
 rule "06.a"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1548962482514)
+	@lprmeta.productionDate(1560412898685)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -20,7 +19,8 @@ rule "06.a"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Henvisningsårsagen skal findes i en af kodelisterne diag, proc.act, proc.opr, proc.und)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Der er angivet forkert SKS-kode for henvisningsårsag)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
