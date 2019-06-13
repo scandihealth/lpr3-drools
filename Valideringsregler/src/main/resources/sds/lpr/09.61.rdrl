@@ -4,9 +4,8 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.OpholdAdresse;
 
 rule "09.61"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516214041095)
+	@lprmeta.productionDate(1560415016017)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -20,9 +19,10 @@ rule "09.61"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(Hvis enhed er udfyldt for opholdsadresse, må angivelse af fravær ikke være udfyldt og vice versa)
+	@lprmeta.errorText(Der skal angives enten en SOR-kode for opholdsadresse eller SKS-kode for fravær)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
