@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "09.12"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1513232095486)
+	@lprmeta.productionDate(1560413703291)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -23,7 +23,7 @@ rule "09.12"
 	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(En opholdsadresses periode skal ligge inden for perioden for den kontakt, som adressen knytter sig til)
+	@lprmeta.errorText(Opholdsadressens starttidspunkt må tidligst starte samtidigt med kontaktens starttidspunkt)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
