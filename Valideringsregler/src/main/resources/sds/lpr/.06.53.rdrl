@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1548962841316</long>
+    <long>1560412654437</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -42,7 +42,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>En SKS-kode anvendt som henvisningsmåde skal være gyldig på tidspunktet for henvisningen</string>
+    <string>Der er angivet ugyldig SKS-kode for henvisningsmåde</string>
     <string>lprmeta.isValidForPrivateSectorReports</string>
     <boolean>true</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
