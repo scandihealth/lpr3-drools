@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Procedure;
 
 rule "10.32"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1516369841030)
+	@lprmeta.productionDate(1560416677738)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -20,7 +20,7 @@ rule "10.32"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Hvis en procedure, der har en betalingsoplysning tilknyttet, har et sluttidspunkt, skal betalingsoplysningen have samme sluttidspunkt)
+	@lprmeta.errorText(Sluttidspunkt for betalingsoplysning skal være lig med procedurens sluttidspunkt)
 	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
