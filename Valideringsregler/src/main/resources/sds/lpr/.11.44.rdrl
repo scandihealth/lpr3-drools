@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1558613125666</long>
+    <long>1560506971328</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -44,7 +44,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>En SOR-enhed, der er producent for en procedure, skal være gyldig på procedurens sluttidspunkt</string>
+    <string>En SOR-enhed, der er producent for en procedure, skal være gyldig på procedurens sluttidspunkt (teknik)</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
