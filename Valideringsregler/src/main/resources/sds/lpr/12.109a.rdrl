@@ -6,9 +6,8 @@ import com.dxc.lpr3.domain.Kontakt;
 import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "12.109a"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1518079211435)
+	@lprmeta.productionDate(1560508968885)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -22,7 +21,8 @@ rule "12.109a"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Hvis der til en kontakt er knyttet en diagnose for metastasering, skal der til samme kontakt være knyttet en diagnose for primær kræft)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Der skal angives en bidiagnose for primær kræft, når der er angivet aktionsdiagnose for metastase)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
