@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1558612956996</long>
+    <long>1560505913078</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -44,7 +44,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Hvis en SOR-enhed, der er angivet som producent for en procedure, lukkes, skal proceduren også lukkes, så denne har et sluttidspunkt, der ligger før eller samtidig med SOR-enhedens sluttidspunkt, når der er tale om en procedure, hvor sluttidspunkt er påkrævet</string>
+    <string>Hvis en SOR-enhed, der er angivet som producent for en procedure, lukkes, skal proceduren også lukkes, så denne har et sluttidspunkt, der ligger før eller samtidig med SOR-enhedens sluttidspunkt, når der er tale om en procedure, hvor sluttidspunkt er påkrævet (teknik)</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
