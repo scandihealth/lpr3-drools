@@ -7,14 +7,12 @@
     </default>
     <int>32</int>
     <int>21</int>
-    <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>true</boolean>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1519720656874</long>
+    <long>1560507809603</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -41,10 +39,12 @@
     <long>9223372036854775807</long>
     <string>lprmeta.encounterEndFromDate</string>
     <long>0</long>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>true</boolean>
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Hvis der til en kontakt er knyttet en DX- eller DY-diagnose, skal diagnosen være en bidiagnose, og kontaktansvarlig enhed skal være psykiatrisk</string>
+    <string>DX- og DY-diagnoser må kun anvendes som bidiagnose og kun i psykiatrien</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
