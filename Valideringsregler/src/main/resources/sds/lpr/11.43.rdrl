@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "11.43"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1558612956996)
+	@lprmeta.productionDate(1560505913078)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -23,7 +23,7 @@ rule "11.43"
 	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(Hvis en SOR-enhed, der er angivet som producent for en procedure, lukkes, skal proceduren også lukkes, så denne har et sluttidspunkt, der ligger før eller samtidig med SOR-enhedens sluttidspunkt, når der er tale om en procedure, hvor sluttidspunkt er påkrævet)
+	@lprmeta.errorText(Hvis en SOR-enhed, der er angivet som producent for en procedure, lukkes, skal proceduren også lukkes, så denne har et sluttidspunkt, der ligger før eller samtidig med SOR-enhedens sluttidspunkt, når der er tale om en procedure, hvor sluttidspunkt er påkrævet (teknik))
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
