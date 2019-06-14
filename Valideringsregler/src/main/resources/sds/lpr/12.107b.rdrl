@@ -6,9 +6,8 @@ import com.dxc.lpr3.domain.Kontakt;
 import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "12.107b"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519721082081)
+	@lprmeta.productionDate(1560508171824)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -22,7 +21,8 @@ rule "12.107b"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Hvis der til en kontakt er knyttet en DX- eller DY-diagnose, skal diagnosen være en bidiagnose, og kontaktansvarlig enhed skal være psykiatrisk)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(DX- og DY-diagnoser må kun anvendes  i psykiatrien og kun som bidiagnose)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
