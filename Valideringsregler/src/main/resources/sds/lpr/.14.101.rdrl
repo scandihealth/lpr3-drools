@@ -7,14 +7,12 @@
     </default>
     <int>32</int>
     <int>21</int>
-    <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>true</boolean>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1521559232366</long>
+    <long>1560763108166</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -28,7 +26,7 @@
     <string>lprmeta.ruleGroup</string>
     <string>3</string>
     <string>dcore.description[0]</string>
-    <string></string>
+    <string>En SKS-kode anvendt som lokalrecidiv skal findes i kodelisten diag.lokalrecidiv</string>
     <string>lprmeta.errorNumber</string>
     <string>14101</string>
     <string>lprmeta.archivedDate</string>
@@ -41,10 +39,12 @@
     <long>9223372036854775807</long>
     <string>lprmeta.encounterEndFromDate</string>
     <long>0</long>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>true</boolean>
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>En SKS-kode anvendt som lokalrecidiv skal findes i kodelisten diag.lokalrecidiv</string>
+    <string>Der er angivet forkert SKS-kode for lokalrecidiv</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
