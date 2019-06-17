@@ -6,9 +6,8 @@ import com.dxc.lpr3.domain.Kontakt;
 import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "14.102a"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1517917972530)
+	@lprmeta.productionDate(1560765331851)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -22,7 +21,8 @@ rule "14.102a"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Hvis der til en diagnose er knyttet en kode for lokalrecidiv, skal diagnosen være en anmeldelsespligtig cancerdiagnose for primær kræft)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Der må kun angives kode for lokalrecidiv, når aktionsdiagnosen er en anmeldelsespligtig cancerdiagnose for primær kræft)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
