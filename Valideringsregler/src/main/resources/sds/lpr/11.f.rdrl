@@ -4,9 +4,8 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.Procedure;
 
 rule "11.f"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1520510608655)
+	@lprmeta.productionDate(1560758136711)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -20,7 +19,8 @@ rule "11.f"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Personalekategori skal være i kodelisten admin.personale)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Der er angivet forkert SKS-kode for personalekategori)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
