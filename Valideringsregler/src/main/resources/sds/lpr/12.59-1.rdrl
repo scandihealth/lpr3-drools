@@ -6,9 +6,8 @@ import com.dxc.lpr3.domain.Diagnose;
 import com.dxc.lpr3.domain.SksKode;
 
 rule "12.59-1"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1515677889608)
+	@lprmeta.productionDate(1560758959434)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -22,10 +21,10 @@ rule "12.59-1"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(En tillægskode til en diagnose skal være gyldig på et tidspunkt både i kontaktens periode og i den periode, hvor primærkoden er gyldig
-)
+	@lprmeta.errorText(Der er angivet en ugyldig SKS-kode for tillægskoden til en diagnose)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
