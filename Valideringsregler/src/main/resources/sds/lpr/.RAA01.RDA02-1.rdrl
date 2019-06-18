@@ -6,15 +6,13 @@
       <threshold>24</threshold>
     </default>
     <int>32</int>
-    <int>20</int>
-    <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>true</boolean>
+    <int>21</int>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.productionDate</string>
-    <long>1522275573010</long>
+    <long>1560859291759</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -27,6 +25,8 @@
     <long>9223372036854775807</long>
     <string>lprmeta.ruleGroup</string>
     <string>15</string>
+    <string>dcore.description[0]</string>
+    <string>Makroskopisk diagnosegrundlag (resultat RDA02) skal være i kodelisten res.makrogr</string>
     <string>lprmeta.errorNumber</string>
     <string>90021</string>
     <string>lprmeta.archivedDate</string>
@@ -39,10 +39,12 @@
     <long>9223372036854775807</long>
     <string>lprmeta.encounterEndFromDate</string>
     <long>-9223372036854775808</long>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>true</boolean>
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Makroskopisk diagnosegrundlag (resultat RDA02) skal være i kodelisten res.makrogr</string>
+    <string>Der er angivet forkert SKS-kode for makroskopisk grundlag i resultatindberetningen &apos;canceranmeldelse&apos;</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
