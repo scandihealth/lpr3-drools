@@ -4,9 +4,8 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "15.a"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519995684121)
+	@lprmeta.productionDate(1560852451051)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -20,7 +19,8 @@ rule "15.a"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
-	@lprmeta.errorText(Resultatsindberetnings navn skal findes i kodelisten resindb.navn)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Der er angivet forkert SKS-kode for resultatindberetningens navn)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
