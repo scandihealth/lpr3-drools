@@ -6,15 +6,13 @@
       <threshold>24</threshold>
     </default>
     <int>32</int>
-    <int>20</int>
-    <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>true</boolean>
+    <int>21</int>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1522277975994</long>
+    <long>1560858511531</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -27,6 +25,8 @@
     <long>9223372036854775807</long>
     <string>lprmeta.ruleGroup</string>
     <string>15</string>
+    <string>dcore.description[0]</string>
+    <string>Anmeldelsesstatus (resultat RDA01) skal være i en af kodelisterne res.statuscar.subb og res.statuscar.subc ved komplet indberetning</string>
     <string>lprmeta.errorNumber</string>
     <string>90013</string>
     <string>lprmeta.archivedDate</string>
@@ -39,10 +39,12 @@
     <long>9223372036854775807</long>
     <string>lprmeta.encounterEndFromDate</string>
     <long>0</long>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>true</boolean>
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Anmeldelsesstatus (resultat RDA01) skal være i en af kodelisterne res.statuscar.subb og res.statuscar.subc ved komplet indberetning</string>
+    <string>Anmeldelsesstatus AZCA1, AZCA3, AZCA4, AZCA9 må kun anvendes når resultatindberetningen &apos;canceranmeldelse&apos; er komplet</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
