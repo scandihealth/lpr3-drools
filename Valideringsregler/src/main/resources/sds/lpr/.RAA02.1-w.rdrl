@@ -7,14 +7,12 @@
     </default>
     <int>32</int>
     <int>22</int>
-    <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>true</boolean>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1535827486274</long>
+    <long>1560860915123</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -30,7 +28,7 @@
     <string>lprmeta.ruleGroup</string>
     <string>15</string>
     <string>dcore.description[0]</string>
-    <string></string>
+    <string>Hvis aktionsdiagnosen er i kodelisten diag.foedmor, skal der være en komplet resultatindberetning RAA02 (fødselsindberetning mor) senest 7 dage efter kontaktens afslutning</string>
     <string>lprmeta.errorNumber</string>
     <string>9201</string>
     <string>lprmeta.archivedDate</string>
@@ -43,10 +41,12 @@
     <long>9223372036854775807</long>
     <string>lprmeta.encounterEndFromDate</string>
     <long>0</long>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>true</boolean>
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Hvis aktionsdiagnosen er i kodelisten diag.foedmor, skal der være en komplet resultatindberetning RAA02 (fødselsindberetning mor) senest 7 dage efter kontaktens afslutning</string>
+    <string>Senest 7 dage efter kontaktens afslutning skal  fødselsdiagnosen have en komplet resultatindberetning med fødselsoplysninger for mor</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
