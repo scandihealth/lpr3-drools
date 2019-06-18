@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "16.03"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1518602570985)
+	@lprmeta.productionDate(1560841760699)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -21,7 +21,7 @@ rule "16.03"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(En SKS-kode, der er anvendt som type for et resultat knyttet til en resultatindberetning, der er trigget af en kontakt, skal være gyldig på kontaktens starttidspunkt)
+	@lprmeta.errorText(Resultattypen er ugyldig på kontaktens starttidspunkt (teknik))
 	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
