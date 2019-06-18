@@ -6,9 +6,8 @@ import com.dxc.lpr3.domain.Resultat;
 import java.util.Set;
 
 rule "RAA02.RDA22-2"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1525343098120)
+	@lprmeta.productionDate(1560868608965)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -22,7 +21,8 @@ rule "RAA02.RDA22-2"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
-	@lprmeta.errorText(Der må højst være 1 resultat af typen RDA22 (paritet))
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Paritet må kun angives én gang)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
