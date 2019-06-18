@@ -4,9 +4,8 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA02.RDA23-1"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519205676657)
+	@lprmeta.productionDate(1560869089362)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -20,7 +19,8 @@ rule "RAA02.RDA23-1"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Antal levendefødte (resultat RDA23) skal være større end eller lig med 0)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Antal levendefødte skal være større end eller lig med 0)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
