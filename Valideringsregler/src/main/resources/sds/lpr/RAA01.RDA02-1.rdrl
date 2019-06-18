@@ -5,9 +5,8 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA01.RDA02-1"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1522275573010)
+	@lprmeta.productionDate(1560859291759)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -21,9 +20,10 @@ rule "RAA01.RDA02-1"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(Makroskopisk diagnosegrundlag (resultat RDA02) skal være i kodelisten res.makrogr)
+	@lprmeta.errorText(Der er angivet forkert SKS-kode for makroskopisk grundlag i resultatindberetningen 'canceranmeldelse')
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
