@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "16.12"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519041504722)
+	@lprmeta.productionDate(1560852519259)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -24,7 +24,7 @@ rule "16.12"
 	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(Et tidspunkt for et resultat knyttet til en resultatindberetning, der er trigget af en forløbsmarkør, skal ligge efter forløbsmarkørens tidspunkt)
+	@lprmeta.errorText(Resultatindberetningen indeholder et tidspunkt, der ligger før forløbsmarkørens tidspunkt (teknik))
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
