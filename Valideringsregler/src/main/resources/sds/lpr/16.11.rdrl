@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.ForloebElement;
 
 rule "16.11"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1521627453410)
+	@lprmeta.productionDate(1560852404917)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -24,7 +24,7 @@ rule "16.11"
 	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(Et tidspunkt for et resultat knyttet til en resultatindberetning, der er trigget af et forløbselement, skal ligge efter forløbselementets starttidspunkt)
+	@lprmeta.errorText(Resultatindberetningen indeholder et tidspunkt, der ligger før forløbselementets starttidspunkt (teknik))
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
