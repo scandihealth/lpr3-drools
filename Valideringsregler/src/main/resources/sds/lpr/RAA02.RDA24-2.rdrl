@@ -6,9 +6,8 @@ import com.dxc.lpr3.domain.Resultat;
 import java.util.Set;
 
 rule "RAA02.RDA24-2"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1525346094040)
+	@lprmeta.productionDate(1560870188919)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -22,7 +21,8 @@ rule "RAA02.RDA24-2"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
-	@lprmeta.errorText(Der må højst være 1 resultat af typen RDA24 (antal dødfødte))
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Antal dødfødte må kun angives én gang)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
