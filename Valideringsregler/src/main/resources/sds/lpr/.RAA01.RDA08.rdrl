@@ -6,15 +6,13 @@
       <threshold>24</threshold>
     </default>
     <int>32</int>
-    <int>20</int>
-    <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>true</boolean>
+    <int>21</int>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.productionDate</string>
-    <long>1522272745591</long>
+    <long>1560867694845</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -27,6 +25,8 @@
     <long>9223372036854775807</long>
     <string>lprmeta.ruleGroup</string>
     <string>15</string>
+    <string>dcore.description[0]</string>
+    <string>For resultatindberetning RAA01 (canceranmeldelse) skal der være et resultat af type RDA08 (AnnArbor-stadie), når diagnosen er i kodelisten diag.car.lymfom og anmeldelsesstatus (resultat RDA01) er i kodelisten res.statuscar.subb</string>
     <string>lprmeta.errorNumber</string>
     <string>9008</string>
     <string>lprmeta.archivedDate</string>
@@ -39,10 +39,12 @@
     <long>9223372036854775807</long>
     <string>lprmeta.encounterEndFromDate</string>
     <long>-9223372036854775808</long>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>true</boolean>
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>For resultatindberetning RAA01 (canceranmeldelse) skal der være et resultat af type RDA08 (AnnArbor-stadie), når diagnosen er i kodelisten diag.car.lymfom og anmeldelsesstatus (resultat RDA01) er i kodelisten res.statuscar.subb</string>
+    <string>Cancerdiagnosen mangler SKS-kode for Ann Arbor-stadie  i resultatindberetningen &apos;canceranmeldelse&apos;</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
