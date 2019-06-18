@@ -8,7 +8,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "16.15"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519115861800)
+	@lprmeta.productionDate(1560855128277)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -25,7 +25,7 @@ rule "16.15"
 	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(Et tidspunkt for et resultat knyttet til en resultatindberetning, der er trigget af en diagnose, skal ligge efter starttidspunkt for den kontakt, som diagnosen knytter sig til)
+	@lprmeta.errorText(Resultatindberetningen indeholder et tidspunkt, der ligger udenfor den kontakt, hvor en diagnose har trigget resultatindberetningen (teknik))
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
