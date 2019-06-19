@@ -4,9 +4,8 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA03.RDA36-1"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1543481492279)
+	@lprmeta.productionDate(1560944586260)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -20,7 +19,9 @@ rule "RAA03.RDA36-1"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Hovedomfang (resultat RDA36) skal være et heltal mellem 10 og 99 eller -1)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText("Hovedomfang skal være et heltal mellem 10 og 99 
+eller -1 (uoplyst)")
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
