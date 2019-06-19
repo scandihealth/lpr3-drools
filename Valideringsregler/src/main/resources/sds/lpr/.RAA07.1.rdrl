@@ -6,15 +6,13 @@
       <threshold>24</threshold>
     </default>
     <int>32</int>
-    <int>20</int>
-    <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>true</boolean>
+    <int>21</int>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1519198105994</long>
+    <long>1560953546738</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -27,6 +25,8 @@
     <long>9223372036854775807</long>
     <string>lprmeta.ruleGroup</string>
     <string>15</string>
+    <string>dcore.description[0]</string>
+    <string>For procedurekoder i kodelisten proc.inhabil.suba skal der være en komplet resultatindberetning RAA07</string>
     <string>lprmeta.errorNumber</string>
     <string>9701</string>
     <string>lprmeta.archivedDate</string>
@@ -39,10 +39,12 @@
     <long>9223372036854775807</long>
     <string>lprmeta.encounterEndFromDate</string>
     <long>0</long>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>true</boolean>
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>For procedurekoder i kodelisten proc.inhabil.suba skal der være en komplet resultatindberetning RAA07. </string>
+    <string>Procedurekoden BRXY10 mangler resultatindberetning for beslutning vedr. personlig alarm- og pejlesystem</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
