@@ -5,9 +5,8 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA04.RDA51"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1520593423454)
+	@lprmeta.productionDate(1560936190120)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -21,7 +20,8 @@ rule "RAA04.RDA51"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
-	@lprmeta.errorText(For resultatindberetning RAA04 (abortoplysninger) skal der være et resultat af type RDA51 (samrådstilladelse) ved komplet indberetning, hvis diagnosen er i en af kodelisterne diag.abort.samraad.suba eller diag.abort.samraad.subb)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Kode for samrådstilladelse skal angives, hvis diagnosen er enten DO069 eller DO059 ved komplet resultatindberetning 'abortoplysninger')
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
