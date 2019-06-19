@@ -4,9 +4,8 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "RAA05.3"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1520321730365)
+	@lprmeta.productionDate(1560952563335)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -20,9 +19,10 @@ rule "RAA05.3"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(Resultatindberetning RAA05 (skadeindberetning) må kun trigges af en kontakt med en kontaktårsag i kodelisten admin.kontaarsag.skade, kontakttype i kodelisten admin.konttype.fysfr og prioritet i kodelisten admin.prioritet.akut)
+	@lprmeta.errorText(Resultatindberetning med skadeoplysninger må kun indberettes for akut fysisk fremmøde efter ulykke, vold eller selvmord(-sforsøg))
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
