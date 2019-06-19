@@ -7,14 +7,12 @@
     </default>
     <int>32</int>
     <int>22</int>
-    <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>true</boolean>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1535829031735</long>
+    <long>1560944573775</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -43,10 +41,12 @@
     <long>9223372036854775807</long>
     <string>lprmeta.encounterEndFromDate</string>
     <long>0</long>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>true</boolean>
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Hvis kontaktårsagen er i kodelisten admin.kontaarsag.skade, kontakttypen i kodelisten admin.konttype.fysfr og prioritet i kodelisten admin.prioritet.akut, skal der være en komplet resultatindberetning RAA05 (skadeindberetning) senest 3 dage efter kontaktens afslutning</string>
+    <string>Senest 3 dage efter kontaktens afslutning skal der være en komplet resultatindberetning med skadeoplysninger</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
