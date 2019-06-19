@@ -7,14 +7,12 @@
     </default>
     <int>32</int>
     <int>22</int>
-    <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>true</boolean>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.productionDate</string>
-    <long>1535828518427</long>
+    <long>1560931114222</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -30,7 +28,7 @@
     <string>lprmeta.ruleGroup</string>
     <string>15</string>
     <string>dcore.description[0]</string>
-    <string>H</string>
+    <string>Hvis der er en diagnose i kodelisten diag.abort, skal der være en komplet resultatindberetning RAA04 (abortoplysninger) senest 7 dage efter kontaktens afslutning</string>
     <string>lprmeta.errorNumber</string>
     <string>9401</string>
     <string>lprmeta.archivedDate</string>
@@ -43,10 +41,12 @@
     <long>9223372036854775807</long>
     <string>lprmeta.encounterEndFromDate</string>
     <long>-9223372036854775808</long>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>true</boolean>
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Hvis der er en diagnose i kodelisten diag.abort, skal der være en komplet resultatindberetning RAA04 (abortoplysninger) senest 7 dage efter kontaktens afslutning</string>
+    <string>Senest 7 dage efter kontaktens afslutning skal  bidiagnose for abort  have en komplet resultatindberetning &apos;abortoplysninger&apos;</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
