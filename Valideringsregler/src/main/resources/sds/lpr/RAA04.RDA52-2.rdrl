@@ -5,9 +5,8 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA04.RDA52-2"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519901542799)
+	@lprmeta.productionDate(1560951285114)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -21,7 +20,8 @@ rule "RAA04.RDA52-2"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
-	@lprmeta.errorText(Misdannelsesoplysning (resultat RDA52) skal være i kodelisten res.misdann)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Der er angivet forkert SKS-kode for misdannelsesoplysning i resultatindberetning 'abortoplysninger')
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
