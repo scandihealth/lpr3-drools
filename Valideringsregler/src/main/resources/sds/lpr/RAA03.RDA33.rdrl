@@ -6,9 +6,8 @@ import com.dxc.lpr3.domain.Kontakt;
 import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "RAA03.RDA33"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1518776513312)
+	@lprmeta.productionDate(1560930033916)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -22,9 +21,10 @@ rule "RAA03.RDA33"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(For komplet resultatindberetning RAA03 (fødselsindberetning barn) skal der være et resultat af type RDA33 (flernummer), når kuld (resultat RDA32) er større end 1)
+	@lprmeta.errorText(Flernummer skal angives, når kuld er større end 1 og resultatindberetning med fødselsoplysninger for barn er komplet)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
