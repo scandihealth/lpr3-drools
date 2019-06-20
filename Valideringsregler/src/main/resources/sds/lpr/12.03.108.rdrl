@@ -6,30 +6,30 @@ import com.dxc.lpr3.domain.Diagnose;
 import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "12.03.108"
-	@lprmeta.isValidForPrivateSectorReports(true)
-	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1517993708589)
-	@lprmeta.reportReceivedFromDate(0)
-	@lprmeta.isValidForLPRReports(true)
-	@lprmeta.episodeOfCareStartFromDate(0)
-	@lprmeta.errorType(ERROR)
-	@lprmeta.encounterStartFromDate(0)
-	@lprmeta.encounterEndToDate(9223372036854775807)
-	@lprmeta.ruleGroup(DIAGNOSE)
-	@lprmeta.errorNumber(1203108)
-	@lprmeta.archivedDate(0)
 	@lprmeta.type(REPORT_VALIDATION)
-	@lprmeta.hasProdVersion(true)
-	@lprmeta.reportReceivedToDate(9223372036854775807)
-	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Hvis der til en kontakt er knyttet en aktionsdiagnose for levendefødt barn efter provokeret abortindgreb , så skal der også være tilknyttet en abortdiagnose som bidiagnose)
-	@lprmeta.encounterStartToDate(9223372036854775807)
-	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
+	@lprmeta.errorType(ERROR)
+	@lprmeta.ruleGroup(DIAGNOSE)
+	@lprmeta.errorText(Der skal angives en abortdiagnose som bidiagnose, når der til en kontakt er angivet en aktionsdiagnose for levendefødt barn efter provokeret abortindgreb)
+	@lprmeta.errorNumber(1203108)
+	@lprmeta.isValidForDUSASAbroadReports(true)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
+	@lprmeta.isValidForLPRReports(true)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.productionDate(1561029134344)
+	@lprmeta.hasProdVersion(true)
+	@lprmeta.archivedDate(0)
+	@lprmeta.reportReceivedFromDate(0)
+	@lprmeta.reportReceivedToDate(9223372036854775807)
+	@lprmeta.encounterStartFromDate(0)
+	@lprmeta.encounterStartToDate(9223372036854775807)
+	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.encounterEndToDate(9223372036854775807)
+	@lprmeta.episodeOfCareStartFromDate(0)
+	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	dialect "mvel"
 	when
 		K : Kontakt( aktionDiagnose != null , aktionDiagnose.kode.primaerKode.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) contains "diag.foedmor.samraad" , KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt)
-		not (		B : Diagnose( kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.abort.samraad" ) from K.bidiagnoser
-) 
+				not (		B : Diagnose( kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.abort.samraad" ) from K.bidiagnoser
+		)
 	then
 end
