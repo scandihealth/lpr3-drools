@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.productionDate</string>
-    <long>1561034828577</long>
+    <long>1561034884390</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -44,7 +44,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Angivelse af antal implantater mangler i resultatindberetningen for implantatoplysninger
+    <string>Antal implantater mangler i resultatindberetningen for implantatoplysninger
 </string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
