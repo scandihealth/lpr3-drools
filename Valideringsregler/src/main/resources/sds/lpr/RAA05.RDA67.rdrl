@@ -6,9 +6,8 @@ import com.dxc.lpr3.domain.Resultat;
 import com.dxc.lpr3.domain.Kontakt;
 
 rule "RAA05.RDA67"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519983855881)
+	@lprmeta.productionDate(1561030622998)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -22,9 +21,10 @@ rule "RAA05.RDA67"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
+	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(Uheldssituation (resultat RDA67) skal være i kodelisten res.uheldsituation)
+	@lprmeta.errorText(Der er angivet forkert SKS-kode for uheldssituation i resultatindberetning med skadeoplysninger)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
