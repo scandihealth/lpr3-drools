@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA08.RDB06-2"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1561034828577)
+	@lprmeta.productionDate(1561034884390)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -21,7 +21,7 @@ rule "RAA08.RDB06-2"
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
 	@lprmeta.isValidForPrivateSectorReports(true)
-	@lprmeta.errorText(Angivelse af antal implantater mangler i resultatindberetningen for implantatoplysninger
+	@lprmeta.errorText(Antal implantater mangler i resultatindberetningen for implantatoplysninger
 )
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
