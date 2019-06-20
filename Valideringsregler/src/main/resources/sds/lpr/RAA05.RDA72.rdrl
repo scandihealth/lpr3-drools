@@ -4,9 +4,8 @@ import java.lang.Number;
 import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA05.RDA72"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519723628804)
+	@lprmeta.productionDate(1561035372487)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -20,8 +19,8 @@ rule "RAA05.RDA72"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(X-koordinat (resultat RDA72) skal være et tal mellem 400.000 og 1.000.000
-)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(X-koordinat skal være et tal mellem 400.000 og 1.000.000)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
