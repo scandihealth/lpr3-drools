@@ -6,15 +6,13 @@
       <threshold>24</threshold>
     </default>
     <int>32</int>
-    <int>20</int>
-    <string>lprmeta.isValidForPrivateSectorReports</string>
-    <boolean>true</boolean>
+    <int>21</int>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.productionDate</string>
-    <long>1523281330396</long>
+    <long>1561103302322</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>-9223372036854775808</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -27,6 +25,8 @@
     <long>9223372036854775807</long>
     <string>lprmeta.ruleGroup</string>
     <string>15</string>
+    <string>dcore.description[0]</string>
+    <string>Resultatindberetning RAA10 (tvangsforanstaltning) må kun trigges af en procedure med en kode i kodelisten proc.tvangsforanst</string>
     <string>lprmeta.errorNumber</string>
     <string>91000</string>
     <string>lprmeta.archivedDate</string>
@@ -39,10 +39,12 @@
     <long>9223372036854775807</long>
     <string>lprmeta.encounterEndFromDate</string>
     <long>-9223372036854775808</long>
+    <string>lprmeta.isValidForPrivateSectorReports</string>
+    <boolean>true</boolean>
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Resultatindberetning RAA10 (tvangsforanstaltning) må kun trigges af en procedure med en kode i kodelisten proc.tvangsforanst</string>
+    <string>Resultatindberetning for tvangsforanstaltning må kun indberettes ved procedurekoden AVSA</string>
     <string>lprmeta.episodeOfCareStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.isValidForDUSASSpecialityReports</string>
