@@ -5,9 +5,8 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA10.2"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1520504451480)
+	@lprmeta.productionDate(1561103084754)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -21,7 +20,8 @@ rule "RAA10.2"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
-	@lprmeta.errorText(Resultatindberetning RAA10 (tvangsforanstaltning) må kun indeholde resultater af typen RDA96-RDA98)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Der er angivet forkert resultattype i resultatindberetning for tvangsforanstaltning)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
