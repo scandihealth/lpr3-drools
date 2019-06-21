@@ -6,9 +6,8 @@ import com.dxc.lpr3.domain.Resultat;
 import java.util.Set;
 
 rule "RAA08.RDB09"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1537382954266)
+	@lprmeta.productionDate(1561101052945)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -22,7 +21,8 @@ rule "RAA08.RDB09"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
-	@lprmeta.errorText(Der må højst være 1 resultat af typen RDB09 (udløbstidspunkt))
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Udløbstidspunkt må kun angives én gang)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
