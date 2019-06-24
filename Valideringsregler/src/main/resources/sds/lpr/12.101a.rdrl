@@ -5,9 +5,8 @@ import com.dxc.lpr3.domain.Kontakt;
 import com.dxc.lpr3.domain.Diagnose;
 
 rule "12.101a"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1521202869916)
+	@lprmeta.productionDate(1561360464903)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -21,7 +20,8 @@ rule "12.101a"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(-9223372036854775808)
-	@lprmeta.errorText(Aktionsdiagnosens kode skal findes i kodelisten diag)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(SKS-koden må ikke indberettes som aktionsdiagnose)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
