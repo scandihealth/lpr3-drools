@@ -6,13 +6,13 @@
       <threshold>24</threshold>
     </default>
     <int>32</int>
-    <int>20</int>
+    <int>21</int>
     <string>lprmeta.isValidForDUSASAbroadReports</string>
     <boolean>true</boolean>
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1560412898685</long>
+    <long>1561367658819</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -25,6 +25,8 @@
     <long>9223372036854775807</long>
     <string>lprmeta.ruleGroup</string>
     <string>7</string>
+    <string>dcore.description[0]</string>
+    <string>Henvisningsårsagen skal findes i en af kodelisterne diag, proc.act, proc.opr, proc.und</string>
     <string>lprmeta.errorNumber</string>
     <string>6001</string>
     <string>lprmeta.archivedDate</string>
