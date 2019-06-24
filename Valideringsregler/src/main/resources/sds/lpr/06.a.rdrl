@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.Henvisning;
 
 rule "06.a"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560412898685)
+	@lprmeta.productionDate(1561367658819)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
