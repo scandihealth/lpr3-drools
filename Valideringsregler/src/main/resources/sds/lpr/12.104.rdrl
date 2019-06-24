@@ -6,9 +6,8 @@ import com.dxc.lpr3.domain.Kontakt;
 import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "12.104"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1517408396836)
+	@lprmeta.productionDate(1561361088151)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -22,8 +21,8 @@ rule "12.104"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Fødselsdiagnose for barn skal indberettes som aktionsdiagnose
-)
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Fødselsdiagnose skal angives som aktionsdiagnose for barn)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
