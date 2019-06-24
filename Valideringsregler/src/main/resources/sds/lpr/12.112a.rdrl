@@ -5,9 +5,8 @@ import com.dxc.lpr3.domain.Diagnose;
 import com.dxc.lpr3.domain.Kontakt;
 
 rule "12.112a"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1519808107158)
+	@lprmeta.productionDate(1561364881003)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -21,7 +20,8 @@ rule "12.112a"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Hvis en diagnose er en anmeldelsespligtig cancerdiagnose for primær kræft, så skal der til diagnosen være tilknyttet en oplysning om lokalrecidiv (herunder ingen lokalrecidiv))
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Cancerdiagnosen mangler oplysning om lokalrecidiv (herunder 'intet lokalrecidiv'))
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
