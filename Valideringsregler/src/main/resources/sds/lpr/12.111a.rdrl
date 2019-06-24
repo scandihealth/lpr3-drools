@@ -5,9 +5,8 @@ import com.dxc.lpr3.domain.Diagnose;
 import com.dxc.lpr3.domain.Kontakt;
 
 rule "12.111a"
-	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1518089391403)
+	@lprmeta.productionDate(1561364309673)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -21,7 +20,8 @@ rule "12.111a"
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
-	@lprmeta.errorText(Hvis en diagnose er en anmeldelsespligtig cancerdiagnose for primær kræft, så skal der til diagnosen være tilknyttet en oplysning om metastasering (herunder ingen metastaser))
+	@lprmeta.isValidForPrivateSectorReports(true)
+	@lprmeta.errorText(Cancerdiagnosen mangler oplysning om metastasering (herunder 'ingen metastaser'))
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
