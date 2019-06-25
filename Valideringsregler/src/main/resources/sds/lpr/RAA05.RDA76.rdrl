@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA05.RDA76"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1561035798119)
+	@lprmeta.productionDate(1561448665056)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -23,7 +23,7 @@ rule "RAA05.RDA76"
 	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText(UTM-zone skal være 32 eller 33)
+	@lprmeta.errorText(Der er angivet forkert SKS-kode for produkt i resultatindberetning med skadeoplysninger)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
