@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA03.RDA35-1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560940145593)
+	@lprmeta.productionDate(1561448672654)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -20,8 +20,7 @@ rule "RAA03.RDA35-1"
 	@lprmeta.reportReceivedToDate(9223372036854775807)
 	@lprmeta.encounterEndFromDate(0)
 	@lprmeta.isValidForPrivateSectorReports(true)
-	@lprmeta.errorText("Apgar-5 skal være et heltal mellem 0 og 10 
-eller -1 (uoplyst)")
+	@lprmeta.errorText(Apgar-5 skal være et heltal mellem 0 og 10 eller -1 (uoplyst))
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
