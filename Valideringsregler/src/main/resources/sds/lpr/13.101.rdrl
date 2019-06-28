@@ -8,7 +8,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "13.101"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560759107973)
+	@lprmeta.productionDate(1561722063044)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -31,6 +31,6 @@ rule "13.101"
 	when
 		D : Diagnose( metastaser.empty == false )
 		K : Kontakt( ( aktionDiagnose != null && aktionDiagnose == D )|| ( bidiagnoser != null && bidiagnoser contains D ), KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt)
-		(SksKode( ) from D.metastaser)
+		(SksKode( kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) not contains "diag.metastase" ) from D.metastaser)
 	then
 end
