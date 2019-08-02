@@ -12,7 +12,7 @@
     <string>lprmeta.reportReceivedFromDate</string>
     <long>0</long>
     <string>lprmeta.productionDate</string>
-    <long>1560951372467</long>
+    <long>1564736330638</long>
     <string>lprmeta.episodeOfCareStartFromDate</string>
     <long>0</long>
     <string>lprmeta.isValidForLPRReports</string>
@@ -42,7 +42,7 @@
     <string>lprmeta.encounterStartToDate</string>
     <long>9223372036854775807</long>
     <string>lprmeta.errorText</string>
-    <string>Base-excess fra navlesnorsarterie  skal være et tal mellem -19,9 og 9,9</string>
+    <string>Base-excess fra navlesnorsarterie  skal være et tal mellem -30 og 30</string>
     <string>lprmeta.isValidForPrivateSectorReports</string>
     <boolean>true</boolean>
     <string>lprmeta.episodeOfCareStartToDate</string>
