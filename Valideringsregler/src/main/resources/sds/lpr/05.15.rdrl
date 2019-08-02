@@ -6,7 +6,7 @@ import java.time.OffsetDateTime;
 
 rule "05.15"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560410575405)
+	@lprmeta.productionDate(1564741905221)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,6 +27,6 @@ rule "05.15"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Kontakt( startTidspunkt.plusDays(30) < ( OffsetDateTime.now() ) , aktionDiagnose == null )
+		Kontakt( startTidspunkt.plusDays(30) < ( OffsetDateTime.now() ) , aktionDiagnose == null , harSlutTidspunkt() == false )
 	then
 end
