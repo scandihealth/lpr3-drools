@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Diagnose;
 
 rule "12.102"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1561364604645)
+	@lprmeta.productionDate(1565358994426)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -28,8 +28,8 @@ rule "12.102"
 	dialect "mvel"
 	when
 		K : Kontakt( KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt)
-		( 		Diagnose( kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.lateral" , sideAngivelse == null ) from K.bidiagnoser
- or 		Diagnose( kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.lateral" , sideAngivelse == null ) from K.aktionDiagnose
+		( 		Fejlkilde : Diagnose( kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.lateral" , sideAngivelse == null ) from K.bidiagnoser
+ or 		Fejlkilde : Diagnose( kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.lateral" , sideAngivelse == null ) from K.aktionDiagnose
  )
 	then
 end
