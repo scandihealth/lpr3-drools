@@ -1,11 +1,11 @@
 <project-repositories>
   <repositories>
     <repository>
-      <include>false</include>
+      <include>true</include>
       <metadata>
-        <id>central</id>
-        <url>https://repo.maven.apache.org/maven2</url>
-        <source>PROJECT</source>
+        <id>guvnor-m2-repo</id>
+        <url>http://wfly-master:8181/drools-wb-webapp/maven2</url>
+        <source>SETTINGS</source>
       </metadata>
     </repository>
     <repository>
@@ -17,11 +17,11 @@
       </metadata>
     </repository>
     <repository>
-      <include>true</include>
+      <include>false</include>
       <metadata>
-        <id>guvnor-m2-repo</id>
-        <url>http://wfly-master:8181/drools-wb-webapp/maven2</url>
-        <source>SETTINGS</source>
+        <id>central</id>
+        <url>https://repo.maven.apache.org/maven2</url>
+        <source>PROJECT</source>
       </metadata>
     </repository>
   </repositories>
