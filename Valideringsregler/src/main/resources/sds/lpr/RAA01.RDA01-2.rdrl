@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA01.RDA01-2"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560857813783)
+	@lprmeta.productionDate(1566905460768)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -23,7 +23,7 @@ rule "RAA01.RDA01-2"
 	@lprmeta.isValidForPrivateSectorReports(true)
 	@lprmeta.encounterStartToDate(9223372036854775807)
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
-	@lprmeta.errorText( Anmeldelsesstatus AZCA0  må kun anvendes når resultatindberetningen 'canceranmeldelse' er inkomplet)
+	@lprmeta.errorText(Anmeldelsesstatus skal være AZCA0 når resultatindberetningen 'canceranmeldelse' er inkomplet)
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
