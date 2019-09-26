@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA01.RDA04-3"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560861516487)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -27,8 +27,8 @@ rule "RAA01.RDA04-3"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		RI : ResultatIndberetning( diagnose != null , navn.kode == "RAA01" , RIaarsagStartTidspunkt : aarsagStartTidspunkt, RIaarsagSlutTidspunkt : aarsagSlutTidspunkt, diagnose.kode.primaerKode.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "diag.car.ta" )
-		(Resultat( type.kode == "RDA01" , vaerdiSomSksKode().kodelisterIndenforPeriode(RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) contains "res.statuscar.subb" ) from RI.resultater)
-		(Resultat( type.kode == "RDA04" , vaerdiSomSksKode().kodelisterIndenforPeriode(RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) not contains "res.tcstad.ta" ) from RI.resultater)
+		RI : ResultatIndberetning( diagnose != null , navn.kode == "RAA01" , RIaarsagStartTidspunkt : aarsagStartTidspunkt, RIaarsagSlutTidspunkt : aarsagSlutTidspunkt, diagnose.kode.primaerKode.gyldigIKodeListe("diag_car_ta", aarsagStartTidspunkt, aarsagSlutTidspunkt) )
+		(Resultat( type.kode == "RDA01" , vaerdiSomSksKode().gyldigIKodeListe("res_statuscar_subb", RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) ) from RI.resultater)
+		(Resultat( type.kode == "RDA04" , vaerdiSomSksKode().ugyldigIKodeListe("res_tcstad_ta", RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) ) from RI.resultater)
 	then
 end

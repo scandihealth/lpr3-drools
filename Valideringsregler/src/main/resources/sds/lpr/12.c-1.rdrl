@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "12.c-1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560763730965)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -26,6 +26,6 @@ rule "12.c-1"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Kontakt( aktionDiagnose != null , aktionDiagnose.sideAngivelse != null , aktionDiagnose.sideAngivelse.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "spec.lateraldiag" )
+		Kontakt( aktionDiagnose != null , aktionDiagnose.sideAngivelse != null , aktionDiagnose.sideAngivelse.ugyldigIKodeListe("spec_lateraldiag", startTidspunkt, slutTidspunkt) )
 	then
 end

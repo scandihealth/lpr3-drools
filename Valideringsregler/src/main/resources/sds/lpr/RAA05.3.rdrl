@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "RAA05.3"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560952563335)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -26,6 +26,6 @@ rule "RAA05.3"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		RI : ResultatIndberetning( navn.kode == "RAA05" , kontakt == null || ( kontakt != null && kontakt.kontaktAarsag != null && kontakt.kontaktAarsag.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) not contains "admin.kontaarsag.skade" )|| ( kontakt != null && kontakt.kontaktAarsag == null )|| ( kontakt != null && kontakt.type.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) not contains "admin.konttype.fysfr" )|| ( kontakt != null && kontakt.prioritet.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) not contains "admin.prioritet.akut" ))
+		RI : ResultatIndberetning( navn.kode == "RAA05" , kontakt == null || ( kontakt != null && kontakt.kontaktAarsag != null && kontakt.kontaktAarsag.ugyldigIKodeListe("admin_kontaarsag_skade", aarsagStartTidspunkt, aarsagSlutTidspunkt) )|| ( kontakt != null && kontakt.kontaktAarsag == null )|| ( kontakt != null && kontakt.type.ugyldigIKodeListe("admin_konttype_fysfr", aarsagStartTidspunkt, aarsagSlutTidspunkt) )|| ( kontakt != null && kontakt.prioritet.ugyldigIKodeListe("admin_prioritet_akut", aarsagStartTidspunkt, aarsagSlutTidspunkt) ))
 	then
 end

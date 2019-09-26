@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA01.RDA03"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560860074718)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -28,7 +28,7 @@ rule "RAA01.RDA03"
 	dialect "mvel"
 	when
 		RI : ResultatIndberetning( navn.kode == "RAA01" , RIaarsagStartTidspunkt : aarsagStartTidspunkt, RIaarsagSlutTidspunkt : aarsagSlutTidspunkt)
-		(Resultat( type.kode == "RDA01" , vaerdiSomSksKode().kodelisterIndenforPeriode(RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) contains "res.statuscar.suba" ) from RI.resultater)
+		(Resultat( type.kode == "RDA01" , vaerdiSomSksKode().gyldigIKodeListe("res_statuscar_suba", RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) ) from RI.resultater)
 		not (		Resultat( type.kode == "RDA03" ) from RI.resultater
 ) 
 	then

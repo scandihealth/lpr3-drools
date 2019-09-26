@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "12.109"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1561363812572)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -29,8 +29,8 @@ rule "12.109"
 	dialect "mvel"
 	when
 		K : Kontakt( KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt)
-		(Diagnose( kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.metastase" ) from K.aktionDiagnose)
-		not (		Diagnose( kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.primkraeft" ) from K.bidiagnoser
+		(Diagnose( kode.primaerKode.gyldigIKodeListe("diag_metastase", KstartTidspunkt, KslutTidspunkt) ) from K.aktionDiagnose)
+		not (		Diagnose( kode.primaerKode.gyldigIKodeListe("diag_primkraeft", KstartTidspunkt, KslutTidspunkt) ) from K.bidiagnoser
 ) 
 	then
 end

@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA04.RDA51"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560936190120)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -27,7 +27,7 @@ rule "RAA04.RDA51"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		RI : ResultatIndberetning( D : diagnose != null , navn.kode == "RAA04" , status.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "resindb.status.suba" , diagnose.kode.primaerKode.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "diag.abort.samraad.suba" || diagnose.kode.primaerKode.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "diagn.abor.samraad.subb" )
+		RI : ResultatIndberetning( D : diagnose != null , navn.kode == "RAA04" , status.gyldigIKodeListe("resindb_status_suba", aarsagStartTidspunkt, aarsagSlutTidspunkt) , diagnose.kode.primaerKode.gyldigIKodeListe("diag_abort_samraad_suba", aarsagStartTidspunkt, aarsagSlutTidspunkt) || diagnose.kode.primaerKode.gyldigIKodeListe("diagn_abor_samraad_subb", aarsagStartTidspunkt, aarsagSlutTidspunkt) )
 		not (		Resultat( type.kode == "RDA51" ) from RI.resultater
 ) 
 	then

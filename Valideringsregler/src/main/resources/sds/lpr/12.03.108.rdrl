@@ -15,7 +15,7 @@ rule "12.03.108"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.isValidForPrivateSectorReports(true)
-	@lprmeta.productionDate(1561029134344)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.hasProdVersion(true)
 	@lprmeta.archivedDate(0)
 	@lprmeta.reportReceivedFromDate(0)
@@ -28,8 +28,8 @@ rule "12.03.108"
 	@lprmeta.episodeOfCareStartToDate(9223372036854775807)
 	dialect "mvel"
 	when
-		K : Kontakt( aktionDiagnose != null , aktionDiagnose.kode.primaerKode.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) contains "diag.foedmor.samraad" , KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt)
-				not (		B : Diagnose( kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.abort.samraad" ) from K.bidiagnoser
+		K : Kontakt( aktionDiagnose != null , aktionDiagnose.kode.primaerKode.gyldigIKodeListe("diag_foedmor_samraad", startTidspunkt, slutTidspunkt) , KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt)
+				not (		B : Diagnose( kode.primaerKode.gyldigIKodeListe("diag_abort_samraad", KstartTidspunkt, KslutTidspunkt) ) from K.bidiagnoser
 		)
 	then
 end

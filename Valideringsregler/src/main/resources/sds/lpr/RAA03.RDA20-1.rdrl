@@ -8,7 +8,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "RAA03.RDA20-1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560869552680)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -29,7 +29,7 @@ rule "RAA03.RDA20-1"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		RI : ResultatIndberetning( navn.kode == "RAA03" , status.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "resindb.status.suba" , RIaarsagStartTidspunkt : aarsagStartTidspunkt, RIaarsagSlutTidspunkt : aarsagSlutTidspunkt)
-		(Resultat( type.kode == "RDA20" , vaerdiSomSksKode().kodelisterIndenforPeriode(RIaarsagStartTidspunkt, RIaarsagStartTidspunkt) not contains "res.gestald" ) from RI.resultater)
+		RI : ResultatIndberetning( navn.kode == "RAA03" , status.gyldigIKodeListe("resindb_status_suba", aarsagStartTidspunkt, aarsagSlutTidspunkt) , RIaarsagStartTidspunkt : aarsagStartTidspunkt, RIaarsagSlutTidspunkt : aarsagSlutTidspunkt)
+		(Resultat( type.kode == "RDA20" , vaerdiSomSksKode().ugyldigIKodeListe("res_gestald", RIaarsagStartTidspunkt, RIaarsagStartTidspunkt) ) from RI.resultater)
 	then
 end

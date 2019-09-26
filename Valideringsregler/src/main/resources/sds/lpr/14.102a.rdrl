@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "14.102a"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1561365992404)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,6 +28,6 @@ rule "14.102a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( aktionDiagnose != null , aktionDiagnose.lokalRecidiver.empty == false , aktionDiagnose.kode.primaerKode.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "diag.primkraeft" )
+		K : Kontakt( aktionDiagnose != null , aktionDiagnose.lokalRecidiver.empty == false , aktionDiagnose.kode.primaerKode.ugyldigIKodeListe("diag_primkraeft", startTidspunkt, slutTidspunkt) )
 	then
 end

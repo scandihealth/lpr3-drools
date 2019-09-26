@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "11.109"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560425117437)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,7 +28,7 @@ rule "11.109"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		P : Procedure( kode.primaerKode.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) contains "proc.opr.komplikat" )
+		P : Procedure( kode.primaerKode.gyldigIKodeListe("proc_opr_komplikat", startTidspunkt, slutTidspunkt) )
 		not (		ResultatIndberetning( navn.kode == "RAA09" ) from P.resultatIndberetninger
 ) 
 	then

@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "15.a"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560852451051)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -26,6 +26,6 @@ rule "15.a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		ResultatIndberetning( navn.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) not contains "resindb.navn" )
+		ResultatIndberetning( navn.ugyldigIKodeListe("resindb_navn", aarsagStartTidspunkt, aarsagSlutTidspunkt) )
 	then
 end

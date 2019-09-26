@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "RAA01.1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560855346521)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,7 +27,7 @@ rule "RAA01.1"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Kontakt( A : aktionDiagnose != null , aktionDiagnose.kode.primaerKode.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) contains "diag.car" )
+		Kontakt( A : aktionDiagnose != null , aktionDiagnose.kode.primaerKode.gyldigIKodeListe("diag_car", startTidspunkt, slutTidspunkt) )
 		not (ResultatIndberetning( diagnose == A , navn.kode == "RAA01" )) 
 	then
 end

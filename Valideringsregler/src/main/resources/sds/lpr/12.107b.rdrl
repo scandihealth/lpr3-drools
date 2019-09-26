@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "12.107b"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560508171824)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -29,6 +29,6 @@ rule "12.107b"
 	dialect "mvel"
 	when
 		K : Kontakt( ansvarligEnhed.harPsykiatriskHovedSpeciale() == false , KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt)
-		(Diagnose( kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.ydreaarsag" ) from K.bidiagnoser)
+		(Diagnose( kode.primaerKode.gyldigIKodeListe("diag_ydreaarsag", KstartTidspunkt, KslutTidspunkt) ) from K.bidiagnoser)
 	then
 end

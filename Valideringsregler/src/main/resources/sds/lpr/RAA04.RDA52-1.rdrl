@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA04.RDA52-1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560950913397)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -27,8 +27,8 @@ rule "RAA04.RDA52-1"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		RI : ResultatIndberetning( navn.kode == "RAA04" , diagnose != null , diagnose.kode.primaerKode.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "diag.abort.spon" , RIaarsagStartTidspunkt : aarsagStartTidspunkt, RIaarsagSlutTidspunkt : aarsagSlutTidspunkt, status.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "resindb.status.suba" )
-		(Resultat( type.kode == "RDA20" , vaerdiSomSksKode().kodelisterIndenforPeriode(RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) contains "res.gestald.spontabort" ) from RI.resultater)
+		RI : ResultatIndberetning( navn.kode == "RAA04" , diagnose != null , diagnose.kode.primaerKode.gyldigIKodeListe("diag_abort_spon", aarsagStartTidspunkt, aarsagSlutTidspunkt) , RIaarsagStartTidspunkt : aarsagStartTidspunkt, RIaarsagSlutTidspunkt : aarsagSlutTidspunkt, status.gyldigIKodeListe("resindb_status_suba", aarsagStartTidspunkt, aarsagSlutTidspunkt) )
+		(Resultat( type.kode == "RDA20" , vaerdiSomSksKode().gyldigIKodeListe("res_gestald_spontabort", RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) ) from RI.resultater)
 		not (		Resultat( type.kode == "RDA52" ) from RI.resultater
 ) 
 	then

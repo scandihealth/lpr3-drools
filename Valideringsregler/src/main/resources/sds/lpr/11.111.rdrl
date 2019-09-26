@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "11.111"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560431092461)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,7 +28,7 @@ rule "11.111"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( type.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) contains "admin.konttype.diagindb" )
+		K : Kontakt( type.gyldigIKodeListe("admin_konttype_diagindb", startTidspunkt, slutTidspunkt) )
 		(Procedure( startTidspunkt != K.startTidspunkt || harSlutTidspunkt()) from K.procedurer)
 	then
 end

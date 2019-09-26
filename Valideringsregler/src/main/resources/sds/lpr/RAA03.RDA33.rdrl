@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "RAA03.RDA33"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560930033916)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,7 +28,7 @@ rule "RAA03.RDA33"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		RI : ResultatIndberetning( navn.kode == "RAA03" , status.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "resindb.status.suba" )
+		RI : ResultatIndberetning( navn.kode == "RAA03" , status.gyldigIKodeListe("resindb_status_suba", aarsagStartTidspunkt, aarsagSlutTidspunkt) )
 		(Resultat( type.kode == "RDA32" , vaerdiSomHeltal() > 1 ) from RI.resultater)
 		not (		Resultat( type.kode == "RDA33" ) from RI.resultater
 ) 

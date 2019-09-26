@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "12.c-2"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560764576269)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -29,6 +29,6 @@ rule "12.c-2"
 	dialect "mvel"
 	when
 		K : Kontakt( KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt)
-		(D : Diagnose( sideAngivelse != null , sideAngivelse.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) not contains "spec.lateraldiag" ) from K.bidiagnoser)
+		(D : Diagnose( sideAngivelse != null , sideAngivelse.ugyldigIKodeListe("spec_lateraldiag", KstartTidspunkt, KslutTidspunkt) ) from K.bidiagnoser)
 	then
 end

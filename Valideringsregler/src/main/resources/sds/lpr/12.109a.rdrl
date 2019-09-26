@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "12.109a"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560508968885)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,9 +28,9 @@ rule "12.109a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt, aktionDiagnose == null || ( aktionDiagnose != null && aktionDiagnose.kode.primaerKode.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "diag.primkraeft" ))
-		(B1 : Diagnose( kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.metastase" ) from K.bidiagnoser)
-		not (		Diagnose( this != B1 , kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.primkraeft" ) from K.bidiagnoser
+		K : Kontakt( KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt, aktionDiagnose == null || ( aktionDiagnose != null && aktionDiagnose.kode.primaerKode.ugyldigIKodeListe("diag_primkraeft", startTidspunkt, slutTidspunkt) ))
+		(B1 : Diagnose( kode.primaerKode.gyldigIKodeListe("diag_metastase", KstartTidspunkt, KslutTidspunkt) ) from K.bidiagnoser)
+		not (		Diagnose( this != B1 , kode.primaerKode.gyldigIKodeListe("diag_primkraeft", KstartTidspunkt, KslutTidspunkt) ) from K.bidiagnoser
 ) 
 	then
 end

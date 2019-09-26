@@ -8,7 +8,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "RAA05.RDA63-1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1561015839415)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -30,6 +30,6 @@ rule "RAA05.RDA63-1"
 	dialect "mvel"
 	when
 		RI : ResultatIndberetning( navn.kode == "RAA05" , RIaarsagStartTidspunkt : aarsagStartTidspunkt, RIaarsagSlutTidspunkt : aarsagSlutTidspunkt)
-		(Resultat( type.kode == "RDA63" , vaerdiSomSksKode().kodelisterIndenforPeriode(RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) not contains "res.skadeakt" ) from RI.resultater)
+		(Resultat( type.kode == "RDA63" , vaerdiSomSksKode().ugyldigIKodeListe("res_skadeakt", RIaarsagStartTidspunkt, RIaarsagSlutTidspunkt) ) from RI.resultater)
 	then
 end

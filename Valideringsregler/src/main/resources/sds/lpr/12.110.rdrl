@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Diagnose;
 
 rule "12.110"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560510495329)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,8 +27,8 @@ rule "12.110"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt, aktionDiagnose != null , aktionDiagnose.kode.primaerKode.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) contains "diag.lokalrecidiv" )
-		not (		Diagnose( kode.primaerKode.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) contains "diag.primkraeft" ) from K.bidiagnoser
+		K : Kontakt( KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt, aktionDiagnose != null , aktionDiagnose.kode.primaerKode.gyldigIKodeListe("diag_lokalrecidiv", startTidspunkt, slutTidspunkt) )
+		not (		Diagnose( kode.primaerKode.gyldigIKodeListe("diag_primkraeft", KstartTidspunkt, KslutTidspunkt) ) from K.bidiagnoser
 ) 
 	then
 end

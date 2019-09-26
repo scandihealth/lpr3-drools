@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "12.04.101"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1561107863974)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -29,6 +29,6 @@ rule "12.04.101"
 	dialect "mvel"
 	when
 		K : Kontakt( KstartTidspunkt : startTidspunkt, KslutTidspunkt : slutTidspunkt)
-		(Diagnose( art.kodelisterIndenforPeriode(KstartTidspunkt, KslutTidspunkt) not contains "admin.diagart.bidiag" ) from K.bidiagnoser)
+		(Diagnose( art.ugyldigIKodeListe("admin_diagart_bidiag", KstartTidspunkt, KslutTidspunkt) ) from K.bidiagnoser)
 	then
 end

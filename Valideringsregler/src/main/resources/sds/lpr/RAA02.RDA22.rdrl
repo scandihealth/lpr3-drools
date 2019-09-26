@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "RAA02.RDA22"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560868797104)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -27,7 +27,7 @@ rule "RAA02.RDA22"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		RI : ResultatIndberetning( navn.kode == "RAA02" , status.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) contains "resindb.status.suba" )
+		RI : ResultatIndberetning( navn.kode == "RAA02" , status.gyldigIKodeListe("resindb_status_suba", aarsagStartTidspunkt, aarsagSlutTidspunkt) )
 		not (		Resultat( type.kode == "RDA22" ) from RI.resultater
 ) 
 	then

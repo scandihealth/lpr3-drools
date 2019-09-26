@@ -8,7 +8,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "15.b"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560852683550)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -29,6 +29,6 @@ rule "15.b"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		ResultatIndberetning( status.kodelisterIndenforPeriode(aarsagStartTidspunkt, aarsagSlutTidspunkt) not contains "resindb.status" )
+		ResultatIndberetning( status.ugyldigIKodeListe("resindb_status", aarsagStartTidspunkt, aarsagSlutTidspunkt) )
 	then
 end

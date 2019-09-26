@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "12.03.101"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560430620910)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,6 +28,6 @@ rule "12.03.101"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( aktionDiagnose != null , aktionDiagnose.art.kodelisterIndenforPeriode(startTidspunkt, slutTidspunkt) not contains "admin.diagart.aktdia" )
+		K : Kontakt( aktionDiagnose != null , aktionDiagnose.art.ugyldigIKodeListe("admin_diagart_aktdia", startTidspunkt, slutTidspunkt) )
 	then
 end
