@@ -27,6 +27,6 @@ rule "11.d"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Procedure( anvendtKontrast != null , anvendtKontrast.kodelisterPaaDato(startTidspunkt) not contains "spec.anvkontrast" )
+		Procedure( anvendtKontrast != null , anvendtKontrast.ugyldigIKodeListe("spec_anvkontrast", startTidspunkt) )
 	then
 end

@@ -27,6 +27,6 @@ rule "06.b"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Henvisning( maade.kodelisterPaaDato(tidspunkt) not contains "admin.henvmaade" , tidspunktAsDate >= "01-07-2018" )
+		Henvisning( maade.ugyldigIKodeListe("admin_henvmaade", tidspunkt) , tidspunktAsDate >= "01-07-2018" )
 	then
 end

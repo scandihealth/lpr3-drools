@@ -26,6 +26,6 @@ rule "11.f"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Procedure( personaleKategori != null , personaleKategori.kodelisterPaaDato(startTidspunkt) not contains "admin.personale" )
+		Procedure( personaleKategori != null , personaleKategori.ugyldigIKodeListe("admin_personale", startTidspunkt) )
 	then
 end

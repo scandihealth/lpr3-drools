@@ -27,6 +27,6 @@ rule "11.104"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		P : Procedure( anvendtKontrast == null , kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.kontrast" )
+		P : Procedure( anvendtKontrast == null , kode.primaerKode.gyldigIKodeListe("proc_kontrast", startTidspunkt) )
 	then
 end

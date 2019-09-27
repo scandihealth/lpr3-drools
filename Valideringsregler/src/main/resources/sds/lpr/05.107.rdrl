@@ -27,6 +27,6 @@ rule "05.107"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( type.kodelisterPaaDato(startTidspunkt) contains "admin.konttype.diagindb" , startTidspunkt.plusMinutes(1) != K.slutTidspunkt || prioritet.kodelisterPaaDato(startTidspunkt) not contains "admin.prioritet.plan" )
+		K : Kontakt( type.gyldigIKodeListe("admin_konttype_diagindb", startTidspunkt) , startTidspunkt.plusMinutes(1) != K.slutTidspunkt || prioritet.ugyldigIKodeListe("admin_prioritet_plan", startTidspunkt) )
 	then
 end

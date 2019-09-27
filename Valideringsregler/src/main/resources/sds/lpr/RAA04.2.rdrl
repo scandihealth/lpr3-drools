@@ -29,8 +29,8 @@ rule "RAA04.2"
 	dialect "mvel"
 	when
 		K : Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(7) <= ( OffsetDateTime.now() ) , KslutTidspunkt : slutTidspunkt)
-		(D : Diagnose( kode.primaerKode.kodelisterPaaDato(KslutTidspunkt) contains "diag.abort" ) from K.bidiagnoser)
-		not (		ResultatIndberetning( navn.kode == "RAA04" , status.kodelisterPaaDato(aarsagSlutTidspunkt) contains "resindb.status.suba" ) from D.resultatIndberetninger
+		(D : Diagnose( kode.primaerKode.gyldigIKodeListe("diag_abort", KslutTidspunkt) ) from K.bidiagnoser)
+		not (		ResultatIndberetning( navn.kode == "RAA04" , status.gyldigIKodeListe("resindb_status_suba", aarsagSlutTidspunkt) ) from D.resultatIndberetninger
 ) 
 	then
 end

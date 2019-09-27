@@ -28,6 +28,6 @@ rule "RAA10.RDA96-1"
 	dialect "mvel"
 	when
 		RI : ResultatIndberetning( navn.kode == "RAA10" , RIaarsagStartTidspunkt : aarsagStartTidspunkt)
-		(Resultat( type.kode == "RDA96" , vaerdiSomSksKode().kodelisterPaaDato(RIaarsagStartTidspunkt) not contains "res.tvangsbegrund" ) from RI.resultater)
+		(Resultat( type.kode == "RDA96" , vaerdiSomSksKode().ugyldigIKodeListe("res_tvangsbegrund", RIaarsagStartTidspunkt) ) from RI.resultater)
 	then
 end

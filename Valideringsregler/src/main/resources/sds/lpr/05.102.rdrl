@@ -28,6 +28,6 @@ rule "05.102"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( ansvarligEnhed.harPsykiatriskHovedSpeciale() == false , kontaktAarsag == null , prioritet.kodelisterPaaDato(startTidspunkt) contains "admin.prioritet.akut" , type.kodelisterPaaDato(startTidspunkt) contains "admin.konttype.fysfr" )
+		K : Kontakt( ansvarligEnhed.harPsykiatriskHovedSpeciale() == false , kontaktAarsag == null , prioritet.gyldigIKodeListe("admin_prioritet_akut", startTidspunkt) , type.gyldigIKodeListe("admin_konttype_fysfr", startTidspunkt) )
 	then
 end

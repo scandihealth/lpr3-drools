@@ -27,8 +27,8 @@ rule "RAA10.1"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		P : Procedure( kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.tvangsforanst" )
-		not (		ResultatIndberetning( navn.kode == "RAA10" , status.kodelisterPaaDato(aarsagStartTidspunkt) contains "resindb.status.suba" ) from P.resultatIndberetninger
+		P : Procedure( kode.primaerKode.gyldigIKodeListe("proc_tvangsforanst", startTidspunkt) )
+		not (		ResultatIndberetning( navn.kode == "RAA10" , status.gyldigIKodeListe("resindb_status_suba", aarsagStartTidspunkt) ) from P.resultatIndberetninger
 ) 
 	then
 end

@@ -28,6 +28,6 @@ rule "11.21"
 	dialect "mvel"
 	when
 		K : Kontakt( harSlutTidspunkt())
-		(Fejlkilde : Procedure( harSlutTidspunkt() == false , kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.sluttid" ) from K.procedurer)
+		(Fejlkilde : Procedure( harSlutTidspunkt() == false , kode.primaerKode.gyldigIKodeListe("proc_sluttid", startTidspunkt) ) from K.procedurer)
 	then
 end

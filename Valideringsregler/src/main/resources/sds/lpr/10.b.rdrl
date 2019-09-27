@@ -27,6 +27,6 @@ rule "10.b"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		BetalingOplysning( betaler.kodelisterPaaDato(startTidspunkt) not contains "admin.betaler" )
+		BetalingOplysning( betaler.ugyldigIKodeListe("admin_betaler", startTidspunkt) )
 	then
 end

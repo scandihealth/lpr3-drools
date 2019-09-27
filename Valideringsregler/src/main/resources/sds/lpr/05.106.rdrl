@@ -27,6 +27,6 @@ rule "05.106"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( opholdAddresser.empty == false , type.kodelisterPaaDato(startTidspunkt) not contains "admin.konttype.fysfr" )
+		K : Kontakt( opholdAddresser.empty == false , type.ugyldigIKodeListe("admin_konttype_fysfr", startTidspunkt) )
 	then
 end

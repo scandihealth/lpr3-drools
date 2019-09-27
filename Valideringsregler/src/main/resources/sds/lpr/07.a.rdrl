@@ -27,6 +27,6 @@ rule "07.a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Kontakt( kontaktAarsag != null , kontaktAarsag.kodelisterPaaDato(startTidspunkt) not contains "admin.kontaarsag" )
+		Kontakt( kontaktAarsag != null , kontaktAarsag.ugyldigIKodeListe("admin_kontaarsag", startTidspunkt) )
 	then
 end

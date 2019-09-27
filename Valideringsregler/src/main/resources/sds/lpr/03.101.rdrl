@@ -28,6 +28,6 @@ rule "03.101"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		F : ForloebElement( harStartTidspunkt(), reference != null , reference.forloebElement != null , reference.kode.kodelisterPaaDato(startTidspunkt) contains "forloeb.reftype.ident_id" , reference.forloebElement.patient.erSammePatient(F.patient) != true )
+		F : ForloebElement( harStartTidspunkt(), reference != null , reference.forloebElement != null , reference.kode.gyldigIKodeListe("forloeb_reftype_ident_id", startTidspunkt) , reference.forloebElement.patient.erSammePatient(F.patient) != true )
 	then
 end

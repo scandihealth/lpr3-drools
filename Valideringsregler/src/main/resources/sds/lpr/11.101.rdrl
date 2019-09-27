@@ -27,6 +27,6 @@ rule "11.101"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Procedure( kode.primaerKode.kodelisterPaaDato(startTidspunkt) not contains "proc.act" , kode.primaerKode.kodelisterPaaDato(startTidspunkt) not contains "proc.opr" , kode.primaerKode.kodelisterPaaDato(startTidspunkt) not contains "proc.und" )
+		Procedure( kode.primaerKode.ugyldigIKodeListe("proc_act", startTidspunkt) , kode.primaerKode.ugyldigIKodeListe("proc_opr", startTidspunkt) , kode.primaerKode.ugyldigIKodeListe("proc_und", startTidspunkt) )
 	then
 end

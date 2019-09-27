@@ -28,7 +28,7 @@ rule "RAA05.1"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(3) <= ( OffsetDateTime.now() ) , kontaktAarsag != null , kontaktAarsag.kodelisterPaaDato(slutTidspunkt) contains "admin.kontaarsag.skade" , type.kodelisterPaaDato(slutTidspunkt) contains "admin.konttype.fysfr" , prioritet.kodelisterPaaDato(slutTidspunkt) contains "admin.prioritet.akut" )
-		( Kontakt( this == K , harResultatIndberetning("RAA05") == false ) or ResultatIndberetning( indberetningAarsag == K , navn.kode == "RAA05" , status.kodelisterPaaDato(aarsagSlutTidspunkt) not contains "resindb.status.suba" ) )
+		K : Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(3) <= ( OffsetDateTime.now() ) , kontaktAarsag != null , kontaktAarsag.gyldigIKodeListe("admin_kontaarsag_skade", slutTidspunkt) , type.gyldigIKodeListe("admin_konttype_fysfr", slutTidspunkt) , prioritet.gyldigIKodeListe("admin_prioritet_akut", slutTidspunkt) )
+		( Kontakt( this == K , harResultatIndberetning("RAA05") == false ) or ResultatIndberetning( indberetningAarsag == K , navn.kode == "RAA05" , status.ugyldigIKodeListe("resindb_status_suba", aarsagSlutTidspunkt) ) )
 	then
 end

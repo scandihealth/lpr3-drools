@@ -29,7 +29,7 @@ rule "RAA06.1"
 	dialect "mvel"
 	when
 		Pt : Patient( )
-		P : Procedure( kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.hoerescreen" , startTidspunkt.minusDays(90).toLocalDate() <= Pt.foedselsdato )
-		( Procedure( this == P , harResultatIndberetning("RAA06") == false ) or ResultatIndberetning( indberetningAarsag == P , navn.kode == "RAA06" , status.kodelisterPaaDato(aarsagStartTidspunkt) not contains "resindb.status.suba" ) )
+		P : Procedure( kode.primaerKode.gyldigIKodeListe("proc_hoerescreen", startTidspunkt) , startTidspunkt.minusDays(90).toLocalDate() <= Pt.foedselsdato )
+		( Procedure( this == P , harResultatIndberetning("RAA06") == false ) or ResultatIndberetning( indberetningAarsag == P , navn.kode == "RAA06" , status.ugyldigIKodeListe("resindb_status_suba", aarsagStartTidspunkt) ) )
 	then
 end

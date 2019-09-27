@@ -27,6 +27,6 @@ rule "05.a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( type.kodelisterPaaDato(startTidspunkt) not contains "admin.konttype" )
+		K : Kontakt( type.ugyldigIKodeListe("admin_konttype", startTidspunkt) )
 	then
 end

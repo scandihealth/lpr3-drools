@@ -27,6 +27,6 @@ rule "11.103"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		P : Procedure( handlingSpec == null , kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.handling" )
+		P : Procedure( handlingSpec == null , kode.primaerKode.gyldigIKodeListe("proc_handling", startTidspunkt) )
 	then
 end

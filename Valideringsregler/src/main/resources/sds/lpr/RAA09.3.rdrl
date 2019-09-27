@@ -26,6 +26,6 @@ rule "RAA09.3"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		RI : ResultatIndberetning( navn.kode == "RAA09" , procedure == null || ( procedure != null && procedure.kode.primaerKode.kodelisterPaaDato(aarsagStartTidspunkt) not contains "proc.opr.komplikat" ))
+		RI : ResultatIndberetning( navn.kode == "RAA09" , procedure == null || ( procedure != null && procedure.kode.primaerKode.ugyldigIKodeListe("proc_opr_komplikat", aarsagStartTidspunkt) ))
 	then
 end

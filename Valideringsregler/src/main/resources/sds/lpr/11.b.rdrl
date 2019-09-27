@@ -27,6 +27,6 @@ rule "11.b"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Procedure( sideAngivelse != null , sideAngivelse.kodelisterPaaDato(startTidspunkt) not contains "spec.lateralproc" )
+		Procedure( sideAngivelse != null , sideAngivelse.ugyldigIKodeListe("spec_lateralproc", startTidspunkt) )
 	then
 end

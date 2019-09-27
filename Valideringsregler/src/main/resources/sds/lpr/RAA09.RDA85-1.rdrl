@@ -30,6 +30,6 @@ rule "RAA09.RDA85-1"
 	when
 		P : Procedure( PstartTidspunkt : startTidspunkt)
 		RI : ResultatIndberetning( indberetningAarsag == P , navn.kode == "RAA09" )
-		(Resultat( type.kode == "RDA85" , vaerdiSomSksKode().kodelisterPaaDato(PstartTidspunkt) not contains "res.clavien" ) from RI.resultater)
+		(Resultat( type.kode == "RDA85" , vaerdiSomSksKode().ugyldigIKodeListe("res_clavien", PstartTidspunkt) ) from RI.resultater)
 	then
 end

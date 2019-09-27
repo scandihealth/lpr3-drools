@@ -26,6 +26,6 @@ rule "16.a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		R : Resultat( tidspunkt != null , type.kodelisterPaaDato(tidspunkt) not contains "res.type" )
+		R : Resultat( tidspunkt != null , type.ugyldigIKodeListe("res_type", tidspunkt) )
 	then
 end

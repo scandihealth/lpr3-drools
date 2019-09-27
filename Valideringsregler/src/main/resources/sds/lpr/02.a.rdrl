@@ -27,6 +27,6 @@ rule "02.a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		F : ForloebElement( harStartTidspunkt(), forloebLabel.kodelisterPaaDato(startTidspunkt) not contains "forloeb.label" )
+		F : ForloebElement( harStartTidspunkt(), forloebLabel.ugyldigIKodeListe("forloeb_label", startTidspunkt) )
 	then
 end

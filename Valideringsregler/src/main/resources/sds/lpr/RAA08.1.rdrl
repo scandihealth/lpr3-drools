@@ -27,7 +27,7 @@ rule "RAA08.1"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		P : Procedure( kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.implantat" )
-		( Procedure( this == P , harResultatIndberetning("RAA08") == false ) or ResultatIndberetning( indberetningAarsag == P , navn.kode == "RAA08" , status.kodelisterPaaDato(aarsagStartTidspunkt) not contains "resindb.status.suba" ) )
+		P : Procedure( kode.primaerKode.gyldigIKodeListe("proc_implantat", startTidspunkt) )
+		( Procedure( this == P , harResultatIndberetning("RAA08") == false ) or ResultatIndberetning( indberetningAarsag == P , navn.kode == "RAA08" , status.ugyldigIKodeListe("resindb_status_suba", aarsagStartTidspunkt) ) )
 	then
 end

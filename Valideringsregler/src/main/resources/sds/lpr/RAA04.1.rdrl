@@ -29,7 +29,7 @@ rule "RAA04.1"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(7) <= ( OffsetDateTime.now() ) , aktionDiagnose != null , aktionDiagnose.kode.primaerKode.kodelisterPaaDato(slutTidspunkt) contains "diag.abort" , A : aktionDiagnose, KslutTidspunkt : slutTidspunkt)
-		not (ResultatIndberetning( diagnose == A , navn.kode == "RAA04" , status.kodelisterPaaDato(aarsagSlutTidspunkt) contains "resindb.status.suba" )) 
+		Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(7) <= ( OffsetDateTime.now() ) , aktionDiagnose != null , aktionDiagnose.kode.primaerKode.gyldigIKodeListe("diag_abort", slutTidspunkt) , A : aktionDiagnose, KslutTidspunkt : slutTidspunkt)
+		not (ResultatIndberetning( diagnose == A , navn.kode == "RAA04" , status.gyldigIKodeListe("resindb_status_suba", aarsagSlutTidspunkt) ))
 	then
 end

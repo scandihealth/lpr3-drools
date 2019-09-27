@@ -27,6 +27,6 @@ rule "11.e"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Procedure( indikation != null , indikation.primaerKode.kodelisterPaaDato(startTidspunkt) not contains "diag" , indikation.primaerKode.kodelisterPaaDato(startTidspunkt) not contains "admin.behandsigte" )
+		Procedure( indikation != null , indikation.primaerKode.ugyldigIKodeListe("diag", startTidspunkt) , indikation.primaerKode.ugyldigIKodeListe("admin_behandsigte", startTidspunkt) )
 	then
 end

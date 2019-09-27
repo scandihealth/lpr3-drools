@@ -27,6 +27,6 @@ rule "10.c"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		BetalingOplysning( specialiseringNiveau != null , specialiseringNiveau.kodelisterPaaDato(startTidspunkt) not contains "admin.specialeniv" )
+		BetalingOplysning( specialiseringNiveau != null , specialiseringNiveau.ugyldigIKodeListe("admin_specialeniv", startTidspunkt) )
 	then
 end

@@ -26,7 +26,7 @@ rule "11.107"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		P : Procedure( kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.inhabil.subb" )
-		( Procedure( this == P , personaleKategori == null ) or Procedure( this == P , personaleKategori != null , personaleKategori.kodelisterPaaDato(startTidspunkt) not contains "admin.personale" ) )
+		P : Procedure( kode.primaerKode.gyldigIKodeListe("proc_inhabil_subb", startTidspunkt) )
+		( Procedure( this == P , personaleKategori == null ) or Procedure( this == P , personaleKategori != null , personaleKategori.ugyldigIKodeListe("admin_personale", startTidspunkt) ) )
 	then
 end

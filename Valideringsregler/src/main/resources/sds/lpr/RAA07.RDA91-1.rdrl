@@ -30,6 +30,6 @@ rule "RAA07.RDA91-1"
 	dialect "mvel"
 	when
 		RI : ResultatIndberetning( navn.kode == "RAA07" , RIaarsagStartTidspunkt : aarsagStartTidspunkt)
-		(R : Resultat( type.kode == "RDA91" , vaerdiSomSksKode().kodelisterPaaDato(RIaarsagStartTidspunkt) not contains "res.inhabbegrundelse" ) from RI.resultater)
+		(R : Resultat( type.kode == "RDA91" , vaerdiSomSksKode().ugyldigIKodeListe("res_inhabbegrundelse", RIaarsagStartTidspunkt) ) from RI.resultater)
 	then
 end

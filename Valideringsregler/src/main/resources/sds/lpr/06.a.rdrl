@@ -26,6 +26,6 @@ rule "06.a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Henvisning( aarsag != null , aarsag.primaerKode != null , aarsag.primaerKode.kodelisterPaaDato(tidspunkt) not contains "diag" , aarsag.primaerKode.kodelisterPaaDato(tidspunkt) not contains "proc.act" , aarsag.primaerKode.kodelisterPaaDato(tidspunkt) not contains "proc.opr" , aarsag.primaerKode.kodelisterPaaDato(tidspunkt) not contains "proc.und" , tidspunktAsDate >= "01-07-2018" )
+		Henvisning( aarsag != null , aarsag.primaerKode != null , aarsag.primaerKode.ugyldigIKodeListe("diag", tidspunkt) , aarsag.primaerKode.ugyldigIKodeListe("proc_act", tidspunkt) , aarsag.primaerKode.ugyldigIKodeListe("proc_opr", tidspunkt) , aarsag.primaerKode.ugyldigIKodeListe("proc_und", tidspunkt) , tidspunktAsDate >= "01-07-2018" )
 	then
 end

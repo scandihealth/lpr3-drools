@@ -27,6 +27,6 @@ rule "11.102"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		P : Procedure( sideAngivelse == null , kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.lateral" )
+		P : Procedure( sideAngivelse == null , kode.primaerKode.gyldigIKodeListe("proc_lateral", startTidspunkt) )
 	then
 end

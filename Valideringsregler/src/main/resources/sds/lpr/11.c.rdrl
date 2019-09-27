@@ -27,6 +27,6 @@ rule "11.c"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Procedure( handlingSpec != null , handlingSpec.kodelisterPaaDato(startTidspunkt) not contains "spec.handspec" )
+		Procedure( handlingSpec != null , handlingSpec.ugyldigIKodeListe("spec_handspec", startTidspunkt) )
 	then
 end

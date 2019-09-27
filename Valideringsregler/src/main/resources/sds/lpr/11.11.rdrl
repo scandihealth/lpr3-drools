@@ -28,6 +28,6 @@ rule "11.11"
 	dialect "mvel"
 	when
 		F : ForloebElement( harSlutTidspunkt(), procedurer != null )
-		(Procedure( harSlutTidspunkt() == false , kode.primaerKode.kodelisterPaaDato(startTidspunkt) contains "proc.sluttid" ) from F.procedurer)
+		(Procedure( harSlutTidspunkt() == false , kode.primaerKode.gyldigIKodeListe("proc_sluttid", startTidspunkt) ) from F.procedurer)
 	then
 end

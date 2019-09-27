@@ -27,6 +27,6 @@ rule "04.a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		F : ForloebMarkoer( kode.kodelisterPaaDato(tidspunkt) not contains "forloeb.markoer" )
+		F : ForloebMarkoer( kode.ugyldigIKodeListe("forloeb_markoer", tidspunkt) )
 	then
 end

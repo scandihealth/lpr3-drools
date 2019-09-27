@@ -27,6 +27,6 @@ rule "06.c"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Henvisning( fritvalg.kodelisterPaaDato(tidspunkt) not contains "admin.fritvalg" , tidspunktAsDate >= "01-07-2018" )
+		Henvisning( fritvalg.ugyldigIKodeListe("admin_fritvalg", tidspunkt) , tidspunktAsDate >= "01-07-2018" )
 	then
 end

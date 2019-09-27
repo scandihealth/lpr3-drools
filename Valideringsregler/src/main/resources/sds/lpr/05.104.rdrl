@@ -27,6 +27,6 @@ rule "05.104"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( kontaktAarsag != null , prioritet.kodelisterPaaDato(startTidspunkt) contains "admin.prioritet.plan" )
+		K : Kontakt( kontaktAarsag != null , prioritet.gyldigIKodeListe("admin_prioritet_plan", startTidspunkt) )
 	then
 end

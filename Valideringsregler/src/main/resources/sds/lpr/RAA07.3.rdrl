@@ -26,6 +26,6 @@ rule "RAA07.3"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		RI : ResultatIndberetning( navn.kode == "RAA07" , procedure == null || ( procedure != null && procedure.kode.primaerKode.kodelisterPaaDato(aarsagStartTidspunkt) not contains "proc.inhabil.suba" ))
+		RI : ResultatIndberetning( navn.kode == "RAA07" , procedure == null || ( procedure != null && procedure.kode.primaerKode.ugyldigIKodeListe("proc_inhabil_suba", aarsagStartTidspunkt) ))
 	then
 end

@@ -26,6 +26,6 @@ rule "05.108"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Kontakt( type.kodelisterPaaDato(startTidspunkt) contains "admin.konttype.doed" , prioritet.kodelisterPaaDato(startTidspunkt) not contains "admin.prioritet.akut" || aktionDiagnose == null || ( aktionDiagnose != null && aktionDiagnose.kode.primaerKode.kodelisterPaaDato(startTidspunkt) not contains "diag.doed" ))
+		Kontakt( type.gyldigIKodeListe("admin_konttype_doed", startTidspunkt) , prioritet.ugyldigIKodeListe("admin_prioritet_akut", startTidspunkt) || aktionDiagnose == null || ( aktionDiagnose != null && aktionDiagnose.kode.primaerKode.ugyldigIKodeListe("diag_doed", startTidspunkt) ))
 	then
 end

@@ -27,6 +27,6 @@ rule "09.a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		OpholdAdresse( fravaer != null , fravaer.kodelisterPaaDato(startTidspunkt) not contains "admin.fravaer" )
+		OpholdAdresse( fravaer != null , fravaer.ugyldigIKodeListe("admin_fravaer", startTidspunkt) )
 	then
 end
