@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "10.c"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560425394752)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,6 +27,6 @@ rule "10.c"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		BetalingOplysning( specialiseringNiveau != null , specialiseringNiveau.ugyldigIKodeListe("admin_specialeniv", startTidspunkt) )
+		BetalingOplysning( specialiseringNiveau != null , specialiseringNiveau.ugyldigIKodeListePaaDato("admin_specialeniv", startTidspunkt) )
 	then
 end

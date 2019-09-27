@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 
 rule "RAA03.1-w"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560868913705)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -29,7 +29,7 @@ rule "RAA03.1-w"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(7) > ( OffsetDateTime.now() ) , aktionDiagnose != null , aktionDiagnose.kode.primaerKode.gyldigIKodeListe("diag_foedbarn", slutTidspunkt) , KslutTidspunkt : slutTidspunkt, A : aktionDiagnose, DelayStart : slutTidspunkt)
-		not (ResultatIndberetning( diagnose == A , navn.kode == "RAA03" , status.gyldigIKodeListe("resindb_status_suba", KslutTidspunkt) ))
+		Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(7) > ( OffsetDateTime.now() ) , aktionDiagnose != null , aktionDiagnose.kode.primaerKode.gyldigIKodeListePaaDato("diag_foedbarn", slutTidspunkt) , KslutTidspunkt : slutTidspunkt, A : aktionDiagnose, DelayStart : slutTidspunkt)
+		not (ResultatIndberetning( diagnose == A , navn.kode == "RAA03" , status.gyldigIKodeListePaaDato("resindb_status_suba", KslutTidspunkt) ))
 	then
 end

@@ -7,7 +7,7 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "RAA04.2"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560930912423)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -29,8 +29,8 @@ rule "RAA04.2"
 	dialect "mvel"
 	when
 		K : Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(7) <= ( OffsetDateTime.now() ) , KslutTidspunkt : slutTidspunkt)
-		(D : Diagnose( kode.primaerKode.gyldigIKodeListe("diag_abort", KslutTidspunkt) ) from K.bidiagnoser)
-		not (		ResultatIndberetning( navn.kode == "RAA04" , status.gyldigIKodeListe("resindb_status_suba", aarsagSlutTidspunkt) ) from D.resultatIndberetninger
+		(D : Diagnose( kode.primaerKode.gyldigIKodeListePaaDato("diag_abort", KslutTidspunkt) ) from K.bidiagnoser)
+		not (		ResultatIndberetning( navn.kode == "RAA04" , status.gyldigIKodeListePaaDato("resindb_status_suba", aarsagSlutTidspunkt) ) from D.resultatIndberetninger
 ) 
 	then
 end

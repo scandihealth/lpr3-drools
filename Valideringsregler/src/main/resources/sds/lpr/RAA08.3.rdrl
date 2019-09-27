@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.ResultatIndberetning;
 
 rule "RAA08.3"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1561031114942)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -26,6 +26,6 @@ rule "RAA08.3"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		RI : ResultatIndberetning( navn.kode == "RAA08" , procedure == null || ( procedure != null && procedure.kode.primaerKode.ugyldigIKodeListe("proc_implantat", aarsagStartTidspunkt) ))
+		RI : ResultatIndberetning( navn.kode == "RAA08" , procedure == null || ( procedure != null && procedure.kode.primaerKode.ugyldigIKodeListePaaDato("proc_implantat", aarsagStartTidspunkt) ))
 	then
 end

@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.Procedure;
 
 rule "11.107"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560421401175)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -26,7 +26,7 @@ rule "11.107"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		P : Procedure( kode.primaerKode.gyldigIKodeListe("proc_inhabil_subb", startTidspunkt) )
-		( Procedure( this == P , personaleKategori == null ) or Procedure( this == P , personaleKategori != null , personaleKategori.ugyldigIKodeListe("admin_personale", startTidspunkt) ) )
+		P : Procedure( kode.primaerKode.gyldigIKodeListePaaDato("proc_inhabil_subb", startTidspunkt) )
+		( Procedure( this == P , personaleKategori == null ) or Procedure( this == P , personaleKategori != null , personaleKategori.ugyldigIKodeListePaaDato("admin_personale", startTidspunkt) ) )
 	then
 end

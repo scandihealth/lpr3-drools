@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.Procedure;
 
 rule "11.f"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560758136711)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -26,6 +26,6 @@ rule "11.f"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Procedure( personaleKategori != null , personaleKategori.ugyldigIKodeListe("admin_personale", startTidspunkt) )
+		Procedure( personaleKategori != null , personaleKategori.ugyldigIKodeListePaaDato("admin_personale", startTidspunkt) )
 	then
 end

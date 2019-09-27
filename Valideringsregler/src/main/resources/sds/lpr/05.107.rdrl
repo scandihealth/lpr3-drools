@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "05.107"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560346475921)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,6 +27,6 @@ rule "05.107"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( type.gyldigIKodeListe("admin_konttype_diagindb", startTidspunkt) , startTidspunkt.plusMinutes(1) != K.slutTidspunkt || prioritet.ugyldigIKodeListe("admin_prioritet_plan", startTidspunkt) )
+		K : Kontakt( type.gyldigIKodeListePaaDato("admin_konttype_diagindb", startTidspunkt) , startTidspunkt.plusMinutes(1) != K.slutTidspunkt || prioritet.ugyldigIKodeListePaaDato("admin_prioritet_plan", startTidspunkt) )
 	then
 end

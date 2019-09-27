@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "RAA10.RDA97-1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1561104328612)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -28,6 +28,6 @@ rule "RAA10.RDA97-1"
 	dialect "mvel"
 	when
 		RI : ResultatIndberetning( navn.kode == "RAA10" , RIaarsagStartTidspunkt : aarsagStartTidspunkt)
-		(Resultat( type.kode == "RDA97" , vaerdiSomSksKode().ugyldigIKodeListe("res_tvangsbehsted", RIaarsagStartTidspunkt) ) from RI.resultater)
+		(Resultat( type.kode == "RDA97" , vaerdiSomSksKode().ugyldigIKodeListePaaDato("res_tvangsbehsted", RIaarsagStartTidspunkt) ) from RI.resultater)
 	then
 end

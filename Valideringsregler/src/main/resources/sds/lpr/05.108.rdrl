@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "05.108"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1561107294526)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(-9223372036854775808)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(-9223372036854775808)
@@ -26,6 +26,6 @@ rule "05.108"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Kontakt( type.gyldigIKodeListe("admin_konttype_doed", startTidspunkt) , prioritet.ugyldigIKodeListe("admin_prioritet_akut", startTidspunkt) || aktionDiagnose == null || ( aktionDiagnose != null && aktionDiagnose.kode.primaerKode.ugyldigIKodeListe("diag_doed", startTidspunkt) ))
+		Kontakt( type.gyldigIKodeListePaaDato("admin_konttype_doed", startTidspunkt) , prioritet.ugyldigIKodeListePaaDato("admin_prioritet_akut", startTidspunkt) || aktionDiagnose == null || ( aktionDiagnose != null && aktionDiagnose.kode.primaerKode.ugyldigIKodeListePaaDato("diag_doed", startTidspunkt) ))
 	then
 end

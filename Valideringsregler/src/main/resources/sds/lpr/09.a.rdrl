@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "09.a"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560415148233)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,6 +27,6 @@ rule "09.a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		OpholdAdresse( fravaer != null , fravaer.ugyldigIKodeListe("admin_fravaer", startTidspunkt) )
+		OpholdAdresse( fravaer != null , fravaer.ugyldigIKodeListePaaDato("admin_fravaer", startTidspunkt) )
 	then
 end

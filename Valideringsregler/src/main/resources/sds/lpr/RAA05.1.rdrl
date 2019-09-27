@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 
 rule "RAA05.1"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560952082134)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,7 +28,7 @@ rule "RAA05.1"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		K : Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(3) <= ( OffsetDateTime.now() ) , kontaktAarsag != null , kontaktAarsag.gyldigIKodeListe("admin_kontaarsag_skade", slutTidspunkt) , type.gyldigIKodeListe("admin_konttype_fysfr", slutTidspunkt) , prioritet.gyldigIKodeListe("admin_prioritet_akut", slutTidspunkt) )
-		( Kontakt( this == K , harResultatIndberetning("RAA05") == false ) or ResultatIndberetning( indberetningAarsag == K , navn.kode == "RAA05" , status.ugyldigIKodeListe("resindb_status_suba", aarsagSlutTidspunkt) ) )
+		K : Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(3) <= ( OffsetDateTime.now() ) , kontaktAarsag != null , kontaktAarsag.gyldigIKodeListePaaDato("admin_kontaarsag_skade", slutTidspunkt) , type.gyldigIKodeListePaaDato("admin_konttype_fysfr", slutTidspunkt) , prioritet.gyldigIKodeListePaaDato("admin_prioritet_akut", slutTidspunkt) )
+		( Kontakt( this == K , harResultatIndberetning("RAA05") == false ) or ResultatIndberetning( indberetningAarsag == K , navn.kode == "RAA05" , status.ugyldigIKodeListePaaDato("resindb_status_suba", aarsagSlutTidspunkt) ) )
 	then
 end

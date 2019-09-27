@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "11.b"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560517621811)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -27,6 +27,6 @@ rule "11.b"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Procedure( sideAngivelse != null , sideAngivelse.ugyldigIKodeListe("spec_lateralproc", startTidspunkt) )
+		Procedure( sideAngivelse != null , sideAngivelse.ugyldigIKodeListePaaDato("spec_lateralproc", startTidspunkt) )
 	then
 end

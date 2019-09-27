@@ -8,7 +8,7 @@ import com.dxc.lpr3.domain.Kontakt;
 
 rule "11.110"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560430522771)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -29,10 +29,10 @@ rule "11.110"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		RI : ResultatIndberetning( navn.kode == "RAA09" , procedure != null , procedure.kode.primaerKode.gyldigIKodeListe("proc_opr_komplikat", aarsagStartTidspunkt) , P : procedure, RIaarsagStartTidspunkt : aarsagStartTidspunkt)
-		(Resultat( type.kode == "RDA85" , vaerdiSomSksKode().gyldigIKodeListe("res_clavien_suba", RIaarsagStartTidspunkt) ) from RI.resultater)
+		RI : ResultatIndberetning( navn.kode == "RAA09" , procedure != null , procedure.kode.primaerKode.gyldigIKodeListePaaDato("proc_opr_komplikat", aarsagStartTidspunkt) , P : procedure, RIaarsagStartTidspunkt : aarsagStartTidspunkt)
+		(Resultat( type.kode == "RDA85" , vaerdiSomSksKode().gyldigIKodeListePaaDato("res_clavien_suba", RIaarsagStartTidspunkt) ) from RI.resultater)
 		K : Kontakt( procedurer contains P )
-		not (		Diagnose( kode.primaerKode.gyldigIKodeListe("diag_kirkomplikat", RIaarsagStartTidspunkt) ) from K.bidiagnoser
+		not (		Diagnose( kode.primaerKode.gyldigIKodeListePaaDato("diag_kirkomplikat", RIaarsagStartTidspunkt) ) from K.bidiagnoser
 ) 
 	then
 end

@@ -29,7 +29,7 @@ rule "RAA02.1-w"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(7) > ( OffsetDateTime.now() ) , aktionDiagnose != null , aktionDiagnose.kode.primaerKode.gyldigIKodeListe("diag_foedmor", slutTidspunkt) , A : aktionDiagnose, DelayStart : slutTidspunkt)
+		Kontakt( harSlutTidspunkt(), slutTidspunkt.plusDays(7) > ( OffsetDateTime.now() ) , aktionDiagnose != null , aktionDiagnose.kode.primaerKode.gyldigIKodeListePaaDato("diag_foedmor", slutTidspunkt) , A : aktionDiagnose, DelayStart : slutTidspunkt)
 		not (ResultatIndberetning( navn.kode == "RAA02" , status.gyldigIKodeListe("resindb_status_suba", aarsagStartTidspunkt, aarsagSlutTidspunkt) , diagnose == A ))
 	then
 end

@@ -6,7 +6,7 @@ import com.dxc.lpr3.domain.SksKodeLister;
 
 rule "11.11"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560429502890)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -28,6 +28,6 @@ rule "11.11"
 	dialect "mvel"
 	when
 		F : ForloebElement( harSlutTidspunkt(), procedurer != null )
-		(Procedure( harSlutTidspunkt() == false , kode.primaerKode.gyldigIKodeListe("proc_sluttid", startTidspunkt) ) from F.procedurer)
+		(Procedure( harSlutTidspunkt() == false , kode.primaerKode.gyldigIKodeListePaaDato("proc_sluttid", startTidspunkt) ) from F.procedurer)
 	then
 end

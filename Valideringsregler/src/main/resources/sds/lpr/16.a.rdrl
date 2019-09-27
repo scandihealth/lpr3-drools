@@ -5,7 +5,7 @@ import com.dxc.lpr3.domain.Resultat;
 
 rule "16.a"
 	@lprmeta.isValidForDUSASAbroadReports(true)
-	@lprmeta.productionDate(1560861237639)
+	@lprmeta.productionDate(1569529407)
 	@lprmeta.reportReceivedFromDate(0)
 	@lprmeta.isValidForLPRReports(true)
 	@lprmeta.episodeOfCareStartFromDate(0)
@@ -26,6 +26,6 @@ rule "16.a"
 	@lprmeta.isValidForDUSASSpecialityReports(true)
 	dialect "mvel"
 	when
-		R : Resultat( tidspunkt != null , type.ugyldigIKodeListe("res_type", tidspunkt) )
+		R : Resultat( tidspunkt != null , type.ugyldigIKodeListePaaDato("res_type", tidspunkt) )
 	then
 end
